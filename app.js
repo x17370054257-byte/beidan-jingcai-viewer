@@ -45,6 +45,14 @@ function resolveMatchPhase(obj) {
   return 'live';
 }
 
+
+function methodAgreeBadge(leg) {
+  const n = leg && (leg.method_agree_n ?? leg.vote_agree_n);
+  if (n === undefined || n === null || n === '') return '';
+  const conf = leg.vote_confirmed ? '' : '';
+  return `<span class="agree" title="多方法同向数 · 观察向未升权">方法同意 ${escapeHtml(String(n))}</span>`;
+}
+
 function phaseBadge(obj) {
   const ph = resolveMatchPhase(obj);
   if (ph === 'live') return '<span class="phase live">已开赛</span>';
@@ -212,7 +220,7 @@ function deskCardBeidan(leg, idx) {
   const off = renderOffFieldCard(leg);
   return `<button type="button" class="desk-card${hot}" data-idx="${idx}">
     <div class="desk-top">
-      <span class="desk-no">北单 ${escapeHtml(leg.sale_id)} ${strengthBadge(leg.strength)} ${phaseBadge(leg)}</span>
+      <span class="desk-no">北单 ${escapeHtml(leg.sale_id)} ${strengthBadge(leg.strength)} ${methodAgreeBadge(leg)} ${phaseBadge(leg)}</span>
       <span class="hc">让 ${escapeHtml(leg.handicap)}</span>
     </div>
     <div class="desk-teams">${escapeHtml(name)}</div>
@@ -232,7 +240,7 @@ function deskCardJingcai(leg, idx) {
   const off = renderOffFieldCard(leg);
   return `<button type="button" class="desk-card${hot}" data-idx="${idx}">
     <div class="desk-top">
-      <span class="desk-no">${escapeHtml(leg.sale_id)} ${strengthBadge(leg.strength)} ${phaseBadge(leg)}</span>
+      <span class="desk-no">${escapeHtml(leg.sale_id)} ${strengthBadge(leg.strength)} ${methodAgreeBadge(leg)} ${phaseBadge(leg)}</span>
       <span class="hc">让 ${escapeHtml(leg.handicap)}</span>
     </div>
     <div class="desk-teams">${escapeHtml(name)}</div>
@@ -264,6 +272,7 @@ function renderSkeleton(leg) {
       <span>${escapeHtml(String(leg.sale_id).startsWith('周') ? '竞彩' : '北单')} ${escapeHtml(leg.sale_id)}</span>
       <span>双选 ${escapeHtml(leg.double || '—')}</span>
       ${leg.strength ? `<span>强度 ${escapeHtml(leg.strength)}</span>` : ''}
+      ${(leg.method_agree_n ?? leg.vote_agree_n) != null ? `<span>方法同意 ${escapeHtml(String(leg.method_agree_n ?? leg.vote_agree_n))}</span>` : ''}
       ${phaseBadge(leg)}
     </div>
     <div class="plain">

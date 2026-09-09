@@ -230,3 +230,12 @@ body {
   color: #c5ced8;
   border: 1px solid rgba(139,152,168,.35);
 }
+
+.agree {
+  display: inline-flex; align-items: center;
+  border-radius: 8px; padding: 3px 8px;
+  font-size: 12px; font-weight: 700;
+  background: rgba(61,139,253,.16);
+  color: #9ec5ff;
+  border: 1px solid rgba(61,139,253,.4);
+}
