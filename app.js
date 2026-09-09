@@ -7,6 +7,15 @@ let deskKind = 'beidan7'; // beidan7 | jingcai
 const $ = (id) => document.getElementById(id);
 
 async function load() {
+  // meta optional in 1.4 desk skeleton — never white-screen on missing #meta
+  const metaEl = $('meta');
+  if (metaEl) {
+    try {
+      const c = (typeof DATA !== 'undefined' && DATA && DATA.counts) ? DATA.counts : {};
+      metaEl.innerHTML = '';
+    } catch (_) {}
+  }
+
   $('desk-list').innerHTML = `<div class="empty">加载双选短表…</div>`;
   $('detail').innerHTML = `<div class="empty">加载中…</div>`;
   try {
@@ -266,10 +275,14 @@ function plainReport(md, m) {
   text = text.replace(/^#+\s*/gm, '');
 
   let tendency =
-    pick(text, /结论[：:]\s*(.+)/) ||
     pick(text, /倾向[：:]\s*(.+)/) ||
+    pick(text, /(?<!性质)结论[：:]\s*(.+)/) ||
+    pick(text, /^结论[：:]\s*(.+)/m) ||
     guessTendency(text) ||
     '暂无明确方向';
+  if (/结论性质/.test(tendency) || /research_observation|market_baseline/.test(tendency)) {
+    tendency = pick(text, /倾向[：:]\s*(.+)/) || guessTendency(text) || '暂无明确方向';
+  }
   const action = /不出票|no_bet/i.test(text) || /不出票/.test(tendency) ? '不出票' : '';
 
   let oddsTalk = '';
