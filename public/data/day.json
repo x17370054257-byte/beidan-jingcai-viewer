@@ -2243,7 +2243,11 @@
       "match_phase": "pre",
       "handicap": "0",
       "nspf": null,
-      "spf": null,
+      "spf": [
+        "2.15",
+        "4.64",
+        "3.12"
+      ],
       "sell_status": "paused",
       "fixture_id": 1490452,
       "badge": null,
@@ -2270,7 +2274,11 @@
       "match_phase": "pre",
       "handicap": "0",
       "nspf": null,
-      "spf": null,
+      "spf": [
+        "3.46",
+        "3.44",
+        "2.37"
+      ],
       "sell_status": "paused",
       "fixture_id": 1490454,
       "badge": null,
@@ -2297,7 +2305,11 @@
       "match_phase": "pre",
       "handicap": "0",
       "nspf": null,
-      "spf": null,
+      "spf": [
+        "2.87",
+        "4.19",
+        "2.41"
+      ],
       "sell_status": "paused",
       "fixture_id": 1490456,
       "badge": null,
@@ -2324,7 +2336,11 @@
       "match_phase": "pre",
       "handicap": "0",
       "nspf": null,
-      "spf": null,
+      "spf": [
+        "4.68",
+        "3.98",
+        "1.86"
+      ],
       "sell_status": "paused",
       "fixture_id": 1490453,
       "badge": null,
@@ -2351,7 +2367,11 @@
       "match_phase": "pre",
       "handicap": "0",
       "nspf": null,
-      "spf": null,
+      "spf": [
+        "3.55",
+        "3.43",
+        "2.33"
+      ],
       "sell_status": "paused",
       "fixture_id": 1520860,
       "badge": null,
@@ -2378,7 +2398,11 @@
       "match_phase": "pre",
       "handicap": "0",
       "nspf": null,
-      "spf": null,
+      "spf": [
+        "2.81",
+        "3.23",
+        "2.97"
+      ],
       "sell_status": "paused",
       "fixture_id": 1520866,
       "badge": null,
@@ -2405,7 +2429,11 @@
       "match_phase": "pre",
       "handicap": "-1",
       "nspf": null,
-      "spf": null,
+      "spf": [
+        "3.13",
+        "3.62",
+        "2.47"
+      ],
       "sell_status": "paused",
       "fixture_id": 1490451,
       "badge": null,
