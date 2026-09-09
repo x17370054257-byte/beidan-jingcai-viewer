@@ -95,7 +95,11 @@ function renderPickLines(leg) {
   const b = alt
     ? `<div class="desk-pick alt"><em>另选</em>${escapeHtml(alt)}</div>`
     : '';
-  return `<div class="desk-picks">${a}${b}</div>`;
+  const why = String((leg && (leg.why_alt || leg.alt_floor_why)) || '').trim();
+  const w = why
+    ? `<div class="desk-why-alt"><em>为何另选托底</em>${escapeHtml(why)}</div>`
+    : '';
+  return `<div class="desk-picks">${a}${b}${w}</div>`;
 }
 
 function renderHandicapBig(leg) {
@@ -331,7 +335,7 @@ function renderSkeleton(leg) {
       <div class="verdict">
         <div class="verdict-label">研究结论</div>
         <div class="verdict-main">${leg.strength ? escapeHtml(leg.strength) + ' · ' : ''}${(() => { const p=pickPrimaryAlt(leg); return `主选 ${escapeHtml(p.primary || '—')}` + (p.alt ? ` · 另选 ${escapeHtml(p.alt)}` : ''); })()} · 不出票</div>
-        <div class="verdict-sub">短表观察 · 不是投注建议</div>
+        <div class="verdict-sub">${(() => { const w=String(leg.why_alt||leg.alt_floor_why||'').trim(); return w ? ('为何另选托底：' + escapeHtml(w) + ' · ') : ''; })()}短表观察 · 不是投注建议</div>
       </div>
       <div class="section" id="sec-view">
         <h3>比赛怎么看</h3>

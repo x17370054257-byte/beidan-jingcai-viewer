@@ -288,3 +288,11 @@ body {
   font-size: 16px; font-weight: 800; color: #ffe9a8; line-height: 1.35;
 }
 .hc.big { max-width: 100%; line-height: 1.35; }
+
+.desk-why-alt {
+  font-size: 13px; font-weight: 600; color: #9fb0c3; line-height: 1.45;
+  padding: 4px 10px 0;
+}
+.desk-why-alt em {
+  font-style: normal; color: #8b98a8; font-weight: 700; margin-right: 6px;
+}
