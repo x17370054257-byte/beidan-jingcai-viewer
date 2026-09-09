@@ -497,7 +497,8 @@
     "jingcai_ge7_sp": {
       "n": 156,
       "leg_hit": "73.8%",
-      "survive": "9.0%",
+      "survive": "8.9%",
+      "survive_raw": "14/156",
       "strategy": "SP Top2"
     },
     "jingcai_ge7_elo_ctrl": {
@@ -520,12 +521,14 @@
     },
     "n_tickets": 156,
     "leg_hit": "73.8%",
-    "ticket_survive": "9.0%",
+    "ticket_survive": "8.9%",
+    "sp_not_more_stable": true,
+    "sp_vs_elo_note": "SP Top2 8.9% < Elo Top2 13.5% → 勿把SP双选当更稳",
     "production_weight": 0,
-    "note": "SP优先主表；替换114/14.0%与236/11.9%；不升权；完赛日继续扩",
     "deprecated_as_main": [
-      "114/80.3%/14.0%",
+      "114/80.3%/14.0% Elo-only",
       "236/11.9% Elo合计"
-    ]
+    ],
+    "note": "换主表完成；SP优先口径≠更稳；不升权"
   }
 }
