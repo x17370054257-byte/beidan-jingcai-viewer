@@ -201,10 +201,10 @@ async function load() {
 
   $('disclaimer').textContent = DOUBLES.disclaimer || '研究观察 · 不出票 · 非投注建议';
   const asOf = String(DOUBLES.as_of || '').replace('T', ' ').slice(0, 16);
-  $('build').textContent = `1.4 · 短表已载 · ${asOf || '—'}`;
+  $('build').textContent = `1.5 · 短表已载 · ${asOf || '—'}`;
   setMode('desk');
   const ms = Math.round(performance.now() - t0);
-  $('build').textContent = `1.4 · 首屏 ${ms}ms · ${asOf || '—'}`;
+  $('build').textContent = `1.5 · 首屏 ${ms}ms · ${asOf || '—'}`;
   // warm day.json in idle — not blocking first paint
   if ('requestIdleCallback' in window) requestIdleCallback(() => ensureDay(), { timeout: 2500 });
   else setTimeout(() => ensureDay(), 800);
@@ -220,7 +220,7 @@ function ensureDay() {
       const n = (d.matches || []).length;
       const asOf = String(d.as_of || DOUBLES?.as_of || '').replace('T', ' ').slice(0, 16);
       if (!$('detail')?.hidden) { /* keep */ }
-      else $('build').textContent = `1.4 · ${n} 场 · ${asOf || '—'}`;
+      else $('build').textContent = `1.5 · ${n} 场 · ${asOf || '—'}`;
       return DATA;
     })
     .catch(err => {
