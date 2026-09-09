@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-10T04:03:14+08:00",
+  "as_of": "2026-09-10T04:04:23+08:00",
   "date": "2026-09-10",
   "schema_version": "1.4",
   "disclaimer": "研究观察 · 不出票 · 非投注建议",
@@ -2155,10 +2155,10 @@
         "away": "班菲尔德"
       },
       "league": "阿根廷杯",
-      "kickoff": null,
-      "kickoff_shanghai": null,
-      "fixture_status": null,
-      "status_short": null,
+      "kickoff": "2026-09-10 06:00",
+      "kickoff_shanghai": "2026-09-10 06:00",
+      "fixture_status": "NS",
+      "status_short": "NS",
       "match_phase": "pre",
       "handicap": "0",
       "nspf": null,
@@ -2168,7 +2168,7 @@
       "badge": null,
       "rank_score": null,
       "has_report": true,
-      "report_level": "skeleton",
+      "report_level": "final",
       "report_file": "bd-60.md"
     },
     {
@@ -2774,7 +2774,7 @@
       "badge": null,
       "rank_score": null,
       "has_report": true,
-      "report_level": "skeleton",
+      "report_level": "final",
       "report_file": "bd-8.md"
     },
     {
