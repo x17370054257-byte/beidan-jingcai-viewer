@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-10T03:29:19+08:00",
+  "as_of": "2026-09-10T03:30:12+08:00",
   "date": "2026-09-10",
   "version": "1.4",
   "schema": "doubles-strength/1.4",
@@ -39,14 +39,14 @@
         "double": "客胜+平",
         "missed": "主胜",
         "sp": [
-          "9.93",
+          "9.94",
           "2.49",
           "2.00"
         ],
         "sell": "paused",
         "disabled": "no",
         "odds_label": "北单让球SP",
-        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价",
+        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价 · 时序最新(okooo series)",
         "strength": "信",
         "strength_code": "trust",
         "structure_tier": "结构精选",
@@ -55,7 +55,14 @@
         "why_not_true_curated": "仍是 market_baseline；无独立 football_prior；销售 paused；升权 weight=0。",
         "review_basis": "对位剧本清晰（逼抢 vs 控场）。METHOD-LAB 今日样本未覆盖本场；赛后用三维结算+叙述一致性打分。",
         "view": "主队氛围猛，更像罗马控中场的客胜剧本；主队高位逼抢是反方，所以双选留平。",
-        "fear": "主队逼抢早进球，客胜直接没了。"
+        "fear": "主队逼抢早进球，客胜直接没了。",
+        "sp_at_pick": [
+          "9.93",
+          "2.49",
+          "2.00"
+        ],
+        "sp_as_of": "2026-09-10T03:27:46+08:00",
+        "sp_frame": "refresh-20260910-0327"
       },
       {
         "no": 2,
@@ -75,7 +82,7 @@
         "sell": "paused",
         "disabled": "yes",
         "odds_label": "北单让球SP",
-        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价",
+        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价 · 时序最新(okooo series)",
         "strength": "信",
         "strength_code": "trust",
         "structure_tier": "结构精选",
@@ -84,7 +91,14 @@
         "why_not_true_curated": "收市场；disabled=yes；无独立 prior；weight=0。叙事强但渠道价态差。",
         "review_basis": "M1-narrative-script 对周三010/fixture1563151：lean=A agree med；low_event + 近窗场均总球1.75 支持。",
         "view": "英冠肉搏偏客；主队缠斗防反是反方。",
-        "fear": "主队死守成功，客队转换打不出来。"
+        "fear": "主队死守成功，客队转换打不出来。",
+        "sp_at_pick": [
+          "4.90",
+          "2.94",
+          "2.19"
+        ],
+        "sp_as_of": "2026-09-10T03:27:46+08:00",
+        "sp_frame": "refresh-20260910-0327"
       },
       {
         "no": 3,
@@ -97,14 +111,14 @@
         "double": "主胜+平",
         "missed": "客胜",
         "sp": [
-          "2.57",
+          "2.56",
           "2.46",
-          "4.85"
+          "4.87"
         ],
         "sell": "paused",
         "disabled": "no",
         "odds_label": "北单让球SP",
-        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价",
+        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价 · 时序最新(okooo series)",
         "strength": "勉强",
         "strength_code": "thin",
         "structure_tier": "日更腿",
@@ -113,7 +127,20 @@
         "why_not_true_curated": "market_baseline；M4 与主胜方向 diverge；未过升权硬门。",
         "review_basis": "M1 弱支持主；M4-odds-structure lean=D vs_report=differ（盘口更偏平）→ 已从结构精选下调。",
         "view": "主场硬度像主剧本，但盘口结构不站边，只能先守主不败凑覆盖。",
-        "fear": "铁桶偷一个；或闷平把「主胜」叙事打穿。"
+        "fear": "铁桶偷一个；或闷平把「主胜」叙事打穿。",
+        "sp_at_pick": [
+          "2.57",
+          "2.46",
+          "4.85"
+        ],
+        "sp_as_of": "2026-09-10T03:27:46+08:00",
+        "sp_frame": "refresh-20260910-0327",
+        "sp_reconcile": {
+          "pick_snapshot": "2.57/2.46/4.85",
+          "mid_frame_4_86": "2.57/2.46/4.86 @ 03:19",
+          "series_latest": "2.56/2.46/4.87 @ 03:27",
+          "canonical_for_public": "series_latest"
+        }
       },
       {
         "no": 4,
@@ -138,7 +165,7 @@
         "sell": "paused",
         "disabled": "yes",
         "odds_label": "北单让球SP",
-        "tip": "让胜/让平/让负 · okooo · 非500官方；先验窗内500 WEB 可并列 · 不可当成交价",
+        "tip": "让胜/让平/让负 · okooo · 非500官方；先验窗内500 WEB 可并列 · 不可当成交价 · 时序最新(okooo series)",
         "strength": "勉强",
         "strength_code": "thin",
         "structure_tier": "日更腿",
@@ -147,7 +174,14 @@
         "why_not_true_curated": "收市场热门侧；disabled=yes；实验室未覆盖本场。",
         "review_basis": "剧本有压迫vs回收；METHOD-LAB 今日样本未含 fixture1635686。赛后看低事件是否兑现。",
         "view": "安菲尔德会压；马竞回收但不躺平。双选守主不败，不是稳胆。",
-        "fear": "打成闷平/低比分，主胜落空。"
+        "fear": "打成闷平/低比分，主胜落空。",
+        "sp_at_pick": [
+          "3.94",
+          "3.10",
+          "2.35"
+        ],
+        "sp_as_of": "2026-09-10T03:27:46+08:00",
+        "sp_frame": "refresh-20260910-0327"
       },
       {
         "no": 5,
@@ -160,14 +194,14 @@
         "double": "主胜+平",
         "missed": "客胜",
         "sp": [
-          "2.13",
+          "2.14",
           "4.42",
-          "3.26"
+          "3.25"
         ],
         "sell": "paused",
         "disabled": "no",
         "odds_label": "北单让球SP",
-        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价",
+        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价 · 时序最新(okooo series)",
         "strength": "勉强",
         "strength_code": "thin",
         "structure_tier": "日更腿",
@@ -176,7 +210,14 @@
         "why_not_true_curated": "方向不清+收市场；锁边弱。",
         "review_basis": "赛前均势锁边弱；实验室未覆盖。赛后看开局定调是否翻车。",
         "view": "均势，只能先守主不败。",
-        "fear": "朗斯转换先得手。"
+        "fear": "朗斯转换先得手。",
+        "sp_at_pick": [
+          "2.13",
+          "4.42",
+          "3.26"
+        ],
+        "sp_as_of": "2026-09-10T03:27:46+08:00",
+        "sp_frame": "refresh-20260910-0327"
       },
       {
         "no": 6,
@@ -189,14 +230,14 @@
         "double": "主胜+平",
         "missed": "客胜",
         "sp": [
-          "2.98",
-          "4.32",
+          "2.97",
+          "4.33",
           "2.30"
         ],
         "sell": "paused",
         "disabled": "no",
         "odds_label": "北单让球SP",
-        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价",
+        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价 · 时序最新(okooo series)",
         "strength": "勉强",
         "strength_code": "thin",
         "structure_tier": "日更腿",
@@ -205,7 +246,14 @@
         "why_not_true_curated": "M1 不放行清晰向；收市场。",
         "review_basis": "M1 对周三015：unclear（open+场均总球4.4）；M4 略偏主仍 balanced。",
         "view": "开放对攻，谁先丢球决定叙事。",
-        "fear": "迈阿密先打穿，均势叙述崩盘。"
+        "fear": "迈阿密先打穿，均势叙述崩盘。",
+        "sp_at_pick": [
+          "2.98",
+          "4.32",
+          "2.30"
+        ],
+        "sp_as_of": "2026-09-10T03:27:46+08:00",
+        "sp_frame": "refresh-20260910-0327"
       },
       {
         "no": 7,
@@ -225,7 +273,7 @@
         "sell": "paused",
         "disabled": "no",
         "odds_label": "北单让球SP",
-        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价",
+        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价 · 时序最新(okooo series)",
         "strength": "不碰",
         "strength_code": "avoid",
         "structure_tier": "风险列示",
@@ -234,7 +282,14 @@
         "why_not_true_curated": "M4 与主不败冲突；不应当信心腿。",
         "review_basis": "M4 对周四007：lean=D vs_report=differ；M1 unclear。标不碰，下一刀有新SP池应替换。",
         "view": "纸面均势主不败，但盘口结构更像打平——今日不当信心腿。",
-        "fear": "硬当胆用，平局/客胜把结构打穿。"
+        "fear": "硬当胆用，平局/客胜把结构打穿。",
+        "sp_at_pick": [
+          "2.59",
+          "5.10",
+          "2.38"
+        ],
+        "sp_as_of": "2026-09-10T03:27:46+08:00",
+        "sp_frame": "refresh-20260910-0327"
       }
     ]
   },
@@ -375,5 +430,7 @@
         "true_curated": false
       }
     ]
-  }
+  },
+  "sp_policy": "live_okooo_series_latest",
+  "sp_note": "公网 doubles 腿 SP 跟 crawl/sp-series 最新点；日更 md 可另存 locked 快照。71：4.85=写盘快照，4.86=中间帧，最新=4.87。"
 }

@@ -1,8 +1,11 @@
 let DATA = null;
 let DOUBLES = null;
+let dayPromise = null;
 let selectedId = null;
 let mode = 'desk';
 let deskKind = 'beidan7';
+let detailSeq = 0;
+const reportCache = new Map();
 
 const $ = (id) => document.getElementById(id);
 
@@ -13,44 +16,84 @@ function strengthBadge(s) {
   return `<span class="str ${cls}">${escapeHtml(v)}</span>`;
 }
 
+function wireOnce() {
+  if (wireOnce.done) return;
+  wireOnce.done = true;
+  document.querySelectorAll('.chip-sw[data-desk]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (deskKind === btn.dataset.desk && mode === 'desk') return;
+      deskKind = btn.dataset.desk;
+      setMode('desk');
+    });
+  });
+  $('tab-all').addEventListener('click', () => setMode('all'));
+  $('back-btn').addEventListener('click', () => closeDetail());
+  ['q', 'product', 'badge', 'report'].forEach(id => {
+    const el = $(id);
+    if (el) el.addEventListener('input', () => { if (mode === 'all') renderList(); });
+  });
+  // event delegation — avoid rebinding 7 cards each switch
+  $('desk-list').addEventListener('click', (ev) => {
+    const btn = ev.target.closest('[data-idx]');
+    if (!btn) return;
+    const pack = deskKind === 'beidan7' ? DOUBLES?.beidan7 : DOUBLES?.jingcai;
+    const leg = pack?.legs?.[Number(btn.dataset.idx)];
+    if (leg) openLeg(leg);
+  });
+  $('list').addEventListener('click', (ev) => {
+    const row = ev.target.closest('[data-id]');
+    if (row) selectMatch(row.dataset.id);
+  });
+}
+
 async function load() {
+  const t0 = performance.now();
   $('desk-list').innerHTML = `<div class="empty">加载短表…</div>`;
+  wireOnce();
   try {
-    const [dayRes, dblRes] = await Promise.all([
-      fetch('./public/data/day.json?t=' + Date.now()),
-      fetch('./public/data/doubles.json?t=' + Date.now()),
-    ]);
-    if (!dayRes.ok) throw new Error('day.json ' + dayRes.status);
-    DATA = await dayRes.json();
-    DOUBLES = dblRes.ok ? await dblRes.json() : null;
+    const dblRes = await fetch('./public/data/doubles.json?t=' + Date.now());
+    if (!dblRes.ok) throw new Error('doubles ' + dblRes.status);
+    DOUBLES = await dblRes.json();
   } catch (err) {
-    $('desk-list').innerHTML = `<div class="empty">加载失败：${escapeHtml(err.message)}</div>`;
+    $('desk-list').innerHTML = `<div class="empty">短表加载失败：${escapeHtml(err.message)}</div>`;
     return;
   }
 
-  $('disclaimer').textContent = DATA.disclaimer || '研究观察 · 不出票 · 非投注建议';
-  const n = (DATA.matches || []).length;
-  const asOf = (DATA.as_of || DOUBLES?.as_of || '').replace('T', ' ').slice(0, 16);
-  $('build').textContent = `1.4 · ${n} 场 · ${asOf || '—'}`;
-
-  document.querySelectorAll('.chip-sw[data-desk]').forEach(btn => {
-    btn.onclick = () => {
-      deskKind = btn.dataset.desk;
-      document.querySelectorAll('.chip-sw[data-desk]').forEach(b => b.classList.toggle('active', b === btn));
-      setMode('desk');
-    };
-  });
-  $('tab-all').onclick = () => setMode('all');
-  $('back-btn').onclick = () => closeDetail();
-  ['q', 'product', 'badge', 'report'].forEach(id => {
-    const el = $(id);
-    if (el) el.addEventListener('input', renderList);
-  });
-
+  $('disclaimer').textContent = DOUBLES.disclaimer || '研究观察 · 不出票 · 非投注建议';
+  const asOf = String(DOUBLES.as_of || '').replace('T', ' ').slice(0, 16);
+  $('build').textContent = `1.4 · 短表已载 · ${asOf || '—'}`;
   setMode('desk');
+  const ms = Math.round(performance.now() - t0);
+  $('build').textContent = `1.4 · 首屏 ${ms}ms · ${asOf || '—'}`;
+  // warm day.json in idle — not blocking first paint
+  if ('requestIdleCallback' in window) requestIdleCallback(() => ensureDay(), { timeout: 2500 });
+  else setTimeout(() => ensureDay(), 800);
+}
+
+function ensureDay() {
+  if (DATA) return Promise.resolve(DATA);
+  if (dayPromise) return dayPromise;
+  dayPromise = fetch('./public/data/day.json?t=' + Date.now())
+    .then(r => { if (!r.ok) throw new Error('day ' + r.status); return r.json(); })
+    .then(d => {
+      DATA = d;
+      const n = (d.matches || []).length;
+      const asOf = String(d.as_of || DOUBLES?.as_of || '').replace('T', ' ').slice(0, 16);
+      if (!$('detail')?.hidden) { /* keep */ }
+      else $('build').textContent = `1.4 · ${n} 场 · ${asOf || '—'}`;
+      return DATA;
+    })
+    .catch(err => {
+      dayPromise = null;
+      throw err;
+    });
+  return dayPromise;
 }
 
 function setMode(next) {
+  if (mode === next && next === 'desk') {
+    // only re-render desk when switching beidan/jingcai
+  }
   mode = next;
   const desk = mode === 'desk';
   $('desk').hidden = !desk;
@@ -60,9 +103,14 @@ function setMode(next) {
     b.classList.toggle('active', desk && b.dataset.desk === deskKind);
   });
   $('tab-all').classList.toggle('active', !desk);
-  if (desk) renderDesk();
-  else renderList();
   closeDetail();
+  if (desk) {
+    requestAnimationFrame(renderDesk);
+  } else {
+    ensureDay().then(() => requestAnimationFrame(renderList)).catch(err => {
+      $('list').innerHTML = `<div class="empty">场次加载失败：${escapeHtml(err.message)}</div>`;
+    });
+  }
 }
 
 function renderDesk() {
@@ -70,25 +118,17 @@ function renderDesk() {
     $('desk-list').innerHTML = `<div class="empty">暂无双选短表</div>`;
     return;
   }
-  if (deskKind === 'beidan7') {
-    const pack = DOUBLES.beidan7;
-    $('desk-note').textContent = '';
-    $('desk-list').innerHTML = (pack.legs || []).map(deskCardBeidan).join('') || `<div class="empty">无腿</div>`;
-  } else {
-    const pack = DOUBLES.jingcai;
-    $('desk-note').textContent = pack.summary || '';
-    $('desk-list').innerHTML = (pack.legs || []).map(deskCardJingcai).join('') || `<div class="empty">无腿</div>`;
-  }
-  $('desk-list').querySelectorAll('[data-open]').forEach(el => {
-    el.addEventListener('click', () => openLeg(JSON.parse(decodeURIComponent(el.getAttribute('data-open')))));
-  });
+  const pack = deskKind === 'beidan7' ? DOUBLES.beidan7 : DOUBLES.jingcai;
+  $('desk-note').textContent = deskKind === 'beidan7' ? '' : (pack.summary || '');
+  const legs = pack.legs || [];
+  const html = legs.map((leg, i) => deskKind === 'beidan7' ? deskCardBeidan(leg, i) : deskCardJingcai(leg, i)).join('');
+  $('desk-list').innerHTML = html || `<div class="empty">无腿</div>`;
 }
 
-function deskCardBeidan(leg) {
+function deskCardBeidan(leg, idx) {
   const sp = Array.isArray(leg.sp) ? leg.sp.join(' / ') : '';
-  const payload = encodeURIComponent(JSON.stringify(leg));
   const name = leg.match_name || `${leg.home} vs ${leg.away}`;
-  return `<button type="button" class="desk-card" data-open="${payload}">
+  return `<button type="button" class="desk-card" data-idx="${idx}">
     <div class="desk-top">
       <span class="desk-no">北单 ${escapeHtml(leg.sale_id)} ${strengthBadge(leg.strength)}</span>
       <span class="hc">让 ${escapeHtml(leg.handicap)}</span>
@@ -102,11 +142,10 @@ function deskCardBeidan(leg) {
   </button>`;
 }
 
-function deskCardJingcai(leg) {
-  const payload = encodeURIComponent(JSON.stringify(leg));
+function deskCardJingcai(leg, idx) {
   const name = leg.match_name || `${leg.home} vs ${leg.away}`;
   const nspf = Array.isArray(leg.nspf) ? leg.nspf.join(' / ') : '';
-  return `<button type="button" class="desk-card" data-open="${payload}">
+  return `<button type="button" class="desk-card" data-idx="${idx}">
     <div class="desk-top">
       <span class="desk-no">${escapeHtml(leg.sale_id)} ${strengthBadge(leg.strength)}</span>
       <span class="hc">让 ${escapeHtml(leg.handicap)}</span>
@@ -121,25 +160,15 @@ function deskCardJingcai(leg) {
 }
 
 function openLeg(leg) {
-  const id = leg.id || (String(leg.sale_id).startsWith('周') ? `jingcai:${leg.sale_id}` : `beidan:${leg.sale_id}`);
-  const m = (DATA.matches || []).find(x => x.id === id || x.sale_id === leg.sale_id);
-  if (m && m.has_report && m.report_file) {
-    selectMatch(m.id, leg);
-    return;
-  }
-  showDetail(renderLegDetail(leg));
+  const seq = ++detailSeq;
+  // 1) instant skeleton from doubles — no day.json / md yet
+  showDetail(renderSkeleton(leg));
+  // 2) async fill 怎么看 from leg.view first, then richer report if available
+  fillDetailAsync(leg, seq);
 }
 
-function renderLegDetail(leg) {
+function renderSkeleton(leg) {
   const name = leg.match_name || `${leg.home} vs ${leg.away}`;
-  const reasons = leg.view ? [leg.view] : ['本腿以双选短表为主。'];
-  const fears = leg.fear ? [leg.fear] : ['销售与价源需临场再核；研究观察，不出票。'];
-  let oddsHtml = '';
-  if (leg.sp) oddsHtml = oddsBlock('北单让球SP', leg.sp.join(' / '), leg.tip);
-  else {
-    oddsHtml = oddsBlock('竞彩非让', Array.isArray(leg.nspf) ? leg.nspf.join(' / ') : '', leg.tip_nspf)
-      + oddsBlock('竞彩让球', Array.isArray(leg.spf) ? leg.spf.join(' / ') : '', leg.tip_spf);
-  }
   return `
     <div class="detail-head">
       <span class="hc big">让球 ${escapeHtml(String(leg.handicap ?? '—'))}</span>
@@ -156,25 +185,94 @@ function renderLegDetail(leg) {
         <div class="verdict-main">${leg.strength ? escapeHtml(leg.strength) + ' · ' : ''}双选：${escapeHtml(leg.double || '—')} · 不出票</div>
         <div class="verdict-sub">短表观察 · 不是投注建议</div>
       </div>
-      <div class="section">
+      <div class="section" id="sec-view">
         <h3>比赛怎么看</h3>
-        <ol>${reasons.map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ol>
+        <p class="muted-loading">加载叙述…</p>
       </div>
-      <div class="section fear-box">
+      <div class="section fear-box" id="sec-fear">
         <h3>我怕什么</h3>
-        <ul>${fears.map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ul>
+        <p class="muted-loading">加载中…</p>
       </div>
-      <div class="section">
+      <div class="section" id="sec-market">
         <h3>市场对照</h3>
-        ${oddsHtml}
+        ${marketFromLeg(leg)}
       </div>
     </div>`;
+}
+
+function marketFromLeg(leg) {
+  if (leg.sp) return oddsBlock('北单让球SP', leg.sp.join(' / '), leg.tip || 'okooo · 非500官方');
+  return oddsBlock('竞彩非让', Array.isArray(leg.nspf) ? leg.nspf.join(' / ') : '', leg.tip_nspf)
+    + oddsBlock('竞彩让球', Array.isArray(leg.spf) ? leg.spf.join(' / ') : '', leg.tip_spf);
 }
 
 function oddsBlock(label, val, tip) {
   if (!val) return `<div class="odds-row"><span class="odds-label">${escapeHtml(label)}</span><span class="odds-miss">无SP</span></div>`;
   return `<div class="odds-row"><span class="odds-label">${escapeHtml(label)}</span><span class="odds-val">${escapeHtml(val)}</span></div>
     ${tip ? `<p class="odds-tip">${escapeHtml(tip)}</p>` : ''}`;
+}
+
+async function fillDetailAsync(leg, seq) {
+  // immediate fill from doubles short text if present
+  const viewEl = () => $('detail-body')?.querySelector('#sec-view');
+  const fearEl = () => $('detail-body')?.querySelector('#sec-fear');
+  if (seq !== detailSeq) return;
+  if (leg.view && viewEl()) {
+    viewEl().innerHTML = `<h3>比赛怎么看</h3><ol><li>${escapeHtml(leg.view)}</li></ol>`;
+  }
+  if (leg.fear && fearEl()) {
+    fearEl().innerHTML = `<h3>我怕什么</h3><ul><li>${escapeHtml(leg.fear)}</li></ul>`;
+  }
+
+  // try richer report via day.json mapping — lazy
+  try {
+    await ensureDay();
+    if (seq !== detailSeq) return;
+    const id = leg.id || (String(leg.sale_id).startsWith('周') ? `jingcai:${leg.sale_id}` : `beidan:${leg.sale_id}`);
+    const m = (DATA.matches || []).find(x => x.id === id || x.sale_id === leg.sale_id);
+    if (!m?.report_file) return;
+    const md = await fetchReport(m.report_file);
+    if (seq !== detailSeq) return;
+    const rich = plainReport(md, m, leg);
+    // replace only narrative sections if parse succeeded
+    const tmp = document.createElement('div');
+    tmp.innerHTML = rich;
+    const rv = tmp.querySelector('.section');
+    const sections = tmp.querySelectorAll('.section');
+    // plainReport structure: verdict, 怎么看, 我怕, 市场
+    const all = tmp.querySelector('.plain');
+    if (all) {
+      const verdict = $('detail-body')?.querySelector('.verdict');
+      const market = $('detail-body')?.querySelector('#sec-market');
+      const head = $('detail-body')?.querySelector('.detail-head');
+      const kv = $('detail-body')?.querySelector('.kv');
+      // keep head/kv/market from skeleton; swap plain body carefully
+      const newVerdict = all.querySelector('.verdict');
+      const newSecs = all.querySelectorAll('.section');
+      if (verdict && newVerdict) verdict.replaceWith(newVerdict);
+      if (viewEl() && newSecs[0]) viewEl().replaceWith(newSecs[0]);
+      if (fearEl() && newSecs[1]) fearEl().replaceWith(newSecs[1]);
+      // keep market from leg unless report has odds talk — optional replace third section
+      if (market && newSecs[2] && /市场对照/.test(newSecs[2].innerHTML)) {
+        // merge: keep SP from leg, append talk if any
+        const talk = newSecs[2].querySelector('.odds-talk');
+        if (talk) market.appendChild(talk.cloneNode(true));
+      }
+    }
+  } catch (_) {
+    if (seq !== detailSeq) return;
+    if (!leg.view && viewEl()) viewEl().innerHTML = `<h3>比赛怎么看</h3><p>本腿以短表为主；研报稍后可再试。</p>`;
+    if (!leg.fear && fearEl()) fearEl().innerHTML = `<h3>我怕什么</h3><p>销售与价源需临场再核；研究观察，不出票。</p>`;
+  }
+}
+
+async function fetchReport(file) {
+  if (reportCache.has(file)) return reportCache.get(file);
+  const r = await fetch('./public/data/reports/' + encodeURIComponent(file) + '?t=' + Date.now());
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  const md = await r.text();
+  reportCache.set(file, md);
+  return md;
 }
 
 function showDetail(html) {
@@ -184,6 +282,7 @@ function showDetail(html) {
 }
 
 function closeDetail() {
+  detailSeq++;
   $('detail').hidden = true;
   $('detail-body').innerHTML = '';
 }
@@ -204,10 +303,10 @@ function sortedMatches(list) {
 }
 
 function filtered() {
-  const q = ($('q').value || '').trim().toLowerCase();
-  const product = $('product').value;
-  const badge = $('badge').value;
-  const report = $('report').value;
+  const q = ($('q')?.value || '').trim().toLowerCase();
+  const product = $('product')?.value || 'all';
+  const badge = $('badge')?.value || 'all';
+  const report = $('report')?.value || 'all';
   return sortedMatches(DATA.matches || []).filter(m => {
     if (product !== 'all' && m.product !== product) return false;
     if (badge === 'none' && m.badge) return false;
@@ -220,6 +319,7 @@ function filtered() {
 }
 
 function renderList() {
+  if (!DATA) return;
   const rows = filtered();
   $('list').innerHTML = rows.map(m => {
     const b = m.badge ? `<span class="badge ${escapeHtml(m.badge)}">${escapeHtml(m.badge)}</span>` : '';
@@ -231,9 +331,6 @@ function renderList() {
       <div class="sub"><span class="hc-inline">让${escapeHtml(String(m.handicap ?? '—'))}</span>${escapeHtml(m.product === 'jingcai' ? '竞彩' : '北单')} ${escapeHtml(m.sale_id || '')}</div>
     </div>`;
   }).join('') || `<div class="empty">无匹配</div>`;
-  $('list').querySelectorAll('.item').forEach(el => {
-    el.addEventListener('click', () => selectMatch(el.dataset.id));
-  });
 }
 
 function plainReport(md, m, legHint) {
@@ -264,19 +361,21 @@ function plainReport(md, m, legHint) {
       if (reasons.length >= 4) break;
     }
   }
-  if (legHint && legHint.view) reasons.unshift(legHint.view);
-  if (!reasons.length) reasons.push('先看让球与双选方向；细节临场再核。');
+  if (legHint?.view) reasons.unshift(legHint.view);
+  // dedupe similar
+  const uniq = [];
+  for (const r of reasons) if (!uniq.includes(r)) uniq.push(r);
 
   let fears = [];
   const fearLine = pick(text, /最怕什么[：:]\s*(.+)/) || pick(text, /我怕什么[：:]\s*(.+)/);
-  if (legHint && legHint.fear) fears.push(legHint.fear);
+  if (legHint?.fear) fears.push(legHint.fear);
   if (fearLine) fears.push(fearLine);
-  for (const r of reasons) if (/怕|防|担心/.test(r)) fears.push(r);
+  for (const r of uniq) if (/怕|防|担心|翻车/.test(r)) fears.push(r);
   fears = [...new Set(fears)].slice(0, 3);
   if (!fears.length) fears.push('销售与价源需临场再核；研究观察，不出票。');
+  if (!uniq.length) uniq.push('先看让球与双选方向；细节临场再核。');
 
-  let oddsTalk = pick(text, /盘口[：:]\s*(.+)/) || '';
-  oddsTalk = simplifyOddsTalk(oddsTalk);
+  let oddsTalk = simplifyOddsTalk(pick(text, /盘口[：:]\s*(.+)/) || '');
 
   return `
     <div class="plain">
@@ -287,7 +386,7 @@ function plainReport(md, m, legHint) {
       </div>
       <div class="section">
         <h3>比赛怎么看</h3>
-        <ol>${reasons.slice(0, 4).map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ol>
+        <ol>${uniq.slice(0, 4).map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ol>
       </div>
       <div class="section fear-box">
         <h3>我怕什么</h3>
@@ -295,23 +394,48 @@ function plainReport(md, m, legHint) {
       </div>
       <div class="section">
         <h3>市场对照</h3>
-        ${marketBlocks(m, oddsTalk, legHint)}
+        ${oddsTalk ? `<p class="odds-talk">${escapeHtml(oddsTalk)}</p>` : ''}
       </div>
     </div>`;
 }
 
-function marketBlocks(m, oddsTalk, legHint) {
-  const bits = [];
-  if (legHint && legHint.sp) bits.push(oddsBlock('北单让球SP', legHint.sp.join(' / '), 'okooo · 非500官方'));
-  else if (m.product === 'beidan') {
-    const sp = Array.isArray(m.spf) ? m.spf.join(' / ') : (Array.isArray(m.nspf) ? m.nspf.join(' / ') : '');
-    bits.push(oddsBlock('北单让球SP', sp, '让胜/让平/让负 · 非成交价'));
-  } else {
-    bits.push(oddsBlock('竞彩非让', Array.isArray(m.nspf) ? m.nspf.join(' / ') : '', '主胜/平/客胜'));
-    bits.push(oddsBlock('竞彩让球', Array.isArray(m.spf) ? m.spf.join(' / ') : '', '让胜/让平/让负'));
+async function selectMatch(id) {
+  selectedId = id;
+  const seq = ++detailSeq;
+  await ensureDay();
+  const m = (DATA.matches || []).find(x => x.id === id);
+  if (!m) return;
+  const name = `${m.home || '?'} vs ${m.away || '?'}`;
+  showDetail(`
+    <div class="detail-head">
+      <span class="hc big">让球 ${escapeHtml(String(m.handicap ?? '—'))}</span>
+      <h1>${escapeHtml(name)}</h1>
+    </div>
+    <div class="kv">
+      <span>${escapeHtml(m.product === 'jingcai' ? '竞彩' : '北单')} ${escapeHtml(m.sale_id || '')}</span>
+      ${m.badge ? `<span>${escapeHtml(m.badge)}</span>` : ''}
+    </div>
+    <div class="plain">
+      <div class="section" id="sec-view"><h3>比赛怎么看</h3><p class="muted-loading">加载叙述…</p></div>
+      <div class="section fear-box" id="sec-fear"><h3>我怕什么</h3><p class="muted-loading">加载中…</p></div>
+    </div>`);
+  if (!m.report_file) {
+    if (seq !== detailSeq) return;
+    $('detail-body').querySelector('#sec-view').innerHTML = `<h3>比赛怎么看</h3><p>本场暂无研报。</p>`;
+    $('detail-body').querySelector('#sec-fear').innerHTML = `<h3>我怕什么</h3><p>研究观察，不出票。</p>`;
+    return;
   }
-  if (oddsTalk) bits.push(`<p class="odds-talk">${escapeHtml(oddsTalk)}</p>`);
-  return bits.join('');
+  try {
+    const md = await fetchReport(m.report_file);
+    if (seq !== detailSeq) return;
+    const body = plainReport(md, m, null);
+    const head = $('detail-body').querySelector('.detail-head').outerHTML;
+    const kv = $('detail-body').querySelector('.kv').outerHTML;
+    $('detail-body').innerHTML = head + kv + body;
+  } catch (e) {
+    if (seq !== detailSeq) return;
+    $('detail-body').querySelector('#sec-view').innerHTML = `<h3>比赛怎么看</h3><p>研报加载失败</p>`;
+  }
 }
 
 function pick(text, re) {
@@ -340,41 +464,6 @@ function simplifyOddsTalk(s) {
   if (t.length > 100) t = t.slice(0, 98) + '…';
   return t;
 }
-
-async function selectMatch(id, legHint) {
-  selectedId = id;
-  const m = (DATA.matches || []).find(x => x.id === id);
-  if (!m) return;
-  let body = '<div class="empty">本场暂无研报</div>';
-  if (m.report_file) {
-    try {
-      const r = await fetch('./public/data/reports/' + encodeURIComponent(m.report_file) + '?t=' + Date.now());
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      body = plainReport(await r.text(), m, legHint);
-    } catch (e) {
-      body = legHint ? renderLegDetail(legHint) : `<div class="empty">研报加载失败</div>`;
-    }
-  } else if (legHint) {
-    body = renderLegDetail(legHint).replace(/^[\s\S]*?<div class="plain">/, '<div class="plain">');
-    // simpler: just use leg detail full
-    showDetail(renderLegDetail(legHint));
-    return;
-  }
-  const name = `${m.home || '?'} vs ${m.away || '?'}`;
-  showDetail(`
-    <div class="detail-head">
-      <span class="hc big">让球 ${escapeHtml(String(m.handicap ?? '—'))}</span>
-      <h1>${escapeHtml(name)}</h1>
-    </div>
-    <div class="kv">
-      <span>${escapeHtml(m.product === 'jingcai' ? '竞彩' : '北单')} ${escapeHtml(m.sale_id || '')}</span>
-      ${m.badge ? `<span>${escapeHtml(m.badge)}</span>` : ''}
-      ${legHint && legHint.double ? `<span>双选 ${escapeHtml(legHint.double)}</span>` : ''}
-      ${legHint && legHint.strength ? `<span>强度 ${escapeHtml(legHint.strength)}</span>` : ''}
-    </div>
-    ${body}`);
-}
-
 function escapeHtml(s) {
   return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }

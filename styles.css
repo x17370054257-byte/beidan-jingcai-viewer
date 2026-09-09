@@ -54,6 +54,9 @@ body {
   width: 100%; text-align: left; appearance: none; font: inherit; color: inherit;
   background: var(--panel); border: 1px solid var(--line);
   border-radius: 16px; padding: 16px 14px;
+  content-visibility: auto;
+  contain-intrinsic-size: 140px;
+  contain: layout paint style;
 }
 .desk-card:active { border-color: var(--blue); }
 .desk-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 8px; }
@@ -148,3 +151,5 @@ body {
   body { max-width: 720px; margin: 0 auto; }
   .detail.sheet { position: static; inset: auto; border-top: 1px solid var(--line); }
 }
+
+.muted-loading { color: var(--muted); font-size: 15px; }
