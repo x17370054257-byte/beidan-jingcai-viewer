@@ -13,7 +13,8 @@ function strengthBadge(s) {
   const v = String(s || '').trim();
   if (!v) return '';
   const cls = ({ '信': 'xin', '偏信': 'pian', '勉强': 'mian', '不碰': 'bu' })[v] || 'mian';
-  return `<span class="str ${cls}">${escapeHtml(v)}</span>`;
+  const note = v === '信' ? '<span class="str-note" title="结构可信≠更稳/更该买">信≠更稳</span>' : '';
+  return `<span class="str ${cls}">${escapeHtml(v)}</span>${note}`;
 }
 
 function wireOnce() {
