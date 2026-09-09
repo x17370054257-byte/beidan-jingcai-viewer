@@ -315,7 +315,7 @@
         "review_basis": "均势占位；无 dual/M3 覆盖；场外无。M2 不主刀。强度封顶勉强。 反低赔：HD带平≠已验证稳胆升级。",
         "view": "三向最均势之一（约2.78/3.20/3.03）；换入是为执行「优先均势」，不是因为找到稳胆。研报薄，只守不败。",
         "fear": "任意一边先打穿；信息增量不足。",
-        "off_field": "场外线索空｜伤停通道未齐（不装满员）｜天气/出行暂缺｜信息薄仅均势盘｜supplier≠官宣",
+        "off_field": "Ponta Grossa｜伤停通道 unsupported（空≠健康）｜主队赛程更紧≈82h｜天气/出行暂缺｜supplier≠官宣",
         "off_field_note": "日更检索无可用伤停/动机增量；仅盘面均势。",
         "even_board": true,
         "low_odds_flag": false,
