@@ -30,6 +30,28 @@ function minutesToKickoff(leg) {
   return (d.getTime() - Date.now()) / 60000;
 }
 
+
+function resolveMatchPhase(obj) {
+  // Prefer fresh clock; use fixture_status when present.
+  const LIVE = { '1H':1, '2H':1, HT:1, ET:1, BT:1, P:1, LIVE:1, INT:1, BREAK:1 };
+  const FT = { FT:1, AET:1, PEN:1, AWD:1, WO:1, ABD:1, CANC:1, PST:1 };
+  const st = String(obj && (obj.fixture_status || obj.status_short) || '').toUpperCase();
+  if (st && LIVE[st]) return 'live';
+  if (st && FT[st]) return 'ft';
+  const mins = minutesToKickoff(obj);
+  if (mins === null) return obj && obj.match_phase || 'pre';
+  if (mins > 0) return 'pre';
+  if (mins <= -150) return 'ft';
+  return 'live';
+}
+
+function phaseBadge(obj) {
+  const ph = resolveMatchPhase(obj);
+  if (ph === 'live') return '<span class="phase live">已开赛</span>';
+  if (ph === 'ft') return '<span class="phase ft">完赛</span>';
+  return '';
+}
+
 function hasLiveXi(text) {
   const s = String(text || '');
   // live XI / 已官宣首发 = 高亮更新
@@ -190,7 +212,7 @@ function deskCardBeidan(leg, idx) {
   const off = renderOffFieldCard(leg);
   return `<button type="button" class="desk-card${hot}" data-idx="${idx}">
     <div class="desk-top">
-      <span class="desk-no">北单 ${escapeHtml(leg.sale_id)} ${strengthBadge(leg.strength)}</span>
+      <span class="desk-no">北单 ${escapeHtml(leg.sale_id)} ${strengthBadge(leg.strength)} ${phaseBadge(leg)}</span>
       <span class="hc">让 ${escapeHtml(leg.handicap)}</span>
     </div>
     <div class="desk-teams">${escapeHtml(name)}</div>
@@ -210,7 +232,7 @@ function deskCardJingcai(leg, idx) {
   const off = renderOffFieldCard(leg);
   return `<button type="button" class="desk-card${hot}" data-idx="${idx}">
     <div class="desk-top">
-      <span class="desk-no">${escapeHtml(leg.sale_id)} ${strengthBadge(leg.strength)}</span>
+      <span class="desk-no">${escapeHtml(leg.sale_id)} ${strengthBadge(leg.strength)} ${phaseBadge(leg)}</span>
       <span class="hc">让 ${escapeHtml(leg.handicap)}</span>
     </div>
     <div class="desk-teams">${escapeHtml(name)}</div>
@@ -242,6 +264,7 @@ function renderSkeleton(leg) {
       <span>${escapeHtml(String(leg.sale_id).startsWith('周') ? '竞彩' : '北单')} ${escapeHtml(leg.sale_id)}</span>
       <span>双选 ${escapeHtml(leg.double || '—')}</span>
       ${leg.strength ? `<span>强度 ${escapeHtml(leg.strength)}</span>` : ''}
+      ${phaseBadge(leg)}
     </div>
     <div class="plain">
       <div class="verdict">
@@ -395,10 +418,11 @@ function renderList() {
   const rows = filtered();
   $('list').innerHTML = rows.map(m => {
     const b = m.badge ? `<span class="badge ${escapeHtml(m.badge)}">${escapeHtml(m.badge)}</span>` : '';
+    const ph = phaseBadge(m);
     return `<div class="item" data-id="${escapeHtml(m.id)}">
       <div class="row1" style="display:flex;justify-content:space-between;gap:8px;align-items:center">
         <div class="teams">${escapeHtml(m.home || '?')} vs ${escapeHtml(m.away || '?')}</div>
-        ${b}
+        <span style="display:inline-flex;gap:6px;align-items:center">${ph}${b}</span>
       </div>
       <div class="sub"><span class="hc-inline">让${escapeHtml(String(m.handicap ?? '—'))}</span>${escapeHtml(m.product === 'jingcai' ? '竞彩' : '北单')} ${escapeHtml(m.sale_id || '')}</div>
     </div>`;
