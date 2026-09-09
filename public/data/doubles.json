@@ -2,8 +2,9 @@
   "as_of": "2026-09-10T04:01:03+08:00",
   "date": "2026-09-10",
   "version": "1.4",
+  "schema": "doubles-strength/1.4",
   "disclaimer": "研究观察 · 不出票 · 偏clear非极端 · toss-up印证降权",
-  "sp_policy": "live_okooo_series_latest",
+  "true_curated_count": 0,
   "structure_pick_sale_ids": [
     "55",
     "51",
@@ -26,11 +27,36 @@
     },
     "note": "主发现改引 SLICE；选腿偏实力差清楚、剔最热门、少堆均势"
   },
-  "ticket_agree": {
-    "min_agree": 3,
-    "gate": "min(agree)≥2",
-    "gate_pass": true
+  "sale_day_main_appendix_ablation_agree": {
+    "source": "analysis/METHOD-LAB-1.4/backtest/ABLATION-AGREE.md",
+    "pointer": "analysis/METHOD-LAB-1.4/backtest/SALE-DAY-SCORED.md",
+    "curated_memo": "team/curated/MEMO-SALE-DAY-MAIN-20260910.md",
+    "priority": "ticket_min_agree_ge2",
+    "champion_combo": "M1+M5+M6≥2",
+    "champion_all_tickets_survive": "15.7%",
+    "ticket_gate_min_agree_ge2_survive": "16.1%",
+    "n_tickets_gate": 1271,
+    "n_tickets_pool": 1369,
+    "ticket_survive": "16.1%",
+    "leg_hit": "75.4%",
+    "baselines": {
+      "HA": "10.4%",
+      "HD": "7.2%",
+      "Elo": "10.4%",
+      "M1": "12.1%"
+    },
+    "agree_card": "agree_n / 3（M1+M5+M6）",
+    "elo_spine_paused": true,
+    "ban_ha_in_winrate_rule": false,
+    "ban_ha_risk_footnote": true,
+    "production_weight": 0,
+    "note": "主数字改引 ABLATION-AGREE；整票门 min(agree)≥2 → 16.1%；今日7全腿 agree=3/3 过门",
+    "deprecated_as_main": [
+      "ABLATION-LIFT 仅15.7%无整票门",
+      "SCORABLE-31 Elo"
+    ]
   },
+  "elo_spine_paused": true,
   "multi_method_gate": {
     "rule": "信/结构：M1+M5+M6≥2；切片偏好 clear非极端；禁HA仅附注",
     "status": "applied_slice_rerank",
@@ -53,8 +79,11 @@
     "slice_ref": "SLICE-LEAGUE-STRENGTH.md",
     "slice_champ": "18.6%"
   },
-  "main_survive": "18.6%",
-  "vote_note": "冠军核同意 3/3 · SLICE 主数字 18.6% · weight=0",
+  "ticket_agree": {
+    "min_agree": 3,
+    "gate": "min(agree)≥2",
+    "gate_pass": true
+  },
   "beidan7": {
     "title": "北单7场双选（SLICE clear非极端）",
     "forced_selection": true,
@@ -131,14 +160,11 @@
         "off_field_note": "英冠肉搏+人员缺口线索。",
         "fixture_id": 1563151,
         "strength_disclaimer": "信=冠军核印证+切片偏好，≠票存活保证",
+        "fixture_status": "1H",
         "kickoff": "2026-09-10 03:00",
         "kickoff_shanghai": "2026-09-10 03:00",
-        "fixture_status": "1H",
         "match_phase": "live",
-        "hot_fav": false,
-        "agree_den": 3,
-        "method_agree_n": 3,
-        "method_agree_den": 3
+        "agree_den": 3
       },
       {
         "no": 2,
@@ -197,14 +223,11 @@
         "off_field_note": "利物浦/马竞伤停线索。",
         "fixture_id": 1635686,
         "strength_disclaimer": "信=冠军核印证+切片偏好，≠票存活保证",
+        "fixture_status": "1H",
         "kickoff": "2026-09-10 03:00",
         "kickoff_shanghai": "2026-09-10 03:00",
-        "fixture_status": "1H",
         "match_phase": "live",
-        "hot_fav": false,
-        "agree_den": 3,
-        "method_agree_n": 3,
-        "method_agree_den": 3
+        "agree_den": 3
       },
       {
         "no": 3,
@@ -263,14 +286,11 @@
         "off_field_note": "见研报场外。",
         "fixture_id": 1575469,
         "strength_disclaimer": "信=冠军核印证+切片偏好，≠票存活保证",
+        "fixture_status": "NS",
         "kickoff": "2026-09-10 03:45",
         "kickoff_shanghai": "2026-09-10 03:45",
-        "fixture_status": "NS",
         "match_phase": "live",
-        "hot_fav": false,
-        "agree_den": 3,
-        "method_agree_n": 3,
-        "method_agree_den": 3
+        "agree_den": 3
       },
       {
         "no": 4,
@@ -329,14 +349,8 @@
         "off_field_note": "日更未深挖伤停。",
         "fixture_id": 1631510,
         "strength_disclaimer": "信=冠军核印证+切片偏好，≠票存活保证",
-        "kickoff": null,
-        "kickoff_shanghai": null,
-        "fixture_status": null,
         "match_phase": "pre",
-        "hot_fav": false,
-        "agree_den": 3,
-        "method_agree_n": 3,
-        "method_agree_den": 3
+        "agree_den": 3
       },
       {
         "no": 5,
@@ -395,14 +409,8 @@
         "off_field_note": "无线索。",
         "fixture_id": 1520860,
         "strength_disclaimer": "信=冠军核印证+切片偏好，≠票存活保证",
-        "kickoff": null,
-        "kickoff_shanghai": null,
-        "fixture_status": null,
         "match_phase": "pre",
-        "hot_fav": false,
-        "agree_den": 3,
-        "method_agree_n": 3,
-        "method_agree_den": 3
+        "agree_den": 3
       },
       {
         "no": 6,
@@ -461,14 +469,11 @@
         "off_field_note": "杯赛轮换风险（研报提示名单未定）。",
         "fixture_id": 1636205,
         "strength_disclaimer": "信=冠军核印证+切片偏好，≠票存活保证",
+        "fixture_status": "1H",
         "kickoff": "2026-09-10 03:00",
         "kickoff_shanghai": "2026-09-10 03:00",
-        "fixture_status": "1H",
         "match_phase": "live",
-        "hot_fav": false,
-        "agree_den": 3,
-        "method_agree_n": 3,
-        "method_agree_den": 3
+        "agree_den": 3
       },
       {
         "no": 7,
@@ -527,14 +532,8 @@
         "off_field_note": "见北单37研报。",
         "fixture_id": 1638094,
         "strength_disclaimer": "信=冠军核印证+切片偏好，≠票存活保证",
-        "kickoff": null,
-        "kickoff_shanghai": null,
-        "fixture_status": null,
         "match_phase": "pre",
-        "hot_fav": false,
-        "agree_den": 3,
-        "method_agree_n": 3,
-        "method_agree_den": 3
+        "agree_den": 3
       }
     ]
   },
@@ -687,5 +686,27 @@
         "hot_fav": false
       }
     ]
-  }
+  },
+  "dropped_legs": [
+    {
+      "sale_id": "82",
+      "reason": "极端热门 p_fav≈0.50"
+    },
+    {
+      "sale_id": "53",
+      "reason": "toss-up 印证不值钱"
+    },
+    {
+      "sale_id": "71",
+      "reason": "toss-up"
+    },
+    {
+      "sale_id": "73",
+      "reason": "先前裸HA换出"
+    },
+    {
+      "sale_id": "68",
+      "reason": "先前裸HA换出"
+    }
+  ]
 }
