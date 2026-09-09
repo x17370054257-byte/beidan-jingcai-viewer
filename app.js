@@ -9,6 +9,61 @@ const reportCache = new Map();
 
 const $ = (id) => document.getElementById(id);
 
+
+function parseKickoff(s) {
+  if (!s) return null;
+  // "2026-09-11 00:45" Asia/Shanghai wall clock
+  const m = String(s).trim().match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/);
+  if (!m) return null;
+  return new Date(`${m[1]}-${m[2]}-${m[3]}T${m[4]}:${m[5]}:00+08:00`);
+}
+
+function minutesToKickoff(leg) {
+  let ko = leg && leg.kickoff;
+  if (!ko && DATA) {
+    const id = leg.id || (String(leg.sale_id || '').startsWith('周') ? `jingcai:${leg.sale_id}` : `beidan:${leg.sale_id}`);
+    const m = (DATA.matches || []).find(x => x.id === id || x.sale_id === leg.sale_id);
+    ko = m && m.kickoff;
+  }
+  const d = parseKickoff(ko);
+  if (!d) return null;
+  return (d.getTime() - Date.now()) / 60000;
+}
+
+function hasLiveXi(text) {
+  return /live\s*XI/i.test(String(text || ''));
+}
+
+/** 卡片场外：未到 T-60 →「首发待临场」；live XI → 高亮 */
+function renderOffFieldCard(leg) {
+  const raw = String(leg.off_field || '').trim();
+  if (!raw || raw === '有' || raw === '空包' || raw === '无') {
+    const mins = minutesToKickoff(leg);
+    if (mins !== null && mins > 60) {
+      return `<div class="desk-off pending"><em>场外</em>首发待临场</div>`;
+    }
+    return '';
+  }
+  const live = hasLiveXi(raw);
+  const mins = minutesToKickoff(leg);
+  let text = raw;
+  let cls = 'desk-off';
+  if (live) cls += ' live-xi';
+  if (mins !== null && mins > 60 && !live) {
+    // 未到 T-60 且非 live：不展示 XI 细节，改待临场；伤停等可跟在后
+    const tail = raw.replace(/^(?:live|probable|last)\s*XI[^｜|]*[｜|]?/i, '')
+      .replace(/^未官宣\s*XI[^｜|]*[｜|]?/i, '')
+      .replace(/^XI未抓取[^｜|]*[｜|]?/i, '')
+      .trim()
+      .replace(/^[｜|]\s*/, '');
+    text = tail ? `首发待临场｜${tail}` : '首发待临场';
+    cls += ' pending';
+  } else if (mins !== null && mins > 60 && live) {
+    cls += ' live-xi early';
+  }
+  return `<div class="${cls}"><em>场外</em>${escapeHtml(text)}</div>`;
+}
+
 function strengthBadge(s) {
   const v = String(s || '').trim();
   if (!v) return '';
@@ -130,7 +185,7 @@ function deskCardBeidan(leg, idx) {
   const sp = Array.isArray(leg.sp) ? leg.sp.join(' / ') : '';
   const name = leg.match_name || `${leg.home} vs ${leg.away}`;
   const hot = leg.hot_fav ? ' hot-fav' : '';
-  const off = leg.off_field ? `<div class="desk-off"><em>场外</em>${escapeHtml(leg.off_field)}</div>` : '';
+  const off = renderOffFieldCard(leg);
   return `<button type="button" class="desk-card${hot}" data-idx="${idx}">
     <div class="desk-top">
       <span class="desk-no">北单 ${escapeHtml(leg.sale_id)} ${strengthBadge(leg.strength)}</span>
@@ -150,7 +205,7 @@ function deskCardJingcai(leg, idx) {
   const name = leg.match_name || `${leg.home} vs ${leg.away}`;
   const nspf = Array.isArray(leg.nspf) ? leg.nspf.join(' / ') : '';
   const hot = leg.hot_fav ? ' hot-fav' : '';
-  const off = leg.off_field ? `<div class="desk-off"><em>场外</em>${escapeHtml(leg.off_field)}</div>` : '';
+  const off = renderOffFieldCard(leg);
   return `<button type="button" class="desk-card${hot}" data-idx="${idx}">
     <div class="desk-top">
       <span class="desk-no">${escapeHtml(leg.sale_id)} ${strengthBadge(leg.strength)}</span>

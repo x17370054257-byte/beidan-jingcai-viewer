@@ -197,3 +197,20 @@ body {
   margin-left: 4px;
   letter-spacing: 0;
 }
+
+.desk-off.pending { color: var(--muted); }
+.desk-off.live-xi {
+  color: #d7ffe9;
+  background: rgba(61,214,140,.12);
+  border: 1px solid rgba(61,214,140,.35);
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-weight: 700;
+}
+.desk-off.live-xi em { color: #6dffb4; }
+.desk-off.live-xi.early::after {
+  content: " · 已更新";
+  font-size: 12px;
+  font-weight: 600;
+  color: #9ec5ff;
+}
