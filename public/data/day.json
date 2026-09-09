@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-10T06:51:20+08:00",
+  "as_of": "2026-09-10T07:27:58+08:00",
   "date": "2026-09-10",
   "schema_version": "1.4",
   "disclaimer": "研究观察 · 不出票 · 非投注建议",
@@ -277,8 +277,8 @@
       "league": "解放者杯",
       "kickoff": "2026-09-10 06:00",
       "kickoff_shanghai": "2026-09-10 06:00",
-      "fixture_status": "1H",
-      "status_short": "1H",
+      "fixture_status": "2H",
+      "status_short": "2H",
       "match_phase": "live",
       "handicap": "-1",
       "nspf": [
