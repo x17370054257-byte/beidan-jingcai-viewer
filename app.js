@@ -99,7 +99,7 @@ function plainReport(md, m) {
     }
   }
   if (!reasons.length) {
-    reasons.push('资料还不够，先当观察，不急着下结论。');
+    reasons.push('证据包还在自动补采：会拉阵容伤停与盘口对照，补齐后刷新本页。');
   }
 
   const sell = simplifySell(m.sell_status);
