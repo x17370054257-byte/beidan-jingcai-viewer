@@ -6,6 +6,13 @@ let deskKind = 'beidan7';
 
 const $ = (id) => document.getElementById(id);
 
+function strengthBadge(s) {
+  const v = String(s || '').trim();
+  if (!v) return '';
+  const cls = ({ '信': 'xin', '偏信': 'pian', '勉强': 'mian', '不碰': 'bu' })[v] || 'mian';
+  return `<span class="str ${cls}">${escapeHtml(v)}</span>`;
+}
+
 async function load() {
   $('desk-list').innerHTML = `<div class="empty">加载短表…</div>`;
   try {
@@ -83,7 +90,7 @@ function deskCardBeidan(leg) {
   const name = leg.match_name || `${leg.home} vs ${leg.away}`;
   return `<button type="button" class="desk-card" data-open="${payload}">
     <div class="desk-top">
-      <span class="desk-no">北单 ${escapeHtml(leg.sale_id)}</span>
+      <span class="desk-no">北单 ${escapeHtml(leg.sale_id)} ${strengthBadge(leg.strength)}</span>
       <span class="hc">让 ${escapeHtml(leg.handicap)}</span>
     </div>
     <div class="desk-teams">${escapeHtml(name)}</div>
@@ -101,7 +108,7 @@ function deskCardJingcai(leg) {
   const nspf = Array.isArray(leg.nspf) ? leg.nspf.join(' / ') : '';
   return `<button type="button" class="desk-card" data-open="${payload}">
     <div class="desk-top">
-      <span class="desk-no">${escapeHtml(leg.sale_id)}</span>
+      <span class="desk-no">${escapeHtml(leg.sale_id)} ${strengthBadge(leg.strength)}</span>
       <span class="hc">让 ${escapeHtml(leg.handicap)}</span>
     </div>
     <div class="desk-teams">${escapeHtml(name)}</div>
@@ -141,11 +148,12 @@ function renderLegDetail(leg) {
     <div class="kv">
       <span>${escapeHtml(String(leg.sale_id).startsWith('周') ? '竞彩' : '北单')} ${escapeHtml(leg.sale_id)}</span>
       <span>双选 ${escapeHtml(leg.double || '—')}</span>
+      ${leg.strength ? `<span>强度 ${escapeHtml(leg.strength)}</span>` : ''}
     </div>
     <div class="plain">
       <div class="verdict">
         <div class="verdict-label">研究结论</div>
-        <div class="verdict-main">双选：${escapeHtml(leg.double || '—')} · 不出票</div>
+        <div class="verdict-main">${leg.strength ? escapeHtml(leg.strength) + ' · ' : ''}双选：${escapeHtml(leg.double || '—')} · 不出票</div>
         <div class="verdict-sub">短表观察 · 不是投注建议</div>
       </div>
       <div class="section">
@@ -362,6 +370,7 @@ async function selectMatch(id, legHint) {
       <span>${escapeHtml(m.product === 'jingcai' ? '竞彩' : '北单')} ${escapeHtml(m.sale_id || '')}</span>
       ${m.badge ? `<span>${escapeHtml(m.badge)}</span>` : ''}
       ${legHint && legHint.double ? `<span>双选 ${escapeHtml(legHint.double)}</span>` : ''}
+      ${legHint && legHint.strength ? `<span>强度 ${escapeHtml(legHint.strength)}</span>` : ''}
     </div>
     ${body}`);
 }

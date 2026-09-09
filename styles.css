@@ -57,7 +57,15 @@ body {
 }
 .desk-card:active { border-color: var(--blue); }
 .desk-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 8px; }
-.desk-no { color: var(--muted); font-size: 13px; font-weight: 700; }
+.desk-no { color: var(--muted); font-size: 13px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.str {
+  display: inline-flex; align-items: center; border-radius: 8px;
+  padding: 3px 8px; font-size: 13px; font-weight: 800;
+}
+.str.xin { background: rgba(61,214,140,.2); color: #6dffb4; border: 1px solid rgba(61,214,140,.45); }
+.str.pian { background: rgba(61,139,253,.2); color: #9ec5ff; border: 1px solid rgba(61,139,253,.45); }
+.str.mian { background: rgba(240,180,41,.16); color: #ffd777; border: 1px solid rgba(240,180,41,.4); }
+.str.bu { background: rgba(240,113,120,.16); color: #ff9aa0; border: 1px solid rgba(240,113,120,.4); }
 .hc {
   background: rgba(240,180,41,.16); color: #ffe08a;
   border: 1px solid rgba(240,180,41,.45);
