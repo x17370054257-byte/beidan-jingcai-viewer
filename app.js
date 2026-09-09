@@ -267,7 +267,8 @@ function oddsMini(m) {
 
 function plainReport(md, m) {
   let text = String(md || '');
-  text = text.split(/\n---\s*\n/)[0];
+  // 旧稿用 --- 切后台；现稿身份区后也有 ---，不能一刀切掉正文
+  text = text.replace(/\n---\s*\n(?:后台|规则|验证位)[\s\S]*$/m, '');
   text = text.replace(/\n后台[：:].*/gs, '');
   text = text.replace(/\n规则[：:].*/gs, '');
   text = text.replace(/`[^`]+`/g, '');
