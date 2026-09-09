@@ -506,5 +506,53 @@
         "match_phase": "pre"
       }
     ]
+  },
+  "multi_method_gate": {
+    "rule": "≥2 methods same direction AND not bare HA → only then 信/结构精选",
+    "status": "awaiting_analysis_table",
+    "memo": "team/curated/MEMO-MULTI-METHOD-GATE-20260910.md",
+    "pending_rerank": true,
+    "note": "今日强度暂未改；表到后重排。82 预检实验室未覆盖，可能降出结构精选。"
+  },
+  "sale_day_main": {
+    "source": "analysis/METHOD-LAB-1.4/backtest/SALE-DAY-SCORED.md",
+    "curated_memo": "team/curated/MEMO-SALE-DAY-MAIN-20260910.md",
+    "priority": "jingcai_GE7_SP_Top2",
+    "jingcai_ge7_sp": {
+      "n": 156,
+      "leg_hit": "73.8%",
+      "survive": "8.9%",
+      "survive_raw": "14/156",
+      "strategy": "SP Top2"
+    },
+    "jingcai_ge7_elo_ctrl": {
+      "n": 156,
+      "leg_hit": "73.4%",
+      "survive": "13.5%",
+      "strategy": "Elo Top2"
+    },
+    "beidan_sp_0909": {
+      "n": 37,
+      "leg_hit": "76.8%",
+      "survive": "8.1%",
+      "strategy": "SP Top2"
+    },
+    "beidan_ft_elo_ctrl": {
+      "n": 97,
+      "leg_hit": "84.4%",
+      "survive": "17.5%",
+      "strategy": "Elo Top2"
+    },
+    "n_tickets": 156,
+    "leg_hit": "73.8%",
+    "ticket_survive": "8.9%",
+    "sp_not_more_stable": true,
+    "sp_vs_elo_note": "SP Top2 8.9% < Elo Top2 13.5% → 勿把SP双选当更稳",
+    "production_weight": 0,
+    "deprecated_as_main": [
+      "114/80.3%/14.0% Elo-only",
+      "236/11.9% Elo合计"
+    ],
+    "note": "换主表完成；SP优先口径≠更稳；不升权"
   }
 }
