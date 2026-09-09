@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-10T06:41:29+08:00",
+  "as_of": "2026-09-10T06:51:20+08:00",
   "date": "2026-09-10",
   "schema_version": "1.4",
   "disclaimer": "研究观察 · 不出票 · 非投注建议",
@@ -2189,11 +2189,7 @@
       "match_phase": "pre",
       "handicap": "-1",
       "nspf": null,
-      "spf": [
-        "2.64",
-        "3.08",
-        "3.36"
-      ],
+      "spf": null,
       "sell_status": "paused",
       "fixture_id": 1520865,
       "badge": null,
@@ -2220,11 +2216,7 @@
       "match_phase": "pre",
       "handicap": "0",
       "nspf": null,
-      "spf": [
-        "4.62",
-        "3.42",
-        "2.03"
-      ],
+      "spf": null,
       "sell_status": "paused",
       "fixture_id": 1520862,
       "badge": null,
