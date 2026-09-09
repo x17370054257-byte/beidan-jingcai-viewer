@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-10T05:58:31+08:00",
+  "as_of": "2026-09-10T06:04:25+08:00",
   "date": "2026-09-10",
   "schema_version": "1.4",
   "disclaimer": "研究观察 · 不出票 · 非投注建议",
@@ -246,9 +246,9 @@
       "league": "葡超",
       "kickoff": "2026-09-10 03:45",
       "kickoff_shanghai": "2026-09-10 03:45",
-      "fixture_status": "2H",
-      "status_short": "2H",
-      "match_phase": "live",
+      "fixture_status": "FT",
+      "status_short": "FT",
+      "match_phase": "ft",
       "handicap": "2",
       "nspf": null,
       "spf": [
@@ -279,7 +279,7 @@
       "kickoff_shanghai": "2026-09-10 06:00",
       "fixture_status": "NS",
       "status_short": "NS",
-      "match_phase": "pre",
+      "match_phase": "live",
       "handicap": "-1",
       "nspf": [
         "1.21",
@@ -1906,11 +1906,7 @@
       "match_phase": "ft",
       "handicap": "0",
       "nspf": null,
-      "spf": [
-        "1.62",
-        "4.43",
-        "6.32"
-      ],
+      "spf": null,
       "sell_status": "paused",
       "fixture_id": 1635736,
       "badge": null,
@@ -2053,9 +2049,9 @@
       "league": "葡超",
       "kickoff": "2026-09-10 03:45",
       "kickoff_shanghai": "2026-09-10 03:45",
-      "fixture_status": "2H",
-      "status_short": "2H",
-      "match_phase": "live",
+      "fixture_status": "FT",
+      "status_short": "FT",
+      "match_phase": "ft",
       "handicap": "2",
       "nspf": null,
       "spf": null,
@@ -2085,11 +2081,7 @@
       "match_phase": "pre",
       "handicap": "-2",
       "nspf": null,
-      "spf": [
-        "4.05",
-        "3.50",
-        "2.13"
-      ],
+      "spf": null,
       "sell_status": "paused",
       "fixture_id": null,
       "badge": null,
@@ -2113,14 +2105,10 @@
       "kickoff_shanghai": "2026-09-10 06:00",
       "fixture_status": "NS",
       "status_short": "NS",
-      "match_phase": "pre",
+      "match_phase": "live",
       "handicap": "0",
       "nspf": null,
-      "spf": [
-        "2.19",
-        "3.00",
-        "4.71"
-      ],
+      "spf": null,
       "sell_status": "paused",
       "fixture_id": 1631510,
       "badge": null,
@@ -2171,14 +2159,10 @@
       "kickoff_shanghai": "2026-09-10 06:00",
       "fixture_status": "NS",
       "status_short": "NS",
-      "match_phase": "pre",
+      "match_phase": "live",
       "handicap": "0",
       "nspf": null,
-      "spf": [
-        "2.59",
-        "2.67",
-        "4.15"
-      ],
+      "spf": null,
       "sell_status": "paused",
       "fixture_id": 1635536,
       "badge": null,
@@ -2367,11 +2351,7 @@
       "match_phase": "pre",
       "handicap": "0",
       "nspf": null,
-      "spf": [
-        "3.55",
-        "3.44",
-        "2.33"
-      ],
+      "spf": null,
       "sell_status": "paused",
       "fixture_id": 1520860,
       "badge": null,
@@ -2520,9 +2500,9 @@
       "handicap": "0",
       "nspf": null,
       "spf": [
-        "2.55",
-        "2.49",
-        "4.82"
+        "2.57",
+        "2.46",
+        "4.85"
       ],
       "sell_status": "paused",
       "fixture_id": 1631506,
@@ -2870,7 +2850,7 @@
       "handicap": "0",
       "nspf": null,
       "spf": [
-        "9.85",
+        "9.93",
         "2.49",
         "2.00"
       ],
