@@ -151,7 +151,10 @@
         "match_phase": "live",
         "hot_fav": true,
         "agree_den": 3,
-        "hit": null
+        "hit": null,
+        "why_alt": "平局是主队打不开/客队铁桶时的真实收场；用平托底，避免单锁主胜被闷平打穿。",
+        "primary_line": "主胜（研究观察 · 不出票）",
+        "alt_line": "平（托底）"
       },
       {
         "no": 2,
@@ -224,7 +227,10 @@
         "match_phase": "pre",
         "hot_fav": false,
         "agree_den": 3,
-        "hit": null
+        "hit": null,
+        "why_alt": "平局是主队打不开/客队铁桶时的真实收场；用平托底，避免单锁主胜被闷平打穿。",
+        "primary_line": "主胜（研究观察 · 不出票）",
+        "alt_line": "平（托底）"
       },
       {
         "no": 3,
@@ -297,7 +303,10 @@
         "match_phase": "pre",
         "hot_fav": true,
         "agree_den": 3,
-        "hit": null
+        "hit": null,
+        "why_alt": "客胜是主线；平托底覆盖主场情绪前20分钟冲击后的胶着，避免单锁客胜遇闷平。",
+        "primary_line": "客胜（研究观察 · 不出票）",
+        "alt_line": "平（托底）"
       },
       {
         "no": 4,
@@ -370,7 +379,10 @@
         "match_phase": "pre",
         "hot_fav": false,
         "agree_den": 3,
-        "hit": null
+        "hit": null,
+        "why_alt": "平局是主队打不开/客队铁桶时的真实收场；用平托底，避免单锁主胜被闷平打穿。",
+        "primary_line": "主胜（研究观察 · 不出票）",
+        "alt_line": "平（托底）"
       },
       {
         "no": 5,
@@ -443,7 +455,10 @@
         "match_phase": "live",
         "hot_fav": false,
         "agree_den": 3,
-        "hit": null
+        "hit": null,
+        "why_alt": "平局是客队带走不成、主队也打不穿时的托底；防单锁客胜遇闷平。",
+        "primary_line": "客胜（研究观察 · 不出票）",
+        "alt_line": "平（托底）"
       },
       {
         "no": 6,
@@ -516,7 +531,10 @@
         "match_phase": "pre",
         "hot_fav": false,
         "agree_den": 3,
-        "hit": null
+        "hit": null,
+        "why_alt": "北单主让两球口径下，客胜/让负是主线；平局托底覆盖主队小胜却未穿盘、或胶着收场，避免单锁客胜被闷平打穿。",
+        "primary_line": "客胜（研究观察 · 不出票）",
+        "alt_line": "平（托底）"
       },
       {
         "no": 7,
@@ -589,7 +607,10 @@
         "match_phase": "pre",
         "hot_fav": false,
         "agree_den": 3,
-        "hit": null
+        "hit": null,
+        "why_alt": "平局是客队带走不成、主队也打不穿时的托底；防单锁客胜遇闷平。",
+        "primary_line": "客胜（研究观察 · 不出票）",
+        "alt_line": "平（托底）"
       }
     ],
     "post_match_review": {

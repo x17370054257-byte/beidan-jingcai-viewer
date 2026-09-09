@@ -99,6 +99,10 @@ function renderPickLines(leg) {
 }
 
 function renderHandicapBig(leg) {
+  const plain = leg && String(leg.handicap_plain || '').trim();
+  if (plain) {
+    return `<div class="desk-hc plain"><em>让球</em><span class="hc-plain">${escapeHtml(plain)}</span></div>`;
+  }
   const hc = leg && (leg.handicap ?? leg.line);
   const v = (hc === null || hc === undefined || hc === '') ? '—' : String(hc);
   return `<div class="desk-hc"><em>让球</em><strong>${escapeHtml(v)}</strong></div>`;
@@ -313,7 +317,7 @@ function renderSkeleton(leg) {
   const name = leg.match_name || `${leg.home} vs ${leg.away}`;
   return `
     <div class="detail-head">
-      <span class="hc big">让球 ${escapeHtml(String(leg.handicap ?? '—'))}</span>
+      <span class="hc big">${escapeHtml(String((leg.handicap_plain || ('让球 ' + (leg.handicap ?? '—')))))}</span>
       <h1>${escapeHtml(name)}</h1>
     </div>
     <div class="kv">

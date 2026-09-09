@@ -282,3 +282,9 @@ body {
 .desk-card.hot-fav .desk-hc em,
 .desk-card.hot-fav .desk-hc strong { color: #c5cdd6; }
 .desk-card.hot-fav .desk-pick.primary { color: #a8b4c4; border-color: #3a4552; }
+
+.desk-hc.plain { align-items: flex-start; }
+.desk-hc .hc-plain {
+  font-size: 16px; font-weight: 800; color: #ffe9a8; line-height: 1.35;
+}
+.hc.big { max-width: 100%; line-height: 1.35; }
