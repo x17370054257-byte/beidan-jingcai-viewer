@@ -97,3 +97,10 @@ body {
 .plain .section li + li { margin-top: 8px; }
 .plain .section.soft p { color: var(--muted); font-size: 13px; }
 .report { display: none; }
+
+.ver-pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 2.2em; padding: 2px 8px; border-radius: 999px;
+  background: rgba(61,139,253,.22); color: #9ec5ff; border: 1px solid rgba(61,139,253,.45);
+  font-size: 13px; font-weight: 700; letter-spacing: .02em;
+}
