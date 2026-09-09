@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-10T03:57:38+08:00",
+  "as_of": "2026-09-10T03:58:22+08:00",
   "date": "2026-09-10",
   "version": "1.4",
   "disclaimer": "研究观察 · 不出票 · 多方法印证≠升权 · 信≠票存活保证",
@@ -9,7 +9,7 @@
     "55",
     "53"
   ],
-  "vote_note": "方法同意数来自 TODAY-VOTE-AGREE · production_weight=0 · 未升权",
+  "vote_note": "方法同意数 agree_n · 冠军核 M1+M5+M6 分母3 · production_weight=0 · 未升权 · ABLATION-AGREE",
   "beidan7": {
     "title": "北单7场双选（多方法印证重排）",
     "forced_selection": true,
@@ -90,10 +90,19 @@
           ]
         },
         "bare_ha_risk_note": "裸HA仅作风控附注（用户偏好），不进胜率主门槛",
-        "fixture_status": "NS",
+        "agree_n": 3,
+        "agree_denom": 3,
+        "agree_label": "3/3",
+        "agree_methods": "M1+M5+M6",
+        "vote_agree_label": "7/7",
         "kickoff": "2026-09-11 00:45",
         "kickoff_shanghai": "2026-09-11 00:45",
-        "match_phase": "pre"
+        "fixture_status": "NS",
+        "match_phase": "pre",
+        "hot_fav": true,
+        "agree_den": 3,
+        "method_agree_n": 3,
+        "method_agree_den": 3
       },
       {
         "no": 2,
@@ -156,10 +165,19 @@
           ]
         },
         "bare_ha_risk_note": "裸HA仅作风控附注（用户偏好），不进胜率主门槛",
-        "fixture_status": "1H",
+        "agree_n": 3,
+        "agree_denom": 3,
+        "agree_label": "3/3",
+        "agree_methods": "M1+M5+M6",
+        "vote_agree_label": "7/7",
         "kickoff": "2026-09-10 03:00",
         "kickoff_shanghai": "2026-09-10 03:00",
-        "match_phase": "live"
+        "fixture_status": "1H",
+        "match_phase": "live",
+        "hot_fav": false,
+        "agree_den": 3,
+        "method_agree_n": 3,
+        "method_agree_den": 3
       },
       {
         "no": 3,
@@ -222,10 +240,19 @@
           ]
         },
         "bare_ha_risk_note": "裸HA仅作风控附注（用户偏好），不进胜率主门槛",
-        "fixture_status": "1H",
+        "agree_n": 3,
+        "agree_denom": 3,
+        "agree_label": "3/3",
+        "agree_methods": "M1+M5+M6",
+        "vote_agree_label": "7/7",
         "kickoff": "2026-09-10 03:00",
         "kickoff_shanghai": "2026-09-10 03:00",
-        "match_phase": "live"
+        "fixture_status": "1H",
+        "match_phase": "live",
+        "hot_fav": false,
+        "agree_den": 3,
+        "method_agree_n": 3,
+        "method_agree_den": 3
       },
       {
         "no": 4,
@@ -288,10 +315,19 @@
           ]
         },
         "bare_ha_risk_note": "裸HA仅作风控附注（用户偏好），不进胜率主门槛",
-        "fixture_status": "NS",
+        "agree_n": 3,
+        "agree_denom": 3,
+        "agree_label": "3/3",
+        "agree_methods": "M1+M5+M6",
+        "vote_agree_label": "7/7",
         "kickoff": "2026-09-10 08:30",
         "kickoff_shanghai": "2026-09-10 08:30",
-        "match_phase": "pre"
+        "fixture_status": "NS",
+        "match_phase": "pre",
+        "hot_fav": false,
+        "agree_den": 3,
+        "method_agree_n": 3,
+        "method_agree_den": 3
       },
       {
         "no": 5,
@@ -354,10 +390,19 @@
           ]
         },
         "bare_ha_risk_note": "裸HA仅作风控附注（用户偏好），不进胜率主门槛",
-        "fixture_status": "1H",
+        "agree_n": 3,
+        "agree_denom": 3,
+        "agree_label": "3/3",
+        "agree_methods": "M1+M5+M6",
+        "vote_agree_label": "7/7",
         "kickoff": "2026-09-10 03:00",
         "kickoff_shanghai": "2026-09-10 03:00",
-        "match_phase": "live"
+        "fixture_status": "1H",
+        "match_phase": "live",
+        "hot_fav": false,
+        "agree_den": 3,
+        "method_agree_n": 3,
+        "method_agree_den": 3
       },
       {
         "no": 6,
@@ -394,7 +439,7 @@
         "review_basis": "冠军门槛 M1+M5+M6 同向3过门。 TODAY-VOTE-AGREE：同向7方法 · AD · 非裸HA。VOTE-LIFT 北单 vote≥2 存活13.2%。",
         "view": "换入：替 73。七方法同向客不败；摩雷伦斯-本菲卡。",
         "fear": "本菲卡客场翻车剧本反杀。",
-        "off_field": "有",
+        "off_field": "",
         "off_field_note": "研报有场外摘要可核。",
         "fixture_id": 1575469,
         "strength_disclaimer": "信=多方法印证门槛通过，≠样本票存活保证（仍见 TIER-FIX / SCORABLE）",
@@ -420,10 +465,19 @@
           ]
         },
         "bare_ha_risk_note": "裸HA仅作风控附注（用户偏好），不进胜率主门槛",
-        "fixture_status": "NS",
+        "agree_n": 3,
+        "agree_denom": 3,
+        "agree_label": "3/3",
+        "agree_methods": "M1+M5+M6",
+        "vote_agree_label": "7/7",
         "kickoff": "2026-09-10 03:45",
         "kickoff_shanghai": "2026-09-10 03:45",
-        "match_phase": "live"
+        "fixture_status": "NS",
+        "match_phase": "live",
+        "hot_fav": false,
+        "agree_den": 7,
+        "method_agree_n": 3,
+        "method_agree_den": 7
       },
       {
         "no": 7,
@@ -460,7 +514,7 @@
         "review_basis": "冠军门槛 M1+M5+M6 同向3过门。 TODAY-VOTE-AGREE：同向7方法 · AD · 非裸HA。VOTE-LIFT 北单 vote≥2 存活13.2%。",
         "view": "换入：替 68。七方法同向客不败；盘面较均势。",
         "fear": "主队主场硬度打穿客向。",
-        "off_field": "有",
+        "off_field": "",
         "off_field_note": "见北单37研报。",
         "fixture_id": 1638094,
         "strength_disclaimer": "信=多方法印证门槛通过，≠样本票存活保证（仍见 TIER-FIX / SCORABLE）",
@@ -486,7 +540,19 @@
           ]
         },
         "bare_ha_risk_note": "裸HA仅作风控附注（用户偏好），不进胜率主门槛",
-        "match_phase": "pre"
+        "agree_n": 3,
+        "agree_denom": 3,
+        "agree_label": "3/3",
+        "agree_methods": "M1+M5+M6",
+        "vote_agree_label": "7/7",
+        "kickoff": null,
+        "kickoff_shanghai": null,
+        "fixture_status": null,
+        "match_phase": "pre",
+        "hot_fav": false,
+        "agree_den": 7,
+        "method_agree_n": 3,
+        "method_agree_den": 7
       }
     ]
   },
@@ -639,116 +705,5 @@
         "hot_fav": false
       }
     ]
-  },
-  "sale_day_main": {
-    "source": "analysis/METHOD-LAB-1.4/backtest/ABLATION-LIFT.md",
-    "pointer": "analysis/METHOD-LAB-1.4/backtest/SALE-DAY-SCORED.md",
-    "curated_memo": "team/curated/MEMO-SALE-DAY-MAIN-20260910.md",
-    "priority": "M1_M5_M6_vote_ge2",
-    "champion": {
-      "strategy": "M1+M5+M6 vote≥2",
-      "n": 1369,
-      "survive": "15.7%",
-      "leg_hit": "75.6%"
-    },
-    "baselines": {
-      "HA": "10.4%",
-      "HD": "7.2%",
-      "Elo": "10.4%"
-    },
-    "ban_ha_cost": {
-      "with_ban": "6.9%",
-      "without_ban": "15.7%",
-      "delta_pt": -8.8
-    },
-    "n_tickets": 1369,
-    "ticket_survive": "15.7%",
-    "leg_hit": "75.6%",
-    "elo_spine_paused": true,
-    "production_weight": 0,
-    "note": "消融主表；禁裸HA砸存活须接受；今日腿见 TODAY-VOTE-AGREE 重排",
-    "deprecated_as_main": [
-      "SCORABLE-31 Elo 8.5%",
-      "156/8.9%",
-      "114/14.0%",
-      "236/11.9%"
-    ],
-    "ban_ha_in_winrate_rule": false,
-    "ban_ha_risk_footnote": true
-  },
-  "sale_day_main_appendix_sp_short": {
-    "source": "analysis/METHOD-LAB-1.4/backtest/SALE-DAY-SCORED.md",
-    "curated_memo": "team/curated/MEMO-SALE-DAY-MAIN-20260910.md",
-    "priority": "jingcai_GE7_SP_Top2",
-    "jingcai_ge7_sp": {
-      "n": 156,
-      "leg_hit": "73.8%",
-      "survive": "8.9%",
-      "survive_raw": "14/156",
-      "strategy": "SP Top2"
-    },
-    "jingcai_ge7_elo_ctrl": {
-      "n": 156,
-      "leg_hit": "73.4%",
-      "survive": "13.5%",
-      "strategy": "Elo Top2"
-    },
-    "beidan_sp_0909": {
-      "n": 37,
-      "leg_hit": "76.8%",
-      "survive": "8.1%",
-      "strategy": "SP Top2"
-    },
-    "beidan_ft_elo_ctrl": {
-      "n": 97,
-      "leg_hit": "84.4%",
-      "survive": "17.5%",
-      "strategy": "Elo Top2"
-    },
-    "n_tickets": 156,
-    "leg_hit": "73.8%",
-    "ticket_survive": "8.9%",
-    "sp_not_more_stable": true,
-    "sp_vs_elo_note": "SP Top2 8.9% < Elo Top2 13.5% → 勿把SP双选当更稳",
-    "production_weight": 0,
-    "deprecated_as_main": [
-      "114/80.3%/14.0% Elo-only",
-      "236/11.9% Elo合计"
-    ],
-    "note": "换主表完成；SP优先口径≠更稳；不升权"
-  },
-  "multi_method_gate": {
-    "rule": "信/结构精选主门槛 = M1+M5+M6 同向≥2（ABLATION 冠军 15.7%）",
-    "ban_ha": "仅作风控附注（用户偏好），不写进胜率主规则；消融示禁HA→6.9%",
-    "status": "applied_rerank_champion_m156",
-    "pending_rerank": false,
-    "elo_spine_paused": true,
-    "source": "TODAY-VOTE-AGREE.md + ABLATION-LIFT.md",
-    "champion_survive": "15.7%",
-    "swapped_out": [
-      "73",
-      "68"
-    ],
-    "swapped_in": [
-      "57",
-      "37"
-    ],
-    "champion_check_57_37": "PASS (agree_n=7 ⇒ M1/M5/M6 同向)",
-    "direction_flip": {
-      "51": "HD→AD"
-    },
-    "keep_lineup": true
-  },
-  "schema": "doubles-strength/1.4",
-  "true_curated_count": 0,
-  "dropped_legs": [
-    {
-      "sale_id": "73",
-      "reason": "裸HA为主，未过印证"
-    },
-    {
-      "sale_id": "68",
-      "reason": "裸HA为主，未过印证"
-    }
-  ]
+  }
 }
