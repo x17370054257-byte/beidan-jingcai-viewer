@@ -28,15 +28,6 @@ async function load() {
   const n = (DATA.matches || []).length;
   const asOf = (DATA.as_of || DOUBLES?.as_of || '').replace('T', ' ').slice(0, 19);
   $('build').textContent = `版本 1.4 · 已载入 ${n} 场 · 刷新 ${asOf || '—'}`;
-  if ($('meta')) {
-    $('meta').innerHTML = [
-      chip('日期 ' + (DATA.date || '')),
-      chip('竞彩 ' + (c.jingcai ?? 0)),
-      chip('北单 ' + (c.beidan ?? 0)),
-      chip('精选 ' + (c.selected ?? 0)),
-      chip('观察 ' + (c.observe ?? 0)),
-    ].join('');
-  }
 
   document.querySelectorAll('.mode-tab').forEach(btn => {
     btn.onclick = () => setMode(btn.dataset.mode);
@@ -103,7 +94,7 @@ function deskCardBeidan(leg) {
       <span class="desk-no">#${escapeHtml(String(leg.no))} · 北单 ${escapeHtml(leg.sale_id)}</span>
       <span class="hc">让球 ${escapeHtml(leg.handicap)}</span>
     </div>
-    <div class="desk-teams">${escapeHtml(leg.home)} vs ${escapeHtml(leg.away)}</div>
+    <div class="desk-teams">${escapeHtml(leg.match_name || (leg.home + " vs " + leg.away))}</div>
     <div class="desk-double">双选 <strong>${escapeHtml(leg.double)}</strong></div>
     <div class="odds-row">
       <span class="odds-label" title="${escapeHtml(leg.tip || '')}">${escapeHtml(leg.odds_label || '北单让球SP')}</span>
@@ -122,7 +113,7 @@ function deskCardJingcai(leg) {
       <span class="desk-no">竞彩 ${escapeHtml(leg.sale_id)}</span>
       <span class="hc">让球 ${escapeHtml(leg.handicap)}</span>
     </div>
-    <div class="desk-teams">${escapeHtml(leg.home)} vs ${escapeHtml(leg.away)}</div>
+    <div class="desk-teams">${escapeHtml(leg.match_name || (leg.home + " vs " + leg.away))}</div>
     <div class="desk-double">双选 <strong>${escapeHtml(leg.double)}</strong></div>
     <div class="odds-row">
       <span class="odds-label" title="${escapeHtml(leg.tip_nspf || '')}">${escapeHtml(leg.odds_label_nspf || '竞彩非让')}</span>
