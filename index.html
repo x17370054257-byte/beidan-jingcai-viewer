@@ -2,9 +2,10 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="viewer-version" content="1.3" />
-  <title>北单·竞彩 查看器 1.3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="viewer-version" content="1.4" />
+  <meta name="theme-color" content="#0f1419" />
+  <title>北单·竞彩 查看器 1.4</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -12,20 +13,33 @@
     <div class="brand-block">
       <div class="brand">
         <strong>北单·竞彩</strong>
-        <span class="ver-pill" title="FMA 小更新线 1.3">1.3</span>
-        <span class="muted">查看器</span>
+        <span class="ver-pill" title="小更新线 1.4">1.4</span>
       </div>
-      <div class="build" id="build">版本 1.3 · 先足球后市场 · 研究观察</div>
+      <div class="build" id="build">版本 1.4 · 加载中…</div>
     </div>
-    <div id="meta" class="meta"></div>
     <div class="disclaimer" id="disclaimer">研究观察 · 不出票 · 非投注建议</div>
   </header>
-  <div class="toolbar">
+
+  <nav class="mode-tabs" role="tablist">
+    <button type="button" class="mode-tab active" data-mode="desk" id="tab-desk">双选工作台</button>
+    <button type="button" class="mode-tab" data-mode="all" id="tab-all">全部场次</button>
+  </nav>
+
+  <section class="desk" id="desk">
+    <div class="desk-switch">
+      <button type="button" class="desk-btn active" data-desk="beidan7">北单7场双选</button>
+      <button type="button" class="desk-btn" data-desk="jingcai">竞彩双选</button>
+    </div>
+    <p class="desk-note" id="desk-note"></p>
+    <div class="desk-list" id="desk-list"></div>
+  </section>
+
+  <div class="toolbar" id="toolbar" hidden>
     <input id="q" type="search" placeholder="搜编号 / 队名 / 联赛" />
     <select id="product">
       <option value="all">全部产品</option>
       <option value="jingcai">竞彩</option>
-      <option value="beidan">北单</option>
+      <option value="beidan" selected>北单</option>
     </select>
     <select id="badge">
       <option value="all">全部角标</option>
@@ -39,9 +53,10 @@
       <option value="final">终稿倾向</option>
     </select>
   </div>
-  <main class="layout">
-    <aside class="list" id="list"><div class="empty">加载场次中…</div></aside>
-    <section class="detail" id="detail"><div class="empty">加载研报中…</div></section>
+
+  <main class="layout" id="layout">
+    <aside class="list" id="list" hidden><div class="empty">加载场次中…</div></aside>
+    <section class="detail" id="detail"><div class="empty">点上方双选一腿，或切到全部场次</div></section>
   </main>
   <script src="./app.js"></script>
 </body>

@@ -1,13 +1,30 @@
 {
-  "as_of": "2026-09-10T03:12:58+08:00",
+  "as_of": "2026-09-10T03:20:21+08:00",
   "date": "2026-09-10",
+  "schema_version": "1.4",
   "disclaimer": "研究观察 · 不出票 · 非投注建议",
+  "field_schema": {
+    "version": "1.4",
+    "match_fields": {
+      "home": "主队显示名（必填）",
+      "away": "客队显示名（必填）",
+      "teams": "可选 {home,away} 与 home/away 同值，供 UI",
+      "handicap": "让球（北单/竞彩让球盘；字符串或数字）",
+      "nspf": "竞彩胜平负三项 [胜,平,负]；北单常空",
+      "spf": "让球胜平负三项 [胜,平,负]；北单对照价可能来自 okooo",
+      "sell_status": "渠道销售态（paused/ended/on_sale 等）",
+      "fixture_id": "API-Football 映射 id",
+      "product": "jingcai | beidan",
+      "sale_id": "竞彩编号或北单场次号",
+      "sp_meta": "可选：play/source/market_label/official"
+    }
+  },
   "counts": {
     "jingcai": 17,
     "beidan": 99,
     "selected": 0,
     "observe": 17,
-    "with_report": 17
+    "with_report": 116
   },
   "matches": [
     {
@@ -16,6 +33,10 @@
       "sale_id": "周三006",
       "home": "里斯本",
       "away": "加拉塔萨",
+      "teams": {
+        "home": "里斯本",
+        "away": "加拉塔萨"
+      },
       "league": "欧冠",
       "kickoff": "2026-09-10 03:00",
       "handicap": "-1",
@@ -35,7 +56,7 @@
       "rank_score": 0,
       "has_report": true,
       "report_level": "final",
-      "report_file": "周三006-里斯本加拉塔萨.md"
+      "report_file": "jc-wed006.md"
     },
     {
       "id": "jingcai:周三007",
@@ -43,6 +64,10 @@
       "sale_id": "周三007",
       "home": "那不勒斯",
       "away": "阿森纳",
+      "teams": {
+        "home": "那不勒斯",
+        "away": "阿森纳"
+      },
       "league": "欧冠",
       "kickoff": "2026-09-10 03:00",
       "handicap": "1",
@@ -62,7 +87,7 @@
       "rank_score": 0,
       "has_report": true,
       "report_level": "final",
-      "report_file": "周三007-那不勒斯阿森纳.md"
+      "report_file": "jc-wed007.md"
     },
     {
       "id": "jingcai:周三008",
@@ -70,6 +95,10 @@
       "sale_id": "周三008",
       "home": "利物浦",
       "away": "马竞",
+      "teams": {
+        "home": "利物浦",
+        "away": "马竞"
+      },
       "league": "欧冠",
       "kickoff": "2026-09-10 03:00",
       "handicap": "-1",
@@ -89,7 +118,7 @@
       "rank_score": 21,
       "has_report": true,
       "report_level": "final",
-      "report_file": "周三008-利物浦马竞.md"
+      "report_file": "jc-wed008.md"
     },
     {
       "id": "jingcai:周三009",
@@ -97,6 +126,10 @@
       "sale_id": "周三009",
       "home": "巴黎圣曼",
       "away": "布拉迪斯",
+      "teams": {
+        "home": "巴黎圣曼",
+        "away": "布拉迪斯"
+      },
       "league": "欧冠",
       "kickoff": "2026-09-10 03:00",
       "handicap": "-3",
@@ -112,7 +145,7 @@
       "rank_score": 0,
       "has_report": true,
       "report_level": "final",
-      "report_file": "周三009-巴黎圣曼布拉迪斯.md"
+      "report_file": "jc-wed009.md"
     },
     {
       "id": "jingcai:周三010",
@@ -120,6 +153,10 @@
       "sale_id": "周三010",
       "home": "查尔顿",
       "away": "女王巡游",
+      "teams": {
+        "home": "查尔顿",
+        "away": "女王巡游"
+      },
       "league": "英冠",
       "kickoff": "2026-09-10 03:00",
       "handicap": "1",
@@ -139,7 +176,7 @@
       "rank_score": 32,
       "has_report": true,
       "report_level": "final",
-      "report_file": "周三010-查尔顿女王巡游.md"
+      "report_file": "jc-wed010.md"
     },
     {
       "id": "jingcai:周三011",
@@ -147,6 +184,10 @@
       "sale_id": "周三011",
       "home": "切尔西",
       "away": "利兹联",
+      "teams": {
+        "home": "切尔西",
+        "away": "利兹联"
+      },
       "league": "英联赛杯",
       "kickoff": "2026-09-10 03:00",
       "handicap": "-1",
@@ -166,7 +207,7 @@
       "rank_score": 0,
       "has_report": true,
       "report_level": "final",
-      "report_file": "周三011-切尔西利兹联.md"
+      "report_file": "jc-wed011.md"
     },
     {
       "id": "jingcai:周三012",
@@ -174,6 +215,10 @@
       "sale_id": "周三012",
       "home": "摩雷伦斯",
       "away": "本菲卡",
+      "teams": {
+        "home": "摩雷伦斯",
+        "away": "本菲卡"
+      },
       "league": "葡超",
       "kickoff": "2026-09-10 03:45",
       "handicap": "2",
@@ -189,7 +234,7 @@
       "rank_score": 0,
       "has_report": true,
       "report_level": "final",
-      "report_file": "周三012-摩雷伦斯本菲卡.md"
+      "report_file": "jc-wed012.md"
     },
     {
       "id": "jingcai:周三013",
@@ -197,6 +242,10 @@
       "sale_id": "周三013",
       "home": "帕梅拉斯",
       "away": "基多体大",
+      "teams": {
+        "home": "帕梅拉斯",
+        "away": "基多体大"
+      },
       "league": "解放者杯",
       "kickoff": "2026-09-10 06:00",
       "handicap": "-1",
@@ -216,7 +265,7 @@
       "rank_score": 0,
       "has_report": true,
       "report_level": "final",
-      "report_file": "周三013-帕梅拉斯基多体大.md"
+      "report_file": "jc-wed013.md"
     },
     {
       "id": "jingcai:周三014",
@@ -224,6 +273,10 @@
       "sale_id": "周三014",
       "home": "拉普大学",
       "away": "科林蒂安",
+      "teams": {
+        "home": "拉普大学",
+        "away": "科林蒂安"
+      },
       "league": "解放者杯",
       "kickoff": "2026-09-10 08:30",
       "handicap": "-1",
@@ -243,7 +296,7 @@
       "rank_score": 30,
       "has_report": true,
       "report_level": "final",
-      "report_file": "周三014-拉普大学科林蒂安.md"
+      "report_file": "jc-wed014.md"
     },
     {
       "id": "jingcai:周三015",
@@ -251,6 +304,10 @@
       "sale_id": "周三015",
       "home": "芝加哥",
       "away": "迈阿密国际",
+      "teams": {
+        "home": "芝加哥",
+        "away": "迈阿密国际"
+      },
       "league": "美职足",
       "kickoff": "2026-09-10 08:30",
       "handicap": "-1",
@@ -270,7 +327,7 @@
       "rank_score": 27,
       "has_report": true,
       "report_level": "final",
-      "report_file": "周三015-芝加哥迈阿密国际.md"
+      "report_file": "jc-wed015.md"
     },
     {
       "id": "jingcai:周四001",
@@ -278,6 +335,10 @@
       "sale_id": "周四001",
       "home": "费内巴切",
       "away": "罗马",
+      "teams": {
+        "home": "费内巴切",
+        "away": "罗马"
+      },
       "league": "欧冠",
       "kickoff": "2026-09-11 00:45",
       "handicap": "1",
@@ -297,7 +358,7 @@
       "rank_score": 32,
       "has_report": true,
       "report_level": "final",
-      "report_file": "周四001-费内巴切罗马.md"
+      "report_file": "jc-thu001.md"
     },
     {
       "id": "jingcai:周四002",
@@ -305,6 +366,10 @@
       "sale_id": "周四002",
       "home": "科莫",
       "away": "莱红牛",
+      "teams": {
+        "home": "科莫",
+        "away": "莱红牛"
+      },
       "league": "欧冠",
       "kickoff": "2026-09-11 03:00",
       "handicap": "-1",
@@ -324,7 +389,7 @@
       "rank_score": 20,
       "has_report": true,
       "report_level": "final",
-      "report_file": "周四002-科莫莱红牛.md"
+      "report_file": "jc-thu002.md"
     },
     {
       "id": "jingcai:周四003",
@@ -332,6 +397,10 @@
       "sale_id": "周四003",
       "home": "拜仁",
       "away": "博德闪耀",
+      "teams": {
+        "home": "拜仁",
+        "away": "博德闪耀"
+      },
       "league": "欧冠",
       "kickoff": "2026-09-11 03:00",
       "handicap": "-3",
@@ -347,7 +416,7 @@
       "rank_score": 0,
       "has_report": true,
       "report_level": "final",
-      "report_file": "周四003-拜仁博德闪耀.md"
+      "report_file": "jc-thu003.md"
     },
     {
       "id": "jingcai:周四004",
@@ -355,6 +424,10 @@
       "sale_id": "周四004",
       "home": "斯拉维亚",
       "away": "朗斯",
+      "teams": {
+        "home": "斯拉维亚",
+        "away": "朗斯"
+      },
       "league": "欧冠",
       "kickoff": "2026-09-11 03:00",
       "handicap": "1",
@@ -374,7 +447,7 @@
       "rank_score": 25,
       "has_report": true,
       "report_level": "final",
-      "report_file": "周四004-斯拉维亚朗斯.md"
+      "report_file": "jc-thu004.md"
     },
     {
       "id": "jingcai:周四005",
@@ -382,6 +455,10 @@
       "sale_id": "周四005",
       "home": "曼联",
       "away": "萨巴赫",
+      "teams": {
+        "home": "曼联",
+        "away": "萨巴赫"
+      },
       "league": "欧冠",
       "kickoff": "2026-09-11 03:00",
       "handicap": "-2",
@@ -397,7 +474,7 @@
       "rank_score": 0,
       "has_report": true,
       "report_level": "final",
-      "report_file": "周四005-曼联萨巴赫.md"
+      "report_file": "jc-thu005.md"
     },
     {
       "id": "jingcai:周四006",
@@ -405,6 +482,10 @@
       "sale_id": "周四006",
       "home": "阿马多拉",
       "away": "布拉加",
+      "teams": {
+        "home": "阿马多拉",
+        "away": "布拉加"
+      },
       "league": "葡超",
       "kickoff": "2026-09-11 03:15",
       "handicap": "1",
@@ -424,7 +505,7 @@
       "rank_score": 0,
       "has_report": true,
       "report_level": "final",
-      "report_file": "周四006-阿马多拉布拉加.md"
+      "report_file": "jc-thu006.md"
     },
     {
       "id": "jingcai:周四007",
@@ -432,6 +513,10 @@
       "sale_id": "周四007",
       "home": "德尔瓦耶",
       "away": "弗拉门戈",
+      "teams": {
+        "home": "德尔瓦耶",
+        "away": "弗拉门戈"
+      },
       "league": "解放者杯",
       "kickoff": "2026-09-11 08:30",
       "handicap": "-1",
@@ -451,7 +536,7 @@
       "rank_score": 25,
       "has_report": true,
       "report_level": "final",
-      "report_file": "周四007-德尔瓦耶弗拉门戈.md"
+      "report_file": "jc-thu007.md"
     },
     {
       "id": "beidan:1",
@@ -459,6 +544,10 @@
       "sale_id": "1",
       "home": "蔚山HD",
       "away": "FC首尔",
+      "teams": {
+        "home": "蔚山HD",
+        "away": "FC首尔"
+      },
       "league": "K1联赛",
       "kickoff": null,
       "handicap": "0",
@@ -468,9 +557,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "北单91-科莫RB莱比锡.md"
     },
     {
       "id": "beidan:10",
@@ -478,6 +567,10 @@
       "sale_id": "10",
       "home": "奈梅亨",
       "away": "鹿特丹精英",
+      "teams": {
+        "home": "奈梅亨",
+        "away": "鹿特丹精英"
+      },
       "league": "荷甲",
       "kickoff": null,
       "handicap": "-1",
@@ -487,9 +580,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "jc-wed010.md"
     },
     {
       "id": "beidan:11",
@@ -497,6 +590,10 @@
       "sale_id": "11",
       "home": "唐卡斯特",
       "away": "哈德斯菲尔德",
+      "teams": {
+        "home": "唐卡斯特",
+        "away": "哈德斯菲尔德"
+      },
       "league": "英锦赛",
       "kickoff": null,
       "handicap": "0",
@@ -506,9 +603,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "jc-wed011.md"
     },
     {
       "id": "beidan:12",
@@ -516,6 +613,10 @@
       "sale_id": "12",
       "home": "AFC伯恩茅斯",
       "away": "林肯城",
+      "teams": {
+        "home": "AFC伯恩茅斯",
+        "away": "林肯城"
+      },
       "league": "英联杯",
       "kickoff": null,
       "handicap": "-2",
@@ -525,9 +626,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "jc-wed012.md"
     },
     {
       "id": "beidan:13",
@@ -535,6 +636,10 @@
       "sale_id": "13",
       "home": "水晶宫",
       "away": "米德尔斯堡",
+      "teams": {
+        "home": "水晶宫",
+        "away": "米德尔斯堡"
+      },
       "league": "英联杯",
       "kickoff": null,
       "handicap": "-1",
@@ -544,9 +649,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "jc-wed013.md"
     },
     {
       "id": "beidan:14",
@@ -554,6 +659,10 @@
       "sale_id": "14",
       "home": "莱顿东方",
       "away": "布拉德福德城",
+      "teams": {
+        "home": "莱顿东方",
+        "away": "布拉德福德城"
+      },
       "league": "英联杯",
       "kickoff": null,
       "handicap": "0",
@@ -563,9 +672,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单14-莱顿东方布拉德福德城.md"
     },
     {
       "id": "beidan:15",
@@ -573,6 +682,10 @@
       "sale_id": "15",
       "home": "桑德兰",
       "away": "赫尔城",
+      "teams": {
+        "home": "桑德兰",
+        "away": "赫尔城"
+      },
       "league": "英联杯",
       "kickoff": null,
       "handicap": "-1",
@@ -582,9 +695,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "jc-wed015.md"
     },
     {
       "id": "beidan:16",
@@ -592,6 +705,10 @@
       "sale_id": "16",
       "home": "布莱克本",
       "away": "谢菲尔德联",
+      "teams": {
+        "home": "布莱克本",
+        "away": "谢菲尔德联"
+      },
       "league": "英冠",
       "kickoff": null,
       "handicap": "0",
@@ -601,9 +718,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单16-布莱克本谢菲尔德联.md"
     },
     {
       "id": "beidan:17",
@@ -611,6 +728,10 @@
       "sale_id": "17",
       "home": "卡迪夫城",
       "away": "斯托克城",
+      "teams": {
+        "home": "卡迪夫城",
+        "away": "斯托克城"
+      },
       "league": "英冠",
       "kickoff": null,
       "handicap": "0",
@@ -620,9 +741,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单17-卡迪夫城斯托克城.md"
     },
     {
       "id": "beidan:18",
@@ -630,6 +751,10 @@
       "sale_id": "18",
       "home": "南安普顿",
       "away": "斯旺西",
+      "teams": {
+        "home": "南安普顿",
+        "away": "斯旺西"
+      },
       "league": "英冠",
       "kickoff": null,
       "handicap": "0",
@@ -639,9 +764,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单18-南安普顿斯旺西.md"
     },
     {
       "id": "beidan:19",
@@ -649,6 +774,10 @@
       "sale_id": "19",
       "home": "沃特福德",
       "away": "普雷斯顿",
+      "teams": {
+        "home": "沃特福德",
+        "away": "普雷斯顿"
+      },
       "league": "英冠",
       "kickoff": null,
       "handicap": "0",
@@ -658,9 +787,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单19-沃特福德普雷斯顿.md"
     },
     {
       "id": "beidan:2",
@@ -668,6 +797,10 @@
       "sale_id": "2",
       "home": "仁川联",
       "away": "富川1995",
+      "teams": {
+        "home": "仁川联",
+        "away": "富川1995"
+      },
       "league": "K1联赛",
       "kickoff": null,
       "handicap": "-1",
@@ -677,9 +810,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单62-博塔弗戈SP新奥里藏蒂诺.md"
     },
     {
       "id": "beidan:20",
@@ -687,6 +820,10 @@
       "sale_id": "20",
       "home": "雷克瑟姆",
       "away": "伯恩利",
+      "teams": {
+        "home": "雷克瑟姆",
+        "away": "伯恩利"
+      },
       "league": "英冠",
       "kickoff": null,
       "handicap": "0",
@@ -696,9 +833,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单20-雷克瑟姆伯恩利.md"
     },
     {
       "id": "beidan:21",
@@ -706,6 +843,10 @@
       "sale_id": "21",
       "home": "奥林匹亚科斯",
       "away": "沃洛斯",
+      "teams": {
+        "home": "奥林匹亚科斯",
+        "away": "沃洛斯"
+      },
       "league": "希腊杯",
       "kickoff": null,
       "handicap": "-2",
@@ -715,9 +856,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单21-奥林匹亚科斯沃洛斯.md"
     },
     {
       "id": "beidan:22",
@@ -725,6 +866,10 @@
       "sale_id": "22",
       "home": "皇家马德里",
       "away": "国际米兰",
+      "teams": {
+        "home": "皇家马德里",
+        "away": "国际米兰"
+      },
       "league": "欧冠联赛",
       "kickoff": null,
       "handicap": "-1",
@@ -734,9 +879,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单22-皇家马德里国际米兰.md"
     },
     {
       "id": "beidan:23",
@@ -744,6 +889,10 @@
       "sale_id": "23",
       "home": "多特蒙德",
       "away": "比利亚雷亚尔",
+      "teams": {
+        "home": "多特蒙德",
+        "away": "比利亚雷亚尔"
+      },
       "league": "欧冠联赛",
       "kickoff": null,
       "handicap": "-1",
@@ -753,9 +902,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单23-多特蒙德比利亚雷亚尔.md"
     },
     {
       "id": "beidan:24",
@@ -763,6 +912,10 @@
       "sale_id": "24",
       "home": "波尔图",
       "away": "曼彻斯特城",
+      "teams": {
+        "home": "波尔图",
+        "away": "曼彻斯特城"
+      },
       "league": "欧冠联赛",
       "kickoff": null,
       "handicap": "1",
@@ -772,9 +925,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单24-波尔图曼彻斯特城.md"
     },
     {
       "id": "beidan:25",
@@ -782,6 +935,10 @@
       "sale_id": "25",
       "home": "里尔",
       "away": "皇家贝蒂斯",
+      "teams": {
+        "home": "里尔",
+        "away": "皇家贝蒂斯"
+      },
       "league": "欧冠联赛",
       "kickoff": null,
       "handicap": "0",
@@ -791,9 +948,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单25-里尔皇家贝蒂斯.md"
     },
     {
       "id": "beidan:26",
@@ -801,6 +958,10 @@
       "sale_id": "26",
       "home": "米尔沃尔",
       "away": "纽卡斯尔联",
+      "teams": {
+        "home": "米尔沃尔",
+        "away": "纽卡斯尔联"
+      },
       "league": "英联杯",
       "kickoff": null,
       "handicap": "1",
@@ -810,9 +971,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单26-米尔沃尔纽卡斯尔联.md"
     },
     {
       "id": "beidan:27",
@@ -820,6 +981,10 @@
       "sale_id": "27",
       "home": "博尔顿",
       "away": "西汉姆联",
+      "teams": {
+        "home": "博尔顿",
+        "away": "西汉姆联"
+      },
       "league": "英冠",
       "kickoff": null,
       "handicap": "1",
@@ -829,9 +994,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单27-博尔顿西汉姆联.md"
     },
     {
       "id": "beidan:28",
@@ -839,6 +1004,10 @@
       "sale_id": "28",
       "home": "弗鲁米嫩塞",
       "away": "普拉腾斯",
+      "teams": {
+        "home": "弗鲁米嫩塞",
+        "away": "普拉腾斯"
+      },
       "league": "解放者杯",
       "kickoff": null,
       "handicap": "-1",
@@ -848,9 +1017,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单28-弗鲁米嫩塞普拉腾斯.md"
     },
     {
       "id": "beidan:29",
@@ -858,6 +1027,10 @@
       "sale_id": "29",
       "home": "圣菲独立",
       "away": "瓦斯科达伽马",
+      "teams": {
+        "home": "圣菲独立",
+        "away": "瓦斯科达伽马"
+      },
       "league": "南俱杯",
       "kickoff": null,
       "handicap": "0",
@@ -867,9 +1040,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单29-圣菲独立瓦斯科达伽马.md"
     },
     {
       "id": "beidan:3",
@@ -877,6 +1050,10 @@
       "sale_id": "3",
       "home": "拉赫蒂",
       "away": "玛丽港",
+      "teams": {
+        "home": "拉赫蒂",
+        "away": "玛丽港"
+      },
       "league": "芬超",
       "kickoff": null,
       "handicap": "-1",
@@ -886,9 +1063,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单36-亚布洛内茨俄斯特拉发.md"
     },
     {
       "id": "beidan:30",
@@ -896,6 +1073,10 @@
       "sale_id": "30",
       "home": "克里西乌马",
       "away": "尤文图德",
+      "teams": {
+        "home": "克里西乌马",
+        "away": "尤文图德"
+      },
       "league": "巴西乙",
       "kickoff": null,
       "handicap": "0",
@@ -905,9 +1086,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单30-克里西乌马尤文图德.md"
     },
     {
       "id": "beidan:31",
@@ -915,6 +1096,10 @@
       "sale_id": "31",
       "home": "博卡青年",
       "away": "圣保罗",
+      "teams": {
+        "home": "博卡青年",
+        "away": "圣保罗"
+      },
       "league": "南俱杯",
       "kickoff": null,
       "handicap": "-1",
@@ -924,9 +1109,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单31-博卡青年圣保罗.md"
     },
     {
       "id": "beidan:32",
@@ -934,6 +1119,10 @@
       "sale_id": "32",
       "home": "大田韩亚市民",
       "away": "FC安养",
+      "teams": {
+        "home": "大田韩亚市民",
+        "away": "FC安养"
+      },
       "league": "K1联赛",
       "kickoff": null,
       "handicap": "-1",
@@ -943,9 +1132,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单32-大田韩亚市民FC安养.md"
     },
     {
       "id": "beidan:33",
@@ -953,6 +1142,10 @@
       "sale_id": "33",
       "home": "江原FC",
       "away": "全北现代",
+      "teams": {
+        "home": "江原FC",
+        "away": "全北现代"
+      },
       "league": "K1联赛",
       "kickoff": null,
       "handicap": "0",
@@ -962,9 +1155,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单33-江原FC全北现代.md"
     },
     {
       "id": "beidan:34",
@@ -972,6 +1165,10 @@
       "sale_id": "34",
       "home": "光州FC",
       "away": "济州SK",
+      "teams": {
+        "home": "光州FC",
+        "away": "济州SK"
+      },
       "league": "K1联赛",
       "kickoff": null,
       "handicap": "1",
@@ -981,9 +1178,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单34-光州FC济州SK.md"
     },
     {
       "id": "beidan:35",
@@ -991,6 +1188,10 @@
       "sale_id": "35",
       "home": "浦项铁人",
       "away": "金泉尚武",
+      "teams": {
+        "home": "浦项铁人",
+        "away": "金泉尚武"
+      },
       "league": "K1联赛",
       "kickoff": null,
       "handicap": "0",
@@ -1000,9 +1201,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单35-浦项铁人金泉尚武.md"
     },
     {
       "id": "beidan:36",
@@ -1010,6 +1211,10 @@
       "sale_id": "36",
       "home": "亚布洛内茨",
       "away": "俄斯特拉发",
+      "teams": {
+        "home": "亚布洛内茨",
+        "away": "俄斯特拉发"
+      },
       "league": "捷克甲",
       "kickoff": null,
       "handicap": "0",
@@ -1019,9 +1224,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单36-亚布洛内茨俄斯特拉发.md"
     },
     {
       "id": "beidan:37",
@@ -1029,6 +1234,10 @@
       "sale_id": "37",
       "home": "赫尔辛基",
       "away": "国际图尔库",
+      "teams": {
+        "home": "赫尔辛基",
+        "away": "国际图尔库"
+      },
       "league": "芬超",
       "kickoff": null,
       "handicap": "0",
@@ -1038,9 +1247,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单37-赫尔辛基国际图尔库.md"
     },
     {
       "id": "beidan:38",
@@ -1048,6 +1257,10 @@
       "sale_id": "38",
       "home": "巴塞罗那",
       "away": "费耶诺德",
+      "teams": {
+        "home": "巴塞罗那",
+        "away": "费耶诺德"
+      },
       "league": "欧冠联赛",
       "kickoff": null,
       "handicap": "-3",
@@ -1057,9 +1270,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单38-巴塞罗那费耶诺德.md"
     },
     {
       "id": "beidan:39",
@@ -1067,6 +1280,10 @@
       "sale_id": "39",
       "home": "斯图加特",
       "away": "维京",
+      "teams": {
+        "home": "斯图加特",
+        "away": "维京"
+      },
       "league": "欧冠联赛",
       "kickoff": null,
       "handicap": "-2",
@@ -1076,9 +1293,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单39-斯图加特维京.md"
     },
     {
       "id": "beidan:4",
@@ -1086,6 +1303,10 @@
       "sale_id": "4",
       "home": "伊尔维斯",
       "away": "查路",
+      "teams": {
+        "home": "伊尔维斯",
+        "away": "查路"
+      },
       "league": "芬超",
       "kickoff": null,
       "handicap": "-1",
@@ -1095,9 +1316,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单4-伊尔维斯查路.md"
     },
     {
       "id": "beidan:40",
@@ -1105,6 +1326,10 @@
       "sale_id": "40",
       "home": "特温特",
       "away": "特尔斯达",
+      "teams": {
+        "home": "特温特",
+        "away": "特尔斯达"
+      },
       "league": "荷甲",
       "kickoff": null,
       "handicap": "-2",
@@ -1114,9 +1339,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单40-特温特特尔斯达.md"
     },
     {
       "id": "beidan:41",
@@ -1124,6 +1349,10 @@
       "sale_id": "41",
       "home": "赫拉德茨克拉洛韦",
       "away": "比尔森胜利",
+      "teams": {
+        "home": "赫拉德茨克拉洛韦",
+        "away": "比尔森胜利"
+      },
       "league": "捷克甲",
       "kickoff": null,
       "handicap": "0",
@@ -1133,9 +1362,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单41-赫拉德茨克拉洛韦比尔森胜利.md"
     },
     {
       "id": "beidan:42",
@@ -1143,6 +1372,10 @@
       "sale_id": "42",
       "home": "科灵",
       "away": "欧登塞",
+      "teams": {
+        "home": "科灵",
+        "away": "欧登塞"
+      },
       "league": "丹麦杯",
       "kickoff": null,
       "handicap": "0",
@@ -1152,9 +1385,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单42-科灵欧登塞.md"
     },
     {
       "id": "beidan:43",
@@ -1162,6 +1395,10 @@
       "sale_id": "43",
       "home": "兰斯克鲁纳",
       "away": "赫尔辛堡",
+      "teams": {
+        "home": "兰斯克鲁纳",
+        "away": "赫尔辛堡"
+      },
       "league": "瑞典甲",
       "kickoff": null,
       "handicap": "0",
@@ -1171,9 +1408,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单43-兰斯克鲁纳赫尔辛堡.md"
     },
     {
       "id": "beidan:44",
@@ -1181,6 +1418,10 @@
       "sale_id": "44",
       "home": "永斯基",
       "away": "诺尔比",
+      "teams": {
+        "home": "永斯基",
+        "away": "诺尔比"
+      },
       "league": "瑞典甲",
       "kickoff": null,
       "handicap": "0",
@@ -1190,9 +1431,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单44-永斯基诺尔比.md"
     },
     {
       "id": "beidan:45",
@@ -1200,6 +1441,10 @@
       "sale_id": "45",
       "home": "桑德维肯",
       "away": "奥迪沃德",
+      "teams": {
+        "home": "桑德维肯",
+        "away": "奥迪沃德"
+      },
       "league": "瑞典甲",
       "kickoff": null,
       "handicap": "0",
@@ -1209,9 +1454,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单45-桑德维肯奥迪沃德.md"
     },
     {
       "id": "beidan:46",
@@ -1219,6 +1464,10 @@
       "sale_id": "46",
       "home": "诺迪克联",
       "away": "韦纳穆",
+      "teams": {
+        "home": "诺迪克联",
+        "away": "韦纳穆"
+      },
       "league": "瑞典甲",
       "kickoff": null,
       "handicap": "0",
@@ -1228,9 +1477,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单46-诺迪克联韦纳穆.md"
     },
     {
       "id": "beidan:47",
@@ -1238,6 +1487,10 @@
       "sale_id": "47",
       "home": "德比郡",
       "away": "西布朗维奇",
+      "teams": {
+        "home": "德比郡",
+        "away": "西布朗维奇"
+      },
       "league": "英冠",
       "kickoff": null,
       "handicap": "0",
@@ -1247,9 +1500,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单47-德比郡西布朗维奇.md"
     },
     {
       "id": "beidan:48",
@@ -1257,6 +1510,10 @@
       "sale_id": "48",
       "home": "诺维奇",
       "away": "伯明翰",
+      "teams": {
+        "home": "诺维奇",
+        "away": "伯明翰"
+      },
       "league": "英冠",
       "kickoff": null,
       "handicap": "0",
@@ -1266,9 +1523,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单48-诺维奇伯明翰.md"
     },
     {
       "id": "beidan:49",
@@ -1276,6 +1533,10 @@
       "sale_id": "49",
       "home": "格拉斯哥流浪者",
       "away": "圣米伦",
+      "teams": {
+        "home": "格拉斯哥流浪者",
+        "away": "圣米伦"
+      },
       "league": "苏超",
       "kickoff": null,
       "handicap": "-2",
@@ -1285,9 +1546,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单49-格拉斯哥流浪者圣米伦.md"
     },
     {
       "id": "beidan:5",
@@ -1295,6 +1556,10 @@
       "sale_id": "5",
       "home": "TPS图尔库",
       "away": "塞伊奈约基",
+      "teams": {
+        "home": "TPS图尔库",
+        "away": "塞伊奈约基"
+      },
       "league": "芬超",
       "kickoff": null,
       "handicap": "0",
@@ -1304,9 +1569,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "52-里斯本加拉塔萨.md"
     },
     {
       "id": "beidan:50",
@@ -1314,6 +1579,10 @@
       "sale_id": "50",
       "home": "巴黎圣日耳曼",
       "away": "布拉迪斯拉发",
+      "teams": {
+        "home": "巴黎圣日耳曼",
+        "away": "布拉迪斯拉发"
+      },
       "league": "欧冠联赛",
       "kickoff": "2026-09-10 03:00",
       "handicap": "-3",
@@ -1323,9 +1592,9 @@
       "fixture_id": 1635705,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "50-巴黎圣曼布拉迪斯.md"
     },
     {
       "id": "beidan:51",
@@ -1333,22 +1602,35 @@
       "sale_id": "51",
       "home": "利物浦",
       "away": "马德里竞技",
+      "teams": {
+        "home": "利物浦",
+        "away": "马德里竞技"
+      },
       "league": "欧冠联赛",
       "kickoff": "2026-09-10 03:00",
       "handicap": "-1",
       "nspf": null,
       "spf": [
-        "3.98",
-        "3.05",
-        "2.36"
+        "3.94",
+        "3.10",
+        "2.35"
       ],
       "sell_status": "paused",
       "fixture_id": 1635686,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "51-利物浦马德里竞技.md",
+      "sp_meta": {
+        "play": "让球胜平负",
+        "market": "rqspf",
+        "market_label": "北单让球胜平负对照价",
+        "source": "okooo",
+        "source_label": "okooo单场公开页",
+        "official": false,
+        "handicap": "-1"
+      }
     },
     {
       "id": "beidan:52",
@@ -1356,6 +1638,10 @@
       "sale_id": "52",
       "home": "葡萄牙体育",
       "away": "加拉塔萨雷",
+      "teams": {
+        "home": "葡萄牙体育",
+        "away": "加拉塔萨雷"
+      },
       "league": "欧冠联赛",
       "kickoff": "2026-09-10 03:00",
       "handicap": "0",
@@ -1365,9 +1651,9 @@
       "fixture_id": 1635736,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "52-里斯本加拉塔萨.md"
     },
     {
       "id": "beidan:53",
@@ -1375,6 +1661,10 @@
       "sale_id": "53",
       "home": "那不勒斯",
       "away": "阿森纳",
+      "teams": {
+        "home": "那不勒斯",
+        "away": "阿森纳"
+      },
       "league": "欧冠联赛",
       "kickoff": "2026-09-10 03:00",
       "handicap": "1",
@@ -1384,9 +1674,9 @@
       "fixture_id": 1635698,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "53-那不勒斯阿森纳.md"
     },
     {
       "id": "beidan:54",
@@ -1394,6 +1684,10 @@
       "sale_id": "54",
       "home": "切尔西",
       "away": "利兹联",
+      "teams": {
+        "home": "切尔西",
+        "away": "利兹联"
+      },
       "league": "英联杯",
       "kickoff": "2026-09-10 03:00",
       "handicap": "-1",
@@ -1403,9 +1697,9 @@
       "fixture_id": 1636205,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "54-切尔西利兹联.md"
     },
     {
       "id": "beidan:55",
@@ -1413,18 +1707,35 @@
       "sale_id": "55",
       "home": "查尔顿",
       "away": "女王公园巡游者",
+      "teams": {
+        "home": "查尔顿",
+        "away": "女王公园巡游者"
+      },
       "league": "英冠",
       "kickoff": "2026-09-10 03:00",
       "handicap": "0",
       "nspf": null,
-      "spf": null,
+      "spf": [
+        "4.90",
+        "2.94",
+        "2.19"
+      ],
       "sell_status": "paused",
       "fixture_id": 1563151,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "55-查尔顿女王巡游.md",
+      "sp_meta": {
+        "play": "让球胜平负",
+        "market": "rqspf",
+        "market_label": "北单让球胜平负对照价",
+        "source": "okooo",
+        "source_label": "okooo单场公开页",
+        "official": false,
+        "handicap": "0"
+      }
     },
     {
       "id": "beidan:56",
@@ -1432,6 +1743,10 @@
       "sale_id": "56",
       "home": "圣约翰斯通",
       "away": "凯尔特人",
+      "teams": {
+        "home": "圣约翰斯通",
+        "away": "凯尔特人"
+      },
       "league": "苏超",
       "kickoff": null,
       "handicap": "1",
@@ -1441,9 +1756,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单56-圣约翰斯通凯尔特人.md"
     },
     {
       "id": "beidan:57",
@@ -1451,6 +1766,10 @@
       "sale_id": "57",
       "home": "摩雷伦斯",
       "away": "本菲卡",
+      "teams": {
+        "home": "摩雷伦斯",
+        "away": "本菲卡"
+      },
       "league": "葡超",
       "kickoff": "2026-09-10 03:45",
       "handicap": "2",
@@ -1460,9 +1779,9 @@
       "fixture_id": 1575469,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "57-摩雷伦斯本菲卡.md"
     },
     {
       "id": "beidan:58",
@@ -1470,6 +1789,10 @@
       "sale_id": "58",
       "home": "帕尔梅拉斯",
       "away": "基多体育大学",
+      "teams": {
+        "home": "帕尔梅拉斯",
+        "away": "基多体育大学"
+      },
       "league": "解放者杯",
       "kickoff": null,
       "handicap": "-2",
@@ -1479,9 +1802,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "58-帕梅拉斯基多体大.md"
     },
     {
       "id": "beidan:59",
@@ -1489,18 +1812,22 @@
       "sale_id": "59",
       "home": "桑托斯",
       "away": "米内罗竞技",
+      "teams": {
+        "home": "桑托斯",
+        "away": "米内罗竞技"
+      },
       "league": "南俱杯",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1631510,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单59-桑托斯米内罗竞技.md"
     },
     {
       "id": "beidan:6",
@@ -1508,6 +1835,10 @@
       "sale_id": "6",
       "home": "瓦萨",
       "away": "AC奥卢",
+      "teams": {
+        "home": "瓦萨",
+        "away": "AC奥卢"
+      },
       "league": "芬超",
       "kickoff": null,
       "handicap": "0",
@@ -1517,9 +1848,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单62-博塔弗戈SP新奥里藏蒂诺.md"
     },
     {
       "id": "beidan:60",
@@ -1527,18 +1858,22 @@
       "sale_id": "60",
       "home": "列斯特拉体育",
       "away": "班菲尔德",
+      "teams": {
+        "home": "列斯特拉体育",
+        "away": "班菲尔德"
+      },
       "league": "阿根廷杯",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1635536,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单60-列斯特拉体育班菲尔德.md"
     },
     {
       "id": "beidan:61",
@@ -1546,18 +1881,22 @@
       "sale_id": "61",
       "home": "福塔莱萨",
       "away": "阿瓦伊",
+      "teams": {
+        "home": "福塔莱萨",
+        "away": "阿瓦伊"
+      },
       "league": "巴西乙",
       "kickoff": null,
       "handicap": "-1",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1520865,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单61-福塔莱萨阿瓦伊.md"
     },
     {
       "id": "beidan:62",
@@ -1565,18 +1904,22 @@
       "sale_id": "62",
       "home": "博塔弗戈SP",
       "away": "新奥里藏蒂诺",
+      "teams": {
+        "home": "博塔弗戈SP",
+        "away": "新奥里藏蒂诺"
+      },
       "league": "巴西乙",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1520862,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单62-博塔弗戈SP新奥里藏蒂诺.md"
     },
     {
       "id": "beidan:63",
@@ -1584,18 +1927,22 @@
       "sale_id": "63",
       "home": "亚特兰大联",
       "away": "奥兰多城",
+      "teams": {
+        "home": "亚特兰大联",
+        "away": "奥兰多城"
+      },
       "league": "美职",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1490452,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单63-亚特兰大联奥兰多城.md"
     },
     {
       "id": "beidan:64",
@@ -1603,18 +1950,22 @@
       "sale_id": "64",
       "home": "华盛顿联",
       "away": "哥伦布机员",
+      "teams": {
+        "home": "华盛顿联",
+        "away": "哥伦布机员"
+      },
       "league": "美职",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1490454,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单64-华盛顿联哥伦布机员.md"
     },
     {
       "id": "beidan:65",
@@ -1622,18 +1973,22 @@
       "sale_id": "65",
       "home": "CF蒙特利尔",
       "away": "夏洛特FC",
+      "teams": {
+        "home": "CF蒙特利尔",
+        "away": "夏洛特FC"
+      },
       "league": "美职",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1490456,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单65-CF蒙特利尔夏洛特FC.md"
     },
     {
       "id": "beidan:66",
@@ -1641,18 +1996,22 @@
       "sale_id": "66",
       "home": "多伦多FC",
       "away": "纳什维尔SC",
+      "teams": {
+        "home": "多伦多FC",
+        "away": "纳什维尔SC"
+      },
       "league": "美职",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1490453,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单66-多伦多FC纳什维尔SC.md"
     },
     {
       "id": "beidan:67",
@@ -1660,18 +2019,22 @@
       "sale_id": "67",
       "home": "米内罗美洲",
       "away": "累西腓航海",
+      "teams": {
+        "home": "米内罗美洲",
+        "away": "累西腓航海"
+      },
       "league": "巴西乙",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1520860,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单67-米内罗美洲累西腓航海.md"
     },
     {
       "id": "beidan:68",
@@ -1679,18 +2042,22 @@
       "sale_id": "68",
       "home": "铁路工人",
       "away": "巴西雷加塔斯",
+      "teams": {
+        "home": "铁路工人",
+        "away": "巴西雷加塔斯"
+      },
       "league": "巴西乙",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1520866,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单68-铁路工人巴西雷加塔斯.md"
     },
     {
       "id": "beidan:69",
@@ -1698,18 +2065,22 @@
       "sale_id": "69",
       "home": "费城联合",
       "away": "FC辛辛那提",
+      "teams": {
+        "home": "费城联合",
+        "away": "FC辛辛那提"
+      },
       "league": "美职",
       "kickoff": null,
       "handicap": "-1",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1490451,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单69-费城联合FC辛辛那提.md"
     },
     {
       "id": "beidan:7",
@@ -1717,6 +2088,10 @@
       "sale_id": "7",
       "home": "格尼斯坦",
       "away": "库普斯",
+      "teams": {
+        "home": "格尼斯坦",
+        "away": "库普斯"
+      },
       "league": "芬超",
       "kickoff": null,
       "handicap": "0",
@@ -1726,9 +2101,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单72-奥斯汀FC科罗拉多急流.md"
     },
     {
       "id": "beidan:70",
@@ -1736,18 +2111,22 @@
       "sale_id": "70",
       "home": "纽约城",
       "away": "新英格兰革命",
+      "teams": {
+        "home": "纽约城",
+        "away": "新英格兰革命"
+      },
       "league": "美职",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1490455,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单70-纽约城新英格兰革命.md"
     },
     {
       "id": "beidan:71",
@@ -1755,18 +2134,35 @@
       "sale_id": "71",
       "home": "拉普拉塔大学生",
       "away": "科林蒂安",
+      "teams": {
+        "home": "拉普拉塔大学生",
+        "away": "科林蒂安"
+      },
       "league": "解放者杯",
       "kickoff": "2026-09-10 08:30",
       "handicap": "0",
       "nspf": null,
-      "spf": null,
+      "spf": [
+        "2.57",
+        "2.46",
+        "4.85"
+      ],
       "sell_status": "paused",
       "fixture_id": 1631506,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "71-拉普拉塔大学生科林蒂安.md",
+      "sp_meta": {
+        "play": "让球胜平负",
+        "market": "rqspf",
+        "market_label": "北单让球胜平负对照价",
+        "source": "okooo",
+        "source_label": "okooo单场公开页",
+        "official": false,
+        "handicap": "0"
+      }
     },
     {
       "id": "beidan:72",
@@ -1774,18 +2170,22 @@
       "sale_id": "72",
       "home": "奥斯汀FC",
       "away": "科罗拉多急流",
+      "teams": {
+        "home": "奥斯汀FC",
+        "away": "科罗拉多急流"
+      },
       "league": "美职",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1490459,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单72-奥斯汀FC科罗拉多急流.md"
     },
     {
       "id": "beidan:73",
@@ -1793,18 +2193,35 @@
       "sale_id": "73",
       "home": "芝加哥火焰",
       "away": "国际迈阿密",
+      "teams": {
+        "home": "芝加哥火焰",
+        "away": "国际迈阿密"
+      },
       "league": "美职",
       "kickoff": "2026-09-10 08:30",
       "handicap": "0",
       "nspf": null,
-      "spf": null,
+      "spf": [
+        "2.98",
+        "4.32",
+        "2.30"
+      ],
       "sell_status": "paused",
       "fixture_id": 1490457,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "73-芝加哥迈阿密.md",
+      "sp_meta": {
+        "play": "让球胜平负",
+        "market": "rqspf",
+        "market_label": "北单让球胜平负对照价",
+        "source": "okooo",
+        "source_label": "okooo单场公开页",
+        "official": false,
+        "handicap": "0"
+      }
     },
     {
       "id": "beidan:74",
@@ -1812,18 +2229,22 @@
       "sale_id": "74",
       "home": "休斯敦迪纳摩",
       "away": "皇家盐湖城",
+      "teams": {
+        "home": "休斯敦迪纳摩",
+        "away": "皇家盐湖城"
+      },
       "league": "美职",
       "kickoff": null,
       "handicap": "-1",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1490460,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单74-休斯敦迪纳摩皇家盐湖城.md"
     },
     {
       "id": "beidan:75",
@@ -1831,18 +2252,22 @@
       "sale_id": "75",
       "home": "明尼苏达联",
       "away": "FC达拉斯",
+      "teams": {
+        "home": "明尼苏达联",
+        "away": "FC达拉斯"
+      },
       "league": "美职",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1490458,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单75-明尼苏达联FC达拉斯.md"
     },
     {
       "id": "beidan:76",
@@ -1850,18 +2275,22 @@
       "sale_id": "76",
       "home": "戈亚尼亚竞技",
       "away": "塞阿拉",
+      "teams": {
+        "home": "戈亚尼亚竞技",
+        "away": "塞阿拉"
+      },
       "league": "巴西乙",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1520861,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单76-戈亚尼亚竞技塞阿拉.md"
     },
     {
       "id": "beidan:77",
@@ -1869,18 +2298,22 @@
       "sale_id": "77",
       "home": "洛杉矶FC",
       "away": "纽约红牛",
+      "teams": {
+        "home": "洛杉矶FC",
+        "away": "纽约红牛"
+      },
       "league": "美职",
       "kickoff": null,
       "handicap": "-1",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1490461,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单77-洛杉矶FC纽约红牛.md"
     },
     {
       "id": "beidan:78",
@@ -1888,18 +2321,22 @@
       "sale_id": "78",
       "home": "波特兰伐木者",
       "away": "圣路易斯城",
+      "teams": {
+        "home": "波特兰伐木者",
+        "away": "圣路易斯城"
+      },
       "league": "美职",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1490465,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单78-波特兰伐木者圣路易斯城.md"
     },
     {
       "id": "beidan:79",
@@ -1907,18 +2344,22 @@
       "sale_id": "79",
       "home": "圣迭戈FC",
       "away": "圣何塞地震",
+      "teams": {
+        "home": "圣迭戈FC",
+        "away": "圣何塞地震"
+      },
       "league": "美职",
       "kickoff": null,
       "handicap": "-1",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1490464,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单79-圣迭戈FC圣何塞地震.md"
     },
     {
       "id": "beidan:8",
@@ -1926,6 +2367,10 @@
       "sale_id": "8",
       "home": "布鲁日",
       "away": "阿斯顿维拉",
+      "teams": {
+        "home": "布鲁日",
+        "away": "阿斯顿维拉"
+      },
       "league": "欧冠联赛",
       "kickoff": null,
       "handicap": "0",
@@ -1935,9 +2380,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单28-弗鲁米嫩塞普拉腾斯.md"
     },
     {
       "id": "beidan:80",
@@ -1945,18 +2390,22 @@
       "sale_id": "80",
       "home": "温哥华白浪",
       "away": "洛杉矶银河",
+      "teams": {
+        "home": "温哥华白浪",
+        "away": "洛杉矶银河"
+      },
       "league": "美职",
       "kickoff": null,
       "handicap": "-2",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1490462,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单80-温哥华白浪洛杉矶银河.md"
     },
     {
       "id": "beidan:81",
@@ -1964,18 +2413,22 @@
       "sale_id": "81",
       "home": "特里波利斯之星",
       "away": "阿瑞斯",
+      "teams": {
+        "home": "特里波利斯之星",
+        "away": "阿瑞斯"
+      },
       "league": "希腊杯",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1638573,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单81-特里波利斯之星阿瑞斯.md"
     },
     {
       "id": "beidan:82",
@@ -1983,18 +2436,35 @@
       "sale_id": "82",
       "home": "费内巴切",
       "away": "罗马",
+      "teams": {
+        "home": "费内巴切",
+        "away": "罗马"
+      },
       "league": "欧冠联赛",
       "kickoff": "2026-09-11 00:45",
       "handicap": "0",
       "nspf": null,
-      "spf": null,
+      "spf": [
+        "9.93",
+        "2.49",
+        "2.00"
+      ],
       "sell_status": "paused",
       "fixture_id": 1635659,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "82-费内巴切罗马.md",
+      "sp_meta": {
+        "play": "让球胜平负",
+        "market": "rqspf",
+        "market_label": "北单让球胜平负对照价",
+        "source": "okooo",
+        "source_label": "okooo单场公开页",
+        "official": false,
+        "handicap": "0"
+      }
     },
     {
       "id": "beidan:83",
@@ -2002,18 +2472,22 @@
       "sale_id": "83",
       "home": "厄斯特松德",
       "away": "布莱格",
+      "teams": {
+        "home": "厄斯特松德",
+        "away": "布莱格"
+      },
       "league": "瑞典甲",
       "kickoff": null,
       "handicap": "-1",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1497693,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单83-厄斯特松德布莱格.md"
     },
     {
       "id": "beidan:84",
@@ -2021,18 +2495,22 @@
       "sale_id": "84",
       "home": "松兹瓦尔",
       "away": "厄勒布鲁",
+      "teams": {
+        "home": "松兹瓦尔",
+        "away": "厄勒布鲁"
+      },
       "league": "瑞典甲",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1497695,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单84-松兹瓦尔厄勒布鲁.md"
     },
     {
       "id": "beidan:85",
@@ -2040,18 +2518,22 @@
       "sale_id": "85",
       "home": "瓦尔贝里",
       "away": "北雪平",
+      "teams": {
+        "home": "瓦尔贝里",
+        "away": "北雪平"
+      },
       "league": "瑞典甲",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1497696,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单85-瓦尔贝里北雪平.md"
     },
     {
       "id": "beidan:86",
@@ -2059,18 +2541,22 @@
       "sale_id": "86",
       "home": "法尔肯贝里",
       "away": "厄斯特什",
+      "teams": {
+        "home": "法尔肯贝里",
+        "away": "厄斯特什"
+      },
       "league": "瑞典甲",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1497689,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单86-法尔肯贝里厄斯特什.md"
     },
     {
       "id": "beidan:87",
@@ -2078,18 +2564,22 @@
       "sale_id": "87",
       "home": "帕纳辛纳科斯",
       "away": "基菲西亚",
+      "teams": {
+        "home": "帕纳辛纳科斯",
+        "away": "基菲西亚"
+      },
       "league": "希腊超",
       "kickoff": null,
       "handicap": "-2",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1593293,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单87-帕纳辛纳科斯基菲西亚.md"
     },
     {
       "id": "beidan:88",
@@ -2097,6 +2587,10 @@
       "sale_id": "88",
       "home": "拜仁慕尼黑",
       "away": "博德闪耀",
+      "teams": {
+        "home": "拜仁慕尼黑",
+        "away": "博德闪耀"
+      },
       "league": "欧冠联赛",
       "kickoff": "2026-09-11 03:00",
       "handicap": "-3",
@@ -2106,9 +2600,9 @@
       "fixture_id": 1635632,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "88-拜仁博德闪耀.md"
     },
     {
       "id": "beidan:89",
@@ -2116,6 +2610,10 @@
       "sale_id": "89",
       "home": "曼彻斯特联",
       "away": "萨巴赫",
+      "teams": {
+        "home": "曼彻斯特联",
+        "away": "萨巴赫"
+      },
       "league": "欧冠联赛",
       "kickoff": null,
       "handicap": "-2",
@@ -2125,9 +2623,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "89-曼联萨巴赫.md"
     },
     {
       "id": "beidan:9",
@@ -2135,6 +2633,10 @@
       "sale_id": "9",
       "home": "雅典AEK",
       "away": "LASK林茨",
+      "teams": {
+        "home": "雅典AEK",
+        "away": "LASK林茨"
+      },
       "league": "欧冠联赛",
       "kickoff": null,
       "handicap": "-1",
@@ -2144,9 +2646,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "北单91-科莫RB莱比锡.md"
     },
     {
       "id": "beidan:90",
@@ -2154,18 +2656,35 @@
       "sale_id": "90",
       "home": "布拉格斯拉维亚",
       "away": "朗斯",
+      "teams": {
+        "home": "布拉格斯拉维亚",
+        "away": "朗斯"
+      },
       "league": "欧冠联赛",
       "kickoff": "2026-09-11 03:00",
       "handicap": "0",
       "nspf": null,
-      "spf": null,
+      "spf": [
+        "2.13",
+        "4.42",
+        "3.26"
+      ],
       "sell_status": "paused",
       "fixture_id": 1635729,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "90-斯拉维亚朗斯.md",
+      "sp_meta": {
+        "play": "让球胜平负",
+        "market": "rqspf",
+        "market_label": "北单让球胜平负对照价",
+        "source": "okooo",
+        "source_label": "okooo单场公开页",
+        "official": false,
+        "handicap": "0"
+      }
     },
     {
       "id": "beidan:91",
@@ -2173,6 +2692,10 @@
       "sale_id": "91",
       "home": "科莫",
       "away": "RB莱比锡",
+      "teams": {
+        "home": "科莫",
+        "away": "RB莱比锡"
+      },
       "league": "欧冠联赛",
       "kickoff": null,
       "handicap": "0",
@@ -2182,9 +2705,9 @@
       "fixture_id": null,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "91-科莫莱红牛.md"
     },
     {
       "id": "beidan:92",
@@ -2192,18 +2715,22 @@
       "sale_id": "92",
       "home": "斯蒂夫尼奇",
       "away": "卢顿",
+      "teams": {
+        "home": "斯蒂夫尼奇",
+        "away": "卢顿"
+      },
       "league": "英甲",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1564305,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单92-斯蒂夫尼奇卢顿.md"
     },
     {
       "id": "beidan:93",
@@ -2211,6 +2738,10 @@
       "sale_id": "93",
       "home": "阿马多拉之星",
       "away": "布拉加",
+      "teams": {
+        "home": "阿马多拉之星",
+        "away": "布拉加"
+      },
       "league": "葡超",
       "kickoff": "2026-09-11 03:15",
       "handicap": "1",
@@ -2220,9 +2751,9 @@
       "fixture_id": 1575465,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "93-阿马多拉布拉加.md"
     },
     {
       "id": "beidan:94",
@@ -2230,18 +2761,22 @@
       "sale_id": "94",
       "home": "圣贝尔纳多",
       "away": "隆德里纳",
+      "teams": {
+        "home": "圣贝尔纳多",
+        "away": "隆德里纳"
+      },
       "league": "巴西乙",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1520867,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单94-圣贝尔纳多隆德里纳.md"
     },
     {
       "id": "beidan:95",
@@ -2249,18 +2784,22 @@
       "sale_id": "95",
       "home": "维拉诺瓦",
       "away": "戈亚斯",
+      "teams": {
+        "home": "维拉诺瓦",
+        "away": "戈亚斯"
+      },
       "league": "巴西乙",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1520869,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单95-维拉诺瓦戈亚斯.md"
     },
     {
       "id": "beidan:96",
@@ -2268,18 +2807,35 @@
       "sale_id": "96",
       "home": "德尔瓦耶独立",
       "away": "弗拉门戈",
+      "teams": {
+        "home": "德尔瓦耶独立",
+        "away": "弗拉门戈"
+      },
       "league": "解放者杯",
       "kickoff": "2026-09-11 08:30",
       "handicap": "0",
       "nspf": null,
-      "spf": null,
+      "spf": [
+        "2.59",
+        "5.10",
+        "2.38"
+      ],
       "sell_status": "paused",
       "fixture_id": 1635386,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "final",
+      "report_file": "96-德尔瓦耶独立弗拉门戈.md",
+      "sp_meta": {
+        "play": "让球胜平负",
+        "market": "rqspf",
+        "market_label": "北单让球胜平负对照价",
+        "source": "okooo",
+        "source_label": "okooo单场公开页",
+        "official": false,
+        "handicap": "0"
+      }
     },
     {
       "id": "beidan:97",
@@ -2287,18 +2843,22 @@
       "sale_id": "97",
       "home": "西恩夏诺",
       "away": "蒙得维的亚城力矩",
+      "teams": {
+        "home": "西恩夏诺",
+        "away": "蒙得维的亚城力矩"
+      },
       "league": "南俱杯",
       "kickoff": null,
       "handicap": "-1",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1631511,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单97-西恩夏诺蒙得维的亚城力矩.md"
     },
     {
       "id": "beidan:98",
@@ -2306,18 +2866,22 @@
       "sale_id": "98",
       "home": "累西腓体育",
       "away": "庞特普雷塔",
+      "teams": {
+        "home": "累西腓体育",
+        "away": "庞特普雷塔"
+      },
       "league": "巴西乙",
       "kickoff": null,
       "handicap": "-2",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1520868,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单98-累西腓体育庞特普雷塔.md"
     },
     {
       "id": "beidan:99",
@@ -2325,18 +2889,22 @@
       "sale_id": "99",
       "home": "普马斯",
       "away": "莱昂",
+      "teams": {
+        "home": "普马斯",
+        "away": "莱昂"
+      },
       "league": "墨超",
       "kickoff": null,
       "handicap": "0",
       "nspf": null,
       "spf": null,
       "sell_status": "paused",
-      "fixture_id": null,
+      "fixture_id": 1550955,
       "badge": null,
       "rank_score": null,
-      "has_report": false,
-      "report_level": null,
-      "report_file": null
+      "has_report": true,
+      "report_level": "skeleton",
+      "report_file": "北单99-普马斯莱昂.md"
     }
   ]
 }
