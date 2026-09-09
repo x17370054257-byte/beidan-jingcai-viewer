@@ -465,10 +465,10 @@
           ]
         },
         "bare_ha_risk_note": "裸HA仅作风控附注（用户偏好），不进胜率主门槛",
-        "agree_n": 3,
+        "agree_n": 7,
         "agree_denom": 3,
         "agree_label": "3/3",
-        "agree_methods": "M1+M5+M6",
+        "agree_methods": "vote7",
         "vote_agree_label": "7/7",
         "kickoff": "2026-09-10 03:45",
         "kickoff_shanghai": "2026-09-10 03:45",
@@ -476,7 +476,7 @@
         "match_phase": "live",
         "hot_fav": false,
         "agree_den": 7,
-        "method_agree_n": 3,
+        "method_agree_n": 7,
         "method_agree_den": 7
       },
       {
@@ -540,10 +540,10 @@
           ]
         },
         "bare_ha_risk_note": "裸HA仅作风控附注（用户偏好），不进胜率主门槛",
-        "agree_n": 3,
+        "agree_n": 7,
         "agree_denom": 3,
         "agree_label": "3/3",
-        "agree_methods": "M1+M5+M6",
+        "agree_methods": "vote7",
         "vote_agree_label": "7/7",
         "kickoff": null,
         "kickoff_shanghai": null,
@@ -551,7 +551,7 @@
         "match_phase": "pre",
         "hot_fav": false,
         "agree_den": 7,
-        "method_agree_n": 3,
+        "method_agree_n": 7,
         "method_agree_den": 7
       }
     ]
