@@ -2,9 +2,8 @@
   "as_of": "2026-09-10T04:02:41+08:00",
   "date": "2026-09-10",
   "version": "1.4",
-  "schema": "doubles-strength/1.4",
   "disclaimer": "研究观察 · 不出票 · 真Elo clear非极端 ∩ M1+M5+M6",
-  "true_curated_count": 0,
+  "sp_policy": "live_okooo_series_latest",
   "structure_pick_sale_ids": [
     "52",
     "60",
@@ -29,7 +28,10 @@
     "today_elo_delta": "TODAY-ELO-DELTA.md",
     "prefer_rule": "clear∧非极端(|Δ|∈[50,74))"
   },
-  "elo_spine_paused": true,
+  "ticket_agree": {
+    "min_agree": 3,
+    "gate_pass": true
+  },
   "multi_method_gate": {
     "rule": "信/结构：prefer clear非极端(真Elo) ∩ M1+M5+M6≥2；禁HA附注",
     "status": "applied_elo_delta_rerank",
@@ -57,10 +59,8 @@
     ],
     "swapped_logic": "SP代理误判已用真Elo纠正：82/71回表；55极端/57·37·54 toss-up/59极端清出"
   },
-  "ticket_agree": {
-    "min_agree": 3,
-    "gate_pass": true
-  },
+  "main_survive": "18.6%",
+  "vote_note": "真Elo · 同意3/3 · 主数字 18.6%（SLICE发现）· weight=0 · 勿回退55桌",
   "beidan7": {
     "title": "北单7场双选（真Elo clear非极端）",
     "forced_selection": true,
@@ -137,11 +137,14 @@
         "fixture_id": 1635736,
         "bare_ha_risk_note": "裸HA仅作风控附注",
         "strength_disclaimer": "信=Elo偏好∩冠军核印证，≠升权",
-        "fixture_status": "1H",
         "kickoff": "2026-09-10 03:00",
         "kickoff_shanghai": "2026-09-10 03:00",
+        "fixture_status": "1H",
         "match_phase": "live",
-        "agree_den": 3
+        "hot_fav": true,
+        "agree_den": 3,
+        "method_agree_n": 3,
+        "method_agree_den": 3
       },
       {
         "no": 2,
@@ -200,8 +203,14 @@
         "fixture_id": 1635536,
         "bare_ha_risk_note": "裸HA仅作风控附注",
         "strength_disclaimer": "信=Elo偏好∩冠军核印证，≠升权",
+        "kickoff": "2026-09-10 06:00",
+        "kickoff_shanghai": "2026-09-10 06:00",
+        "fixture_status": "NS",
         "match_phase": "pre",
-        "agree_den": 3
+        "hot_fav": false,
+        "agree_den": 3,
+        "method_agree_n": 3,
+        "method_agree_den": 3
       },
       {
         "no": 3,
@@ -260,11 +269,14 @@
         "fixture_id": 1635659,
         "bare_ha_risk_note": "裸HA仅作风控附注",
         "strength_disclaimer": "信=Elo偏好∩冠军核印证，≠升权",
-        "fixture_status": "NS",
         "kickoff": "2026-09-11 00:45",
         "kickoff_shanghai": "2026-09-11 00:45",
+        "fixture_status": "NS",
         "match_phase": "pre",
-        "agree_den": 3
+        "hot_fav": true,
+        "agree_den": 3,
+        "method_agree_n": 3,
+        "method_agree_den": 3
       },
       {
         "no": 4,
@@ -323,11 +335,14 @@
         "fixture_id": 1631506,
         "bare_ha_risk_note": "裸HA仅作风控附注",
         "strength_disclaimer": "信=Elo偏好∩冠军核印证，≠升权",
-        "fixture_status": "NS",
         "kickoff": "2026-09-10 08:30",
         "kickoff_shanghai": "2026-09-10 08:30",
+        "fixture_status": "NS",
         "match_phase": "pre",
-        "agree_den": 3
+        "hot_fav": false,
+        "agree_den": 3,
+        "method_agree_n": 3,
+        "method_agree_den": 3
       },
       {
         "no": 5,
@@ -386,11 +401,14 @@
         "fixture_id": 1635686,
         "bare_ha_risk_note": "裸HA仅作风控附注",
         "strength_disclaimer": "信=Elo偏好∩冠军核印证，≠升权",
-        "fixture_status": "1H",
         "kickoff": "2026-09-10 03:00",
         "kickoff_shanghai": "2026-09-10 03:00",
+        "fixture_status": "1H",
         "match_phase": "live",
-        "agree_den": 3
+        "hot_fav": false,
+        "agree_den": 3,
+        "method_agree_n": 3,
+        "method_agree_den": 3
       },
       {
         "no": 6,
@@ -449,8 +467,14 @@
         "fixture_id": 1631507,
         "bare_ha_risk_note": "裸HA仅作风控附注",
         "strength_disclaimer": "信=Elo偏好∩冠军核印证，≠升权",
+        "kickoff": null,
+        "kickoff_shanghai": null,
+        "fixture_status": null,
         "match_phase": "pre",
-        "agree_den": 3
+        "hot_fav": false,
+        "agree_den": 3,
+        "method_agree_n": 3,
+        "method_agree_den": 3
       },
       {
         "no": 7,
@@ -504,16 +528,19 @@
         "review_basis": "真Elo |Δ|=53.5 clear非极端；agree 3/3；TODAY-ELO-DELTA + TODAY-VOTE-AGREE。",
         "view": "clear非极端(|Δ|53.5) AD。",
         "fear": "主队缠斗翻盘。",
-        "off_field": "通常临场前1h才官宣｜场外无线索｜evidence待补｜天气出行暂缺｜≠官宣",
+        "off_field": "通常临场前1h才官宣｜未官宣 XI｜unsupported空≠健康｜雷速侧车未挂｜≠官宣",
         "off_field_note": "无线索。",
         "fixture_id": 1520860,
         "bare_ha_risk_note": "裸HA仅作风控附注",
         "strength_disclaimer": "信=Elo偏好∩冠军核印证，≠升权",
-        "fixture_status": "NS",
         "kickoff": "2026-09-10 07:30",
         "kickoff_shanghai": "2026-09-10 07:30",
+        "fixture_status": "NS",
         "match_phase": "pre",
-        "agree_den": 3
+        "hot_fav": false,
+        "agree_den": 3,
+        "method_agree_n": 3,
+        "method_agree_den": 3
       }
     ]
   },
@@ -666,31 +693,5 @@
         "hot_fav": false
       }
     ]
-  },
-  "dropped_legs": [
-    {
-      "sale_id": "55",
-      "reason": "clear但极端 |Δ|=84"
-    },
-    {
-      "sale_id": "57",
-      "reason": "toss-up |Δ|=0.5"
-    },
-    {
-      "sale_id": "37",
-      "reason": "toss-up"
-    },
-    {
-      "sale_id": "54",
-      "reason": "toss-up |Δ|=49.6"
-    },
-    {
-      "sale_id": "59",
-      "reason": "clear但极端 |Δ|=95"
-    },
-    {
-      "sale_id": "53",
-      "reason": "toss-up"
-    }
-  ]
+  }
 }
