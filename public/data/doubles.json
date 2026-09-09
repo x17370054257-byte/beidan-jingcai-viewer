@@ -332,8 +332,7 @@
         "true_curated": false,
         "pick_pair": "DA",
         "off_field": "",
-        "hot_fav": false,
-        "kickoff": "2026-09-10 03:00"
+        "hot_fav": true
       },
       {
         "sale_id": "周三014",
@@ -369,8 +368,7 @@
         "true_curated": false,
         "pick_pair": "HD",
         "off_field": "",
-        "hot_fav": false,
-        "kickoff": "2026-09-10 08:30"
+        "hot_fav": true
       },
       {
         "sale_id": "周四001",
@@ -406,8 +404,7 @@
         "true_curated": false,
         "pick_pair": "DA",
         "off_field": "",
-        "hot_fav": false,
-        "kickoff": "2026-09-11 00:45"
+        "hot_fav": true
       },
       {
         "sale_id": "周四004",
@@ -443,8 +440,7 @@
         "true_curated": false,
         "pick_pair": "HD",
         "off_field": "",
-        "hot_fav": false,
-        "kickoff": "2026-09-11 03:00"
+        "hot_fav": false
       }
     ]
   }
