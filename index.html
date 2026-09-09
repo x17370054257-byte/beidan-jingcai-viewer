@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewer-version" content="1.3" />
   <title>北单·竞彩 查看器 1.3</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <header class="top">
-    <div class="brand">
-      <strong>北单·竞彩</strong>
-      <span class="ver-pill" title="小更新线 1.3">1.3</span><span class="muted">查看器</span>
+    <div class="brand-block">
+      <div class="brand">
+        <strong>北单·竞彩</strong>
+        <span class="ver-pill" title="FMA 小更新线 1.3">1.3</span>
+        <span class="muted">查看器</span>
+      </div>
+      <div class="build" id="build">版本 1.3 · 先足球后市场 · 研究观察</div>
     </div>
     <div id="meta" class="meta"></div>
     <div class="disclaimer" id="disclaimer">研究观察 · 不出票 · 非投注建议</div>
@@ -35,10 +40,8 @@
     </select>
   </div>
   <main class="layout">
-    <aside class="list" id="list"></aside>
-    <section class="detail" id="detail">
-      <div class="empty">选左侧一场查看研报</div>
-    </section>
+    <aside class="list" id="list"><div class="empty">加载场次中…</div></aside>
+    <section class="detail" id="detail"><div class="empty">加载研报中…</div></section>
   </main>
   <script src="./app.js"></script>
 </body>
