@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-10T03:47:53+08:00",
+  "as_of": "2026-09-10T03:52:48+08:00",
   "date": "2026-09-10",
   "version": "1.4",
   "disclaimer": "研究观察 · 不出票 · 非投注建议 · 偏M3 · 禁裸HA · 拒纯低赔",
@@ -63,17 +63,18 @@
         "fixture_id": 1635659,
         "strength_disclaimer": "经理结构标签≠样本票存活优势（TIER-FIX-XIN）",
         "sp_prev": [
-          "9.94",
+          "9.89",
           "2.49",
           "2.00"
         ],
-        "sp_as_of": "2026-09-10T03:44:57+08:00",
-        "sp_frame": "refresh-20260910-0344",
+        "sp_as_of": "2026-09-10T03:49:06+08:00",
+        "sp_frame": "refresh-20260910-0349",
         "kickoff": "2026-09-11 00:45",
         "kickoff_shanghai": "2026-09-11 00:45",
         "fixture_status": "NS",
         "match_phase": "pre",
-        "hot_fav": true
+        "hot_fav": true,
+        "status_short": "NS"
       },
       {
         "no": 2,
@@ -113,7 +114,15 @@
         "kickoff_shanghai": "2026-09-10 03:00",
         "fixture_status": "1H",
         "match_phase": "live",
-        "hot_fav": false
+        "hot_fav": false,
+        "sp_as_of": "2026-09-10T03:49:06+08:00",
+        "sp_frame": "refresh-20260910-0349",
+        "sp_prev": [
+          "4.90",
+          "2.94",
+          "2.19"
+        ],
+        "status_short": "1H"
       },
       {
         "no": 3,
@@ -153,7 +162,8 @@
         "kickoff_shanghai": "2026-09-10 03:00",
         "fixture_status": "1H",
         "match_phase": "live",
-        "hot_fav": false
+        "hot_fav": false,
+        "status_short": "1H"
       },
       {
         "no": 4,
@@ -167,7 +177,7 @@
         "missed": "客胜",
         "pick_pair": "HD",
         "sp": [
-          "2.57",
+          "2.58",
           "2.46",
           "4.83"
         ],
@@ -190,17 +200,18 @@
         "low_odds_flag": false,
         "fixture_id": 1631506,
         "sp_prev": [
-          "2.56",
+          "2.57",
           "2.46",
-          "4.87"
+          "4.83"
         ],
-        "sp_as_of": "2026-09-10T03:44:57+08:00",
-        "sp_frame": "refresh-20260910-0344",
+        "sp_as_of": "2026-09-10T03:49:06+08:00",
+        "sp_frame": "refresh-20260910-0349",
         "kickoff": "2026-09-10 08:30",
         "kickoff_shanghai": "2026-09-10 08:30",
         "fixture_status": "NS",
         "match_phase": "pre",
-        "hot_fav": false
+        "hot_fav": false,
+        "status_short": "NS"
       },
       {
         "no": 5,
@@ -245,7 +256,15 @@
         "kickoff_shanghai": "2026-09-10 03:00",
         "fixture_status": "1H",
         "match_phase": "live",
-        "hot_fav": false
+        "hot_fav": false,
+        "sp_as_of": "2026-09-10T03:49:06+08:00",
+        "sp_frame": "refresh-20260910-0349",
+        "sp_prev": [
+          "3.94",
+          "3.10",
+          "2.35"
+        ],
+        "status_short": "1H"
       },
       {
         "no": 6,
@@ -282,17 +301,18 @@
         "low_odds_flag": false,
         "fixture_id": 1490457,
         "sp_prev": [
-          "2.97",
-          "4.33",
-          "2.30"
+          "3.00",
+          "4.21",
+          "2.32"
         ],
-        "sp_as_of": "2026-09-10T03:44:57+08:00",
-        "sp_frame": "refresh-20260910-0344",
+        "sp_as_of": "2026-09-10T03:49:06+08:00",
+        "sp_frame": "refresh-20260910-0349",
         "kickoff": "2026-09-10 08:30",
         "kickoff_shanghai": "2026-09-10 08:30",
         "fixture_status": "NS",
         "match_phase": "pre",
-        "hot_fav": false
+        "hot_fav": false,
+        "status_short": "NS"
       },
       {
         "no": 7,
@@ -337,7 +357,8 @@
         "kickoff_shanghai": "2026-09-10 07:30",
         "fixture_status": "NS",
         "match_phase": "pre",
-        "hot_fav": false
+        "hot_fav": false,
+        "status_short": "NS"
       }
     ]
   },
@@ -509,12 +530,58 @@
   },
   "multi_method_gate": {
     "rule": "≥2 methods same direction AND not bare HA → only then 信/结构精选",
-    "status": "awaiting_analysis_table",
+    "status": "awaiting_confirm_lift_survive_table",
     "memo": "team/curated/MEMO-MULTI-METHOD-GATE-20260910.md",
     "pending_rerank": true,
-    "note": "今日强度暂未改；表到后重排。82 预检实验室未覆盖，可能降出结构精选。"
+    "note": "暂缓Elo脊梁；等印证抬存活表再重排；强度继续冻结",
+    "elo_spine_paused": true,
+    "reason": "SCORABLE-31 Elo 8.5% < HD baseline 10.7%"
   },
   "sale_day_main": {
+    "source": "analysis/METHOD-LAB-1.4/backtest/SCORABLE-31-HIT.md",
+    "pointer": "analysis/METHOD-LAB-1.4/backtest/SALE-DAY-SCORED.md",
+    "curated_memo": "team/curated/MEMO-SALE-DAY-MAIN-20260910.md",
+    "priority": "beidan_elo_top2_scorable31",
+    "beidan_elo": {
+      "n": 674,
+      "leg_hit": "69.2%",
+      "survive": "8.5%",
+      "strategy": "Elo Top2"
+    },
+    "beidan_baseline_ha": {
+      "n": 677,
+      "survive": "7.2%"
+    },
+    "beidan_baseline_hd": {
+      "n": 675,
+      "survive": "10.7%"
+    },
+    "jingcai_elo": {
+      "n": 57,
+      "survive": "7.0%"
+    },
+    "jingcai_sp_top2": {
+      "n": 57,
+      "survive": "26.3%",
+      "note": "少子样附录味"
+    },
+    "n_tickets": 674,
+    "leg_hit": "69.2%",
+    "ticket_survive": "8.5%",
+    "sp_gap_result_scoring": true,
+    "not_true_m4": true,
+    "elo_below_hd_baseline": true,
+    "production_weight": 0,
+    "deprecated_as_main": [
+      "114/14.0%",
+      "236/11.9%",
+      "156/8.9% SP短表",
+      "37/8.1% 北单SP短表"
+    ],
+    "note": "主表切 SCORABLE-31；sp_gap结果计分≠真M4；Elo8.5%<HD基线10.7%；不升权 | 暂缓Elo脊梁等印证抬存活表",
+    "elo_spine_paused": true
+  },
+  "sale_day_main_appendix_sp_short": {
     "source": "analysis/METHOD-LAB-1.4/backtest/SALE-DAY-SCORED.md",
     "curated_memo": "team/curated/MEMO-SALE-DAY-MAIN-20260910.md",
     "priority": "jingcai_GE7_SP_Top2",
@@ -554,5 +621,43 @@
       "236/11.9% Elo合计"
     ],
     "note": "换主表完成；SP优先口径≠更稳；不升权"
-  }
+  },
+  "tier_xin_memo": {
+    "source": "analysis/METHOD-LAB-1.4/backtest/TIER-FIX-XIN.md",
+    "curated_memo": "team/curated/MEMO-TIER-XIN-20260910.md",
+    "xin_survive": "7.6%",
+    "observe_survive": "15.4%",
+    "rule": "勿迷信信徽章；继续禁裸HA；等真SP再验"
+  },
+  "backtest_steer": {
+    "source": "analysis/METHOD-LAB-1.4/backtest/FOR-CURATED-DUAL-NUMBERS.md",
+    "amplified": "analysis/METHOD-LAB-1.4/backtest/BACKTEST-7DUAL-AMPLIFIED.md",
+    "n_tickets": 542,
+    "ticket_survive_best": "M3/M4-proxy 12.9%",
+    "m3_survive": "12.9%",
+    "m4_proxy_survive": "12.9%",
+    "m2_survive": "7.4%",
+    "leg_hit_approx": "74%",
+    "weak_modes": [
+      "HA_draw_fail"
+    ],
+    "rules": [
+      "prefer_M3",
+      "M4_proxy_secondary",
+      "ban_bare_HA",
+      "M2_not_primary",
+      "downgrade_HD_away_risk"
+    ],
+    "role": "appendix_vs_sale_day_main",
+    "sale_day_main": "114 / 80.3% / 14.0%"
+  },
+  "anti_lowodds": {
+    "source": "analysis/METHOD-LAB-1.4/backtest/ANTI-LOWODDS-BIAS.md",
+    "n": 1133,
+    "raw_top2_survive": "12.5%",
+    "fav_plus_draw_survive": "6.7%",
+    "rule": "勿盲目低赔+必带平；带平须机制；真SP重跑",
+    "wed013": "北单58 帕梅拉斯 M2 diverge → 不进今日7 / 勿稳胆"
+  },
+  "schema": "doubles-strength/1.4"
 }
