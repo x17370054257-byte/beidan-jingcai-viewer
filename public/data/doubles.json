@@ -1,11 +1,32 @@
 {
-  "as_of": "2026-09-10T03:28:34+08:00",
+  "as_of": "2026-09-10T03:29:19+08:00",
   "date": "2026-09-10",
   "version": "1.4",
-  "disclaimer": "研究观察 · 不出票 · 非投注建议",
+  "schema": "doubles-strength/1.4",
+  "disclaimer": "研究观察 · 不出票 · 非投注建议 · 结构精选≠出票授权",
+  "true_curated_count": 0,
+  "structure_pick_sale_ids": [
+    "82",
+    "55"
+  ],
   "beidan7": {
-    "title": "北单7场双选",
-    "note": "82/55 结构脊梁 · 71/51/90/73 勉强覆盖 · 96 不碰",
+    "title": "北单7场双选（强度版）",
+    "forced_selection": true,
+    "ticket_gate_curated": "blocked",
+    "ticket_gate_daily": "review",
+    "note": "结构脊梁：82信 + 55信。71因M4偏平已降为勉强。96标不碰。真精选0。回测数字一出再调腿。",
+    "manager_summary": {
+      "strongest": [
+        "82",
+        "55"
+      ],
+      "weakest": [
+        "73",
+        "90",
+        "96"
+      ],
+      "fear_tonight": "非骨架腿先丢球；把M4已唱反调的71/96当胆；paused价态当可买。"
+    },
     "legs": [
       {
         "no": 1,
@@ -16,16 +37,25 @@
         "match_name": "费内巴切 vs 罗马",
         "handicap": "0",
         "double": "客胜+平",
+        "missed": "主胜",
         "sp": [
           "9.93",
           "2.49",
           "2.00"
         ],
-        "strength": "信",
-        "layer": "结构精选",
         "sell": "paused",
+        "disabled": "no",
         "odds_label": "北单让球SP",
-        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价"
+        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价",
+        "strength": "信",
+        "strength_code": "trust",
+        "structure_tier": "结构精选",
+        "structure_tier_code": "structure_pick",
+        "true_curated": false,
+        "why_not_true_curated": "仍是 market_baseline；无独立 football_prior；销售 paused；升权 weight=0。",
+        "review_basis": "对位剧本清晰（逼抢 vs 控场）。METHOD-LAB 今日样本未覆盖本场；赛后用三维结算+叙述一致性打分。",
+        "view": "主队氛围猛，更像罗马控中场的客胜剧本；主队高位逼抢是反方，所以双选留平。",
+        "fear": "主队逼抢早进球，客胜直接没了。"
       },
       {
         "no": 2,
@@ -36,16 +66,25 @@
         "match_name": "查尔顿 vs 女王公园巡游者",
         "handicap": "0",
         "double": "客胜+平",
+        "missed": "主胜",
         "sp": [
           "4.90",
           "2.94",
           "2.19"
         ],
-        "strength": "信",
-        "layer": "结构精选",
         "sell": "paused",
+        "disabled": "yes",
         "odds_label": "北单让球SP",
-        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价"
+        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价",
+        "strength": "信",
+        "strength_code": "trust",
+        "structure_tier": "结构精选",
+        "structure_tier_code": "structure_pick",
+        "true_curated": false,
+        "why_not_true_curated": "收市场；disabled=yes；无独立 prior；weight=0。叙事强但渠道价态差。",
+        "review_basis": "M1-narrative-script 对周三010/fixture1563151：lean=A agree med；low_event + 近窗场均总球1.75 支持。",
+        "view": "英冠肉搏偏客；主队缠斗防反是反方。",
+        "fear": "主队死守成功，客队转换打不出来。"
       },
       {
         "no": 3,
@@ -56,16 +95,25 @@
         "match_name": "拉普拉塔大学生 vs 科林蒂安",
         "handicap": "0",
         "double": "主胜+平",
+        "missed": "客胜",
         "sp": [
           "2.57",
           "2.46",
           "4.85"
         ],
-        "strength": "勉强",
-        "layer": "日更腿",
         "sell": "paused",
+        "disabled": "no",
         "odds_label": "北单让球SP",
-        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价"
+        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价",
+        "strength": "勉强",
+        "strength_code": "thin",
+        "structure_tier": "日更腿",
+        "structure_tier_code": "daily_leg",
+        "true_curated": false,
+        "why_not_true_curated": "market_baseline；M4 与主胜方向 diverge；未过升权硬门。",
+        "review_basis": "M1 弱支持主；M4-odds-structure lean=D vs_report=differ（盘口更偏平）→ 已从结构精选下调。",
+        "view": "主场硬度像主剧本，但盘口结构不站边，只能先守主不败凑覆盖。",
+        "fear": "铁桶偷一个；或闷平把「主胜」叙事打穿。"
       },
       {
         "no": 4,
@@ -76,16 +124,30 @@
         "match_name": "利物浦 vs 马德里竞技",
         "handicap": "-1",
         "double": "主胜+平",
+        "missed": "客胜",
         "sp": [
           "3.94",
           "3.10",
           "2.35"
         ],
-        "strength": "勉强",
-        "layer": "日更腿",
+        "sp_prior_500_web": [
+          "3.98",
+          "3.05",
+          "2.36"
+        ],
         "sell": "paused",
+        "disabled": "yes",
         "odds_label": "北单让球SP",
-        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价"
+        "tip": "让胜/让平/让负 · okooo · 非500官方；先验窗内500 WEB 可并列 · 不可当成交价",
+        "strength": "勉强",
+        "strength_code": "thin",
+        "structure_tier": "日更腿",
+        "structure_tier_code": "daily_leg",
+        "true_curated": false,
+        "why_not_true_curated": "收市场热门侧；disabled=yes；实验室未覆盖本场。",
+        "review_basis": "剧本有压迫vs回收；METHOD-LAB 今日样本未含 fixture1635686。赛后看低事件是否兑现。",
+        "view": "安菲尔德会压；马竞回收但不躺平。双选守主不败，不是稳胆。",
+        "fear": "打成闷平/低比分，主胜落空。"
       },
       {
         "no": 5,
@@ -96,16 +158,25 @@
         "match_name": "布拉格斯拉维亚 vs 朗斯",
         "handicap": "0",
         "double": "主胜+平",
+        "missed": "客胜",
         "sp": [
           "2.13",
           "4.42",
           "3.26"
         ],
-        "strength": "勉强",
-        "layer": "日更腿",
         "sell": "paused",
+        "disabled": "no",
         "odds_label": "北单让球SP",
-        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价"
+        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价",
+        "strength": "勉强",
+        "strength_code": "thin",
+        "structure_tier": "日更腿",
+        "structure_tier_code": "daily_leg",
+        "true_curated": false,
+        "why_not_true_curated": "方向不清+收市场；锁边弱。",
+        "review_basis": "赛前均势锁边弱；实验室未覆盖。赛后看开局定调是否翻车。",
+        "view": "均势，只能先守主不败。",
+        "fear": "朗斯转换先得手。"
       },
       {
         "no": 6,
@@ -116,16 +187,25 @@
         "match_name": "芝加哥火焰 vs 国际迈阿密",
         "handicap": "0",
         "double": "主胜+平",
+        "missed": "客胜",
         "sp": [
           "2.98",
           "4.32",
           "2.30"
         ],
-        "strength": "勉强",
-        "layer": "日更腿",
         "sell": "paused",
+        "disabled": "no",
         "odds_label": "北单让球SP",
-        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价"
+        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价",
+        "strength": "勉强",
+        "strength_code": "thin",
+        "structure_tier": "日更腿",
+        "structure_tier_code": "daily_leg",
+        "true_curated": false,
+        "why_not_true_curated": "M1 不放行清晰向；收市场。",
+        "review_basis": "M1 对周三015：unclear（open+场均总球4.4）；M4 略偏主仍 balanced。",
+        "view": "开放对攻，谁先丢球决定叙事。",
+        "fear": "迈阿密先打穿，均势叙述崩盘。"
       },
       {
         "no": 7,
@@ -136,16 +216,25 @@
         "match_name": "德尔瓦耶独立 vs 弗拉门戈",
         "handicap": "0",
         "double": "主胜+平",
+        "missed": "客胜",
         "sp": [
           "2.59",
           "5.10",
           "2.38"
         ],
-        "strength": "不碰",
-        "layer": "风险列示",
         "sell": "paused",
+        "disabled": "no",
         "odds_label": "北单让球SP",
-        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价"
+        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价",
+        "strength": "不碰",
+        "strength_code": "avoid",
+        "structure_tier": "风险列示",
+        "structure_tier_code": "risk_list",
+        "true_curated": false,
+        "why_not_true_curated": "M4 与主不败冲突；不应当信心腿。",
+        "review_basis": "M4 对周四007：lean=D vs_report=differ；M1 unclear。标不碰，下一刀有新SP池应替换。",
+        "view": "纸面均势主不败，但盘口结构更像打平——今日不当信心腿。",
+        "fear": "硬当胆用，平局/客胜把结构打穿。"
       }
     ]
   },
@@ -178,7 +267,13 @@
         "tip_nspf": "主胜/平/客胜，不含让球 · 渠道快照 · 非成交价",
         "tip_spf": "让胜/让平/让负 · 渠道快照 · 非成交价",
         "view": "英冠偏客；主队缠斗防反会让客胜变难。",
-        "fear": "主队肉搏防住转换。"
+        "fear": "主队肉搏防住转换。",
+        "strength_code": "trust",
+        "structure_tier": "结构精选",
+        "structure_tier_code": "structure_pick",
+        "review_basis": "对照北单55；M1 agree 客向。",
+        "why_not_true_curated": "仍非真精选：收市场；竞彩短案可选。",
+        "true_curated": false
       },
       {
         "sale_id": "周三014",
@@ -205,7 +300,13 @@
         "tip_nspf": "主胜/平/客胜，不含让球 · 渠道快照 · 非成交价",
         "tip_spf": "让胜/让平/让负 · 渠道快照 · 非成交价",
         "view": "主场硬度对客队近程丢分；防铁桶偷袭。",
-        "fear": "客队防反打穿主不败。"
+        "fear": "客队防反打穿主不败。",
+        "strength_code": "thin",
+        "structure_tier": "日更腿",
+        "structure_tier_code": "daily_leg",
+        "review_basis": "对照北单71；M4 偏平 diverge。",
+        "why_not_true_curated": "M4 与主胜方向冲突，不作骨架。",
+        "true_curated": false
       },
       {
         "sale_id": "周四001",
@@ -232,7 +333,13 @@
         "tip_nspf": "主胜/平/客胜，不含让球 · 渠道快照 · 非成交价",
         "tip_spf": "让胜/让平/让负 · 渠道快照 · 非成交价",
         "view": "主队氛围 vs 罗马控场，偏客胜，平托底。",
-        "fear": "主队逼抢早进球。"
+        "fear": "主队逼抢早进球。",
+        "strength_code": "trust",
+        "structure_tier": "结构精选",
+        "structure_tier_code": "structure_pick",
+        "review_basis": "对照北单82；对位剧本清晰。",
+        "why_not_true_curated": "收市场；weight=0。",
+        "true_curated": false
       },
       {
         "sale_id": "周四004",
@@ -259,7 +366,13 @@
         "tip_nspf": "主胜/平/客胜，不含让球 · 渠道快照 · 非成交价",
         "tip_spf": "让胜/让平/让负 · 渠道快照 · 非成交价",
         "view": "均势，开局节奏定调，别锁死。",
-        "fear": "客队转换先得手。"
+        "fear": "客队转换先得手。",
+        "strength_code": "thin",
+        "structure_tier": "日更腿",
+        "structure_tier_code": "daily_leg",
+        "review_basis": "对照北单90；均势锁边弱。",
+        "why_not_true_curated": "方向不清。",
+        "true_curated": false
       }
     ]
   }
