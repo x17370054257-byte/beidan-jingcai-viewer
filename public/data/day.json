@@ -2189,7 +2189,11 @@
       "match_phase": "pre",
       "handicap": "-1",
       "nspf": null,
-      "spf": null,
+      "spf": [
+        "2.64",
+        "3.08",
+        "3.36"
+      ],
       "sell_status": "paused",
       "fixture_id": 1520865,
       "badge": null,
@@ -2216,7 +2220,11 @@
       "match_phase": "pre",
       "handicap": "0",
       "nspf": null,
-      "spf": null,
+      "spf": [
+        "4.62",
+        "3.42",
+        "2.03"
+      ],
       "sell_status": "paused",
       "fixture_id": 1520862,
       "badge": null,
