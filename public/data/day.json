@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-10T06:04:25+08:00",
+  "as_of": "2026-09-10T06:41:29+08:00",
   "date": "2026-09-10",
   "schema_version": "1.4",
   "disclaimer": "研究观察 · 不出票 · 非投注建议",
@@ -277,8 +277,8 @@
       "league": "解放者杯",
       "kickoff": "2026-09-10 06:00",
       "kickoff_shanghai": "2026-09-10 06:00",
-      "fixture_status": "NS",
-      "status_short": "NS",
+      "fixture_status": "1H",
+      "status_short": "1H",
       "match_phase": "live",
       "handicap": "-1",
       "nspf": [
@@ -2378,27 +2378,14 @@
       "match_phase": "pre",
       "handicap": "0",
       "nspf": null,
-      "spf": [
-        "2.79",
-        "3.16",
-        "3.06"
-      ],
+      "spf": null,
       "sell_status": "paused",
       "fixture_id": 1520866,
       "badge": null,
       "rank_score": null,
       "has_report": true,
       "report_level": "final",
-      "report_file": "bd-68.md",
-      "sp_meta": {
-        "play": "让球胜平负",
-        "market": "rqspf",
-        "market_label": "北单让球胜平负对照价",
-        "source": "okooo",
-        "source_label": "okooo单场公开页",
-        "official": false,
-        "handicap": null
-      }
+      "report_file": "bd-68.md"
     },
     {
       "id": "beidan:69",
@@ -2568,8 +2555,8 @@
       "nspf": null,
       "spf": [
         "2.98",
-        "4.26",
-        "2.32"
+        "4.32",
+        "2.30"
       ],
       "sell_status": "paused",
       "fixture_id": 1490457,
@@ -2850,7 +2837,7 @@
       "handicap": "0",
       "nspf": null,
       "spf": [
-        "9.86",
+        "9.93",
         "2.49",
         "2.00"
       ],
