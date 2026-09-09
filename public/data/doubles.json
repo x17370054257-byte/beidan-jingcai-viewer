@@ -2,9 +2,8 @@
   "as_of": "2026-09-10T03:58:22+08:00",
   "date": "2026-09-10",
   "version": "1.4",
-  "schema": "doubles-strength/1.4",
   "disclaimer": "研究观察 · 不出票 · 多方法印证≠升权 · 信≠票存活保证",
-  "true_curated_count": 0,
+  "sp_policy": "live_okooo_series_latest",
   "structure_pick_sale_ids": [
     "82",
     "55",
@@ -39,80 +38,21 @@
       "SCORABLE-31 Elo"
     ]
   },
-  "sale_day_main_appendix_sp_short": {
-    "source": "analysis/METHOD-LAB-1.4/backtest/SALE-DAY-SCORED.md",
-    "curated_memo": "team/curated/MEMO-SALE-DAY-MAIN-20260910.md",
-    "priority": "jingcai_GE7_SP_Top2",
-    "jingcai_ge7_sp": {
-      "n": 156,
-      "leg_hit": "73.8%",
-      "survive": "8.9%",
-      "survive_raw": "14/156",
-      "strategy": "SP Top2"
-    },
-    "jingcai_ge7_elo_ctrl": {
-      "n": 156,
-      "leg_hit": "73.4%",
-      "survive": "13.5%",
-      "strategy": "Elo Top2"
-    },
-    "beidan_sp_0909": {
-      "n": 37,
-      "leg_hit": "76.8%",
-      "survive": "8.1%",
-      "strategy": "SP Top2"
-    },
-    "beidan_ft_elo_ctrl": {
-      "n": 97,
-      "leg_hit": "84.4%",
-      "survive": "17.5%",
-      "strategy": "Elo Top2"
-    },
-    "n_tickets": 156,
-    "leg_hit": "73.8%",
-    "ticket_survive": "8.9%",
-    "sp_not_more_stable": true,
-    "sp_vs_elo_note": "SP Top2 8.9% < Elo Top2 13.5% → 勿把SP双选当更稳",
-    "production_weight": 0,
-    "deprecated_as_main": [
-      "114/80.3%/14.0% Elo-only",
-      "236/11.9% Elo合计"
-    ],
-    "note": "换主表完成；SP优先口径≠更稳；不升权"
+  "ticket_agree": {
+    "min_agree": 3,
+    "gate": "min(agree)≥2",
+    "gate_pass": true,
+    "ablation_survive_when_pass": "16.1%",
+    "source": "ABLATION-AGREE.md"
   },
-  "elo_spine_paused": true,
-  "multi_method_gate": {
-    "rule": "信/结构精选主门槛 = M1+M5+M6 同向≥2（ABLATION 冠军 15.7%）",
-    "ban_ha": "仅作风控附注（用户偏好），不写进胜率主规则；消融示禁HA→6.9%",
-    "status": "applied_rerank_champion_m156",
-    "pending_rerank": false,
-    "elo_spine_paused": true,
-    "source": "TODAY-VOTE-AGREE.md + ABLATION-LIFT.md",
-    "champion_survive": "15.7%",
-    "swapped_out": [
-      "73",
-      "68"
-    ],
-    "swapped_in": [
-      "57",
-      "37"
-    ],
-    "champion_check_57_37": "PASS (agree_n=7 ⇒ M1/M5/M6 同向)",
-    "direction_flip": {
-      "51": "HD→AD"
-    },
-    "keep_lineup": true,
-    "agree_card_field": "agree_n",
-    "ticket_min_agree": 3,
-    "ticket_gate_pass": true,
-    "ablation_agree_ref": "ABLATION-AGREE.md 16.1%"
-  },
+  "main_survive": "16.1%",
+  "vote_note": "冠军核 M1+M5+M6 · 同意 n/3 · 整票门≥2 主数字 16.1% · weight=0",
   "beidan7": {
     "title": "北单7场双选（多方法印证重排）",
     "forced_selection": true,
     "ticket_gate_curated": "blocked",
     "ticket_gate_daily": "review",
-    "note": "印证重排：锁82/55/53/71/51；出73/68入57/37；51改为客不败。结构精选82+55+53。vote≥2回测存活13.2%。真精选0。",
+    "note": "印证重排：锁82/55/53/71/51；出73/68入57/37；51改为客不败。结构精选82+55+53。vote≥2回测存活13.2%。真精选0。 · 主数字整票门存活 16.1%",
     "manager_summary": {
       "strongest": [
         "82",
@@ -192,10 +132,11 @@
         "agree_label": "3/3",
         "agree_methods": "M1+M5+M6",
         "vote_agree_label": "7/7",
-        "fixture_status": "NS",
         "kickoff": "2026-09-11 00:45",
         "kickoff_shanghai": "2026-09-11 00:45",
+        "fixture_status": "NS",
         "match_phase": "pre",
+        "hot_fav": true,
         "agree_den": 3,
         "method_agree_n": 3,
         "method_agree_den": 3
@@ -266,10 +207,11 @@
         "agree_label": "3/3",
         "agree_methods": "M1+M5+M6",
         "vote_agree_label": "7/7",
-        "fixture_status": "1H",
         "kickoff": "2026-09-10 03:00",
         "kickoff_shanghai": "2026-09-10 03:00",
+        "fixture_status": "1H",
         "match_phase": "live",
+        "hot_fav": false,
         "agree_den": 3,
         "method_agree_n": 3,
         "method_agree_den": 3
@@ -340,10 +282,11 @@
         "agree_label": "3/3",
         "agree_methods": "M1+M5+M6",
         "vote_agree_label": "7/7",
-        "fixture_status": "1H",
         "kickoff": "2026-09-10 03:00",
         "kickoff_shanghai": "2026-09-10 03:00",
+        "fixture_status": "1H",
         "match_phase": "live",
+        "hot_fav": false,
         "agree_den": 3,
         "method_agree_n": 3,
         "method_agree_den": 3
@@ -414,10 +357,11 @@
         "agree_label": "3/3",
         "agree_methods": "M1+M5+M6",
         "vote_agree_label": "7/7",
-        "fixture_status": "NS",
         "kickoff": "2026-09-10 08:30",
         "kickoff_shanghai": "2026-09-10 08:30",
+        "fixture_status": "NS",
         "match_phase": "pre",
+        "hot_fav": false,
         "agree_den": 3,
         "method_agree_n": 3,
         "method_agree_den": 3
@@ -488,10 +432,11 @@
         "agree_label": "3/3",
         "agree_methods": "M1+M5+M6",
         "vote_agree_label": "7/7",
-        "fixture_status": "1H",
         "kickoff": "2026-09-10 03:00",
         "kickoff_shanghai": "2026-09-10 03:00",
+        "fixture_status": "1H",
         "match_phase": "live",
+        "hot_fav": false,
         "agree_den": 3,
         "method_agree_n": 3,
         "method_agree_den": 3
@@ -531,7 +476,7 @@
         "review_basis": "冠军门槛 M1+M5+M6 同向3过门。 TODAY-VOTE-AGREE：同向7方法 · AD · 非裸HA。VOTE-LIFT 北单 vote≥2 存活13.2%。",
         "view": "换入：替 73。七方法同向客不败；摩雷伦斯-本菲卡。",
         "fear": "本菲卡客场翻车剧本反杀。",
-        "off_field": "有",
+        "off_field": "研报有场外摘要可核。",
         "off_field_note": "研报有场外摘要可核。",
         "fixture_id": 1575469,
         "strength_disclaimer": "信=多方法印证门槛通过，≠样本票存活保证（仍见 TIER-FIX / SCORABLE）",
@@ -562,10 +507,11 @@
         "agree_label": "3/3",
         "agree_methods": "M1+M5+M6",
         "vote_agree_label": "7/7",
-        "fixture_status": "NS",
         "kickoff": "2026-09-10 03:45",
         "kickoff_shanghai": "2026-09-10 03:45",
+        "fixture_status": "NS",
         "match_phase": "live",
+        "hot_fav": false,
         "agree_den": 3,
         "method_agree_n": 3,
         "method_agree_den": 3
@@ -605,7 +551,7 @@
         "review_basis": "冠军门槛 M1+M5+M6 同向3过门。 TODAY-VOTE-AGREE：同向7方法 · AD · 非裸HA。VOTE-LIFT 北单 vote≥2 存活13.2%。",
         "view": "换入：替 68。七方法同向客不败；盘面较均势。",
         "fear": "主队主场硬度打穿客向。",
-        "off_field": "有",
+        "off_field": "见北单37研报。",
         "off_field_note": "见北单37研报。",
         "fixture_id": 1638094,
         "strength_disclaimer": "信=多方法印证门槛通过，≠样本票存活保证（仍见 TIER-FIX / SCORABLE）",
@@ -636,7 +582,11 @@
         "agree_label": "3/3",
         "agree_methods": "M1+M5+M6",
         "vote_agree_label": "7/7",
+        "kickoff": null,
+        "kickoff_shanghai": null,
+        "fixture_status": null,
         "match_phase": "pre",
+        "hot_fav": false,
         "agree_den": 3,
         "method_agree_n": 3,
         "method_agree_den": 3
@@ -792,27 +742,5 @@
         "hot_fav": false
       }
     ]
-  },
-  "dropped_legs": [
-    {
-      "sale_id": "73",
-      "reason": "裸HA为主，未过印证"
-    },
-    {
-      "sale_id": "68",
-      "reason": "裸HA为主，未过印证"
-    }
-  ],
-  "ticket_agree": {
-    "min_agree": 3,
-    "gate": "min(agree)≥2",
-    "gate_pass": true,
-    "ablation_survive_when_pass": "16.1%",
-    "source": "ABLATION-AGREE.md"
-  },
-  "sale_day_main_appendix_ablation_lift": {
-    "source": "ABLATION-LIFT.md",
-    "survive": "15.7%",
-    "note": "冠军组合全票池，无 min(agree) 整票门"
   }
 }

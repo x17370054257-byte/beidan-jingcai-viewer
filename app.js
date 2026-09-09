@@ -48,14 +48,14 @@ function resolveMatchPhase(obj) {
 
 function methodAgreeBadge(leg) {
   if (!leg) return '';
-  const n = leg.agree_n ?? leg.method_agree_n ?? leg.vote_agree_n;
+  // 冠军核 M1+M5+M6：展示「同意 n/3」，不用全方法7
+  if (leg.agree_label) {
+    return `<span class="agree" title="冠军核 M1+M5+M6 · 观察向未升权">同意 ${escapeHtml(String(leg.agree_label))}</span>`;
+  }
+  const n = leg.agree_n ?? leg.champion_agree_n ?? leg.method_agree_n;
   if (n === undefined || n === null || n === '') return '';
-  const den = leg.agree_den ?? leg.method_agree_den ?? (leg.vote_agree_n != null ? 7 : '');
-  const label = den !== '' && den != null ? `同意 ${n}/${den}` : `同意 ${n}`;
-  const tip = leg.agree_methods
-    ? `方法同意数 ${leg.agree_methods} · 观察向未升权`
-    : '方法同意数 agree_n · 观察向未升权';
-  return `<span class="agree" title="${escapeHtml(tip)}">${escapeHtml(label)}</span>`;
+  const den = leg.agree_denom ?? leg.agree_den ?? leg.method_agree_den ?? 3;
+  return `<span class="agree" title="冠军核 M1+M5+M6 · 观察向未升权">同意 ${escapeHtml(String(n))}/${escapeHtml(String(den))}</span>`;
 }
 
 function phaseBadge(obj) {
