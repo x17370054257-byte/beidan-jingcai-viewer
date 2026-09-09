@@ -55,7 +55,7 @@ body {
   background: var(--panel); border: 1px solid var(--line);
   border-radius: 16px; padding: 16px 14px;
   content-visibility: auto;
-  contain-intrinsic-size: 140px;
+  contain-intrinsic-size: 220px;
   contain: layout paint style;
 }
 .desk-card:active { border-color: var(--blue); }
@@ -239,3 +239,46 @@ body {
   color: #9ec5ff;
   border: 1px solid rgba(61,139,253,.4);
 }
+
+
+/* 让球醒目 + 主选/另选分行 */
+.desk-hc {
+  display: flex; align-items: baseline; gap: 10px;
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  background: rgba(240,180,41,.18);
+  border: 1px solid rgba(240,180,41,.55);
+  border-radius: 12px;
+}
+.desk-hc em {
+  font-style: normal; color: #ffe08a; font-size: 13px; font-weight: 800;
+  letter-spacing: .04em;
+}
+.desk-hc strong {
+  font-size: 28px; font-weight: 900; color: #ffe9a8; line-height: 1;
+}
+.desk-picks { display: flex; flex-direction: column; gap: 8px; margin: 0 0 12px; }
+.desk-pick {
+  font-size: 20px; font-weight: 800; line-height: 1.25;
+  padding: 8px 10px; border-radius: 10px;
+  background: #182536; border: 1px solid #35506e;
+}
+.desk-pick.primary { color: #dce9ff; border-color: rgba(61,139,253,.55); }
+.desk-pick.alt { color: #c5d3e6; border-color: #2c3c4e; font-size: 18px; }
+.desk-pick em {
+  font-style: normal; color: #8cbcff; font-size: 13px; font-weight: 700;
+  margin-right: 8px;
+}
+.desk-pick.alt em { color: #9fb0c3; }
+.phase.review {
+  background: rgba(240,180,41,.2); color: #ffd777;
+  border: 1px solid rgba(240,180,41,.5);
+  border-radius: 8px; padding: 2px 8px; font-size: 12px; font-weight: 800;
+}
+.desk-card.hot-fav .desk-hc {
+  background: rgba(140,150,160,.12);
+  border-color: rgba(140,150,160,.35);
+}
+.desk-card.hot-fav .desk-hc em,
+.desk-card.hot-fav .desk-hc strong { color: #c5cdd6; }
+.desk-card.hot-fav .desk-pick.primary { color: #a8b4c4; border-color: #3a4552; }

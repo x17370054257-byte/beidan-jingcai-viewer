@@ -61,8 +61,47 @@ function methodAgreeBadge(leg) {
 function phaseBadge(obj) {
   const ph = resolveMatchPhase(obj);
   if (ph === 'live') return '<span class="phase live">已开赛</span>';
-  if (ph === 'ft') return '<span class="phase ft">完赛</span>';
+  if (ph === 'ft') {
+    // 完赛且未标定「中」→ 待复盘（hit===true 才算已中）
+    if (obj && (obj.hit === true || obj.review_mark === '中' || obj.settled === 'hit')) {
+      return '<span class="phase ft">完赛·中</span>';
+    }
+    return '<span class="phase review">待复盘</span>';
+  }
   return '';
+}
+
+/** 主选/另选：优先 doubles.primary / alt，否则拆 double */
+function pickPrimaryAlt(leg) {
+  let pri = leg && leg.primary;
+  let alt = leg && leg.alt;
+  if (pri && alt) return { primary: String(pri), alt: String(alt) };
+  const d = String((leg && leg.double) || '');
+  if (d.includes('+')) {
+    const parts = d.split('+');
+    return { primary: (parts[0] || '').trim(), alt: (parts[1] || '').trim() };
+  }
+  const map = { H: '主胜', D: '平', A: '客胜' };
+  const pp = String((leg && leg.pick_pair) || '');
+  if (pp.length >= 2) return { primary: map[pp[0]] || pp[0], alt: map[pp[1]] || pp[1] };
+  return { primary: d || '—', alt: '' };
+}
+
+function renderPickLines(leg) {
+  const { primary, alt } = pickPrimaryAlt(leg);
+  const a = primary
+    ? `<div class="desk-pick primary"><em>主选</em>${escapeHtml(primary)}</div>`
+    : '';
+  const b = alt
+    ? `<div class="desk-pick alt"><em>另选</em>${escapeHtml(alt)}</div>`
+    : '';
+  return `<div class="desk-picks">${a}${b}</div>`;
+}
+
+function renderHandicapBig(leg) {
+  const hc = leg && (leg.handicap ?? leg.line);
+  const v = (hc === null || hc === undefined || hc === '') ? '—' : String(hc);
+  return `<div class="desk-hc"><em>让球</em><strong>${escapeHtml(v)}</strong></div>`;
 }
 
 function hasLiveXi(text) {
@@ -230,10 +269,10 @@ function deskCardBeidan(leg, idx) {
   return `<button type="button" class="desk-card${hot}" data-idx="${idx}">
     <div class="desk-top">
       <span class="desk-no">北单 ${escapeHtml(leg.sale_id)} ${strengthBadge(leg.strength)} ${methodAgreeBadge(leg)} ${phaseBadge(leg)}</span>
-      <span class="hc">让 ${escapeHtml(leg.handicap)}</span>
     </div>
     <div class="desk-teams">${escapeHtml(name)}</div>
-    <div class="desk-double"><em>双选</em>${escapeHtml(leg.double)}</div>
+    ${renderHandicapBig(leg)}
+    ${renderPickLines(leg)}
     ${off}
     <div class="odds-row">
       <span class="odds-label">北单让球SP</span>
@@ -250,10 +289,10 @@ function deskCardJingcai(leg, idx) {
   return `<button type="button" class="desk-card${hot}" data-idx="${idx}">
     <div class="desk-top">
       <span class="desk-no">${escapeHtml(leg.sale_id)} ${strengthBadge(leg.strength)} ${methodAgreeBadge(leg)} ${phaseBadge(leg)}</span>
-      <span class="hc">让 ${escapeHtml(leg.handicap)}</span>
     </div>
     <div class="desk-teams">${escapeHtml(name)}</div>
-    <div class="desk-double"><em>双选</em>${escapeHtml(leg.double)}</div>
+    ${renderHandicapBig(leg)}
+    ${renderPickLines(leg)}
     ${off}
     <div class="odds-row">
       <span class="odds-label">竞彩非让</span>
@@ -279,15 +318,15 @@ function renderSkeleton(leg) {
     </div>
     <div class="kv">
       <span>${escapeHtml(String(leg.sale_id).startsWith('周') ? '竞彩' : '北单')} ${escapeHtml(leg.sale_id)}</span>
-      <span>双选 ${escapeHtml(leg.double || '—')}</span>
+      ${(() => { const p=pickPrimaryAlt(leg); return `<span>主选 ${escapeHtml(p.primary || '—')}</span>` + (p.alt ? `<span>另选 ${escapeHtml(p.alt)}</span>` : ''); })()}
       ${leg.strength ? `<span>强度 ${escapeHtml(leg.strength)}</span>` : ''}
-      ${(leg.agree_n ?? leg.method_agree_n ?? leg.vote_agree_n) != null ? `<span>${escapeHtml((() => { const n=leg.agree_n ?? leg.method_agree_n ?? leg.vote_agree_n; const d=leg.agree_den ?? leg.method_agree_den; return d!=null&&d!=='' ? `同意 ${n}/${d}` : `同意 ${n}`; })())}</span>` : ''}
+      ${(leg.agree_n ?? leg.method_agree_n ?? leg.vote_agree_n) != null ? `<span>${escapeHtml((() => { const n=leg.agree_n ?? leg.method_agree_n ?? leg.vote_agree_n; const d=leg.agree_den ?? leg.method_agree_den ?? leg.agree_denom; return d!=null&&d!=='' ? `同意 ${n}/${d}` : `同意 ${n}`; })())}</span>` : ''}
       ${phaseBadge(leg)}
     </div>
     <div class="plain">
       <div class="verdict">
         <div class="verdict-label">研究结论</div>
-        <div class="verdict-main">${leg.strength ? escapeHtml(leg.strength) + ' · ' : ''}双选：${escapeHtml(leg.double || '—')} · 不出票</div>
+        <div class="verdict-main">${leg.strength ? escapeHtml(leg.strength) + ' · ' : ''}${(() => { const p=pickPrimaryAlt(leg); return `主选 ${escapeHtml(p.primary || '—')}` + (p.alt ? ` · 另选 ${escapeHtml(p.alt)}` : ''); })()} · 不出票</div>
         <div class="verdict-sub">短表观察 · 不是投注建议</div>
       </div>
       <div class="section" id="sec-view">
