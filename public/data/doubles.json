@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-10T03:45:42+08:00",
+  "as_of": "2026-09-10T03:47:53+08:00",
   "date": "2026-09-10",
   "version": "1.4",
   "disclaimer": "研究观察 · 不出票 · 非投注建议 · 偏M3 · 禁裸HA · 拒纯低赔",
@@ -39,14 +39,14 @@
         "missed": "主胜",
         "pick_pair": "DA",
         "sp": [
-          "9.94",
+          "9.89",
           "2.49",
           "2.00"
         ],
         "sell": "paused",
         "disabled": "no",
         "odds_label": "北单让球SP",
-        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价",
+        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价 · 时序最新",
         "strength": "信",
         "strength_code": "trust",
         "structure_tier": "结构精选",
@@ -151,14 +151,14 @@
         "missed": "客胜",
         "pick_pair": "HD",
         "sp": [
-          "2.56",
+          "2.57",
           "2.46",
-          "4.87"
+          "4.83"
         ],
         "sell": "paused",
         "disabled": "no",
         "odds_label": "北单让球SP",
-        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价",
+        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价 · 时序最新",
         "strength": "勉强",
         "strength_code": "thin",
         "structure_tier": "日更腿",
@@ -230,14 +230,14 @@
         "missed": "客胜",
         "pick_pair": "HD",
         "sp": [
-          "2.97",
-          "4.33",
-          "2.30"
+          "3.00",
+          "4.21",
+          "2.32"
         ],
         "sell": "paused",
         "disabled": "no",
         "odds_label": "北单让球SP",
-        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价",
+        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价 · 时序最新",
         "strength": "勉强",
         "strength_code": "thin",
         "structure_tier": "日更腿",
@@ -267,14 +267,14 @@
         "missed": "客胜",
         "pick_pair": "HD",
         "sp": [
-          "2.78",
-          "3.19",
-          "3.04"
+          "2.79",
+          "3.16",
+          "3.06"
         ],
         "sell": "paused",
         "disabled": "no",
         "odds_label": "北单让球SP",
-        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价",
+        "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价 · 时序最新",
         "strength": "勉强",
         "strength_code": "thin",
         "structure_tier": "日更腿",
