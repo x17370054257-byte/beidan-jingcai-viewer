@@ -2,53 +2,10 @@
   "as_of": "2026-09-10T03:35:42+08:00",
   "date": "2026-09-10",
   "version": "1.4",
-  "schema": "doubles-strength/1.4",
-  "sp_policy": "live_okooo_series_latest",
-  "user_hard_rules": {
-    "no_pure_low_odds": "拒信/拒结构精选当纯低赔无机制",
-    "prefer": [
-      "even_board",
-      "mechanism",
-      "off_field_delta"
-    ],
-    "each_leg_requires": "off_field 有|无|空包"
-  },
-  "backtest_steer": {
-    "source": "analysis/METHOD-LAB-1.4/backtest/FOR-CURATED-DUAL-NUMBERS.md",
-    "amplified": "analysis/METHOD-LAB-1.4/backtest/BACKTEST-7DUAL-AMPLIFIED.md",
-    "n_tickets": 542,
-    "ticket_survive_best": "M3/M4-proxy 12.9%",
-    "m3_survive": "12.9%",
-    "m4_proxy_survive": "12.9%",
-    "m2_survive": "7.4%",
-    "leg_hit_approx": "74%",
-    "weak_modes": [
-      "HA_draw_fail"
-    ],
-    "rules": [
-      "prefer_M3",
-      "M4_proxy_secondary",
-      "ban_bare_HA",
-      "M2_not_primary",
-      "downgrade_HD_away_risk"
-    ]
-  },
   "disclaimer": "研究观察 · 不出票 · 非投注建议 · 偏M3 · 禁裸HA · 拒纯低赔",
-  "true_curated_count": 0,
+  "sp_policy": "live_okooo_series_latest",
   "structure_pick_sale_ids": [
     "82"
-  ],
-  "dropped_legs": [
-    {
-      "sale_id": "90",
-      "match": "布拉格斯拉维亚 vs 朗斯",
-      "reason": "HD 主向最短约2.14，偏「买热门侧凑数」；有场外但优先级让给更均势的53/68"
-    },
-    {
-      "sale_id": "96",
-      "match": "德尔瓦耶独立 vs 弗拉门戈",
-      "reason": "原不碰+伤停空包；换出"
-    }
   ],
   "beidan7": {
     "title": "北单7场双选（强度版·偏M3）",
@@ -98,11 +55,12 @@
         "review_basis": "引用 FOR-CURATED-DUAL-NUMBERS：放大后偏 M3(12.9%)；本场实验室未跑 M3。抬信靠对位剧本+场外，非 M2。形 DA 禁裸 HA。 反低赔：DA 因对位机制，非「客短赔所以锁平稳胆」。",
         "view": "对位剧本：主队声浪逼抢 vs 罗马控场；客胜主叙事、平托底。客短赔不是抬档理由。M2 已降权，不拿赛程密度吹本场。",
         "fear": "主队逼抢早进球；或把客短赔误当成稳胆。",
-        "off_field": "有",
+        "off_field": "Chobani Stadium Fenerbahce Sukru Saracoglu｜M. Asensio(伤)、A. Fall(轮换)、A…",
         "off_field_note": "供应商：费内 Asensio 肌肉、Oosterwolde 跟腱；罗马 Pellegrini 大腿——两边名单都不完美（≠官宣）。",
         "even_board": false,
         "low_odds_flag": false,
-        "fixture_id": 1635659
+        "fixture_id": 1635659,
+        "hot_fav": true
       },
       {
         "no": 2,
@@ -133,11 +91,12 @@
         "review_basis": "FOR-CURATED-DUAL-NUMBERS：M3 票存活12.9%主刀；本场 M3 vs_report=differ。M2(7.4%)不主刀。形 DA 非裸 HA。",
         "view": "英冠肉搏+主队人员缺口仍可谈客不败，但放大样本后主刀是 M3，而本场 M3 method=H 与客向 differ → 强度封顶勉强，绝不当脊梁。",
         "fear": "按 M3 主刀被阵型控制打穿客向；或仍把旧「偏信」当胆。",
-        "off_field": "有",
+        "off_field": "The Valley｜D. McNamara(停)、W. Mannion(伤)、K. Ramsay(伤)等13人 · 伤12/停1/轮换0｜…",
         "off_field_note": "查尔顿 McNamara 红牌及一串伤缺；巡游者 I.Chair 伤缺（供应商，≠官宣）。",
         "even_board": false,
         "low_odds_flag": false,
-        "fixture_id": 1563151
+        "fixture_id": 1563151,
+        "hot_fav": false
       },
       {
         "no": 3,
@@ -168,11 +127,12 @@
         "review_basis": "均势盘+场外伤停；研报客向。实验室 M3 未覆盖本场 fixture。形 DA。M4 代理与 M3 同档数字但不能当真历史 SP。",
         "view": "欧对位：客队控场质量 vs 主队转换；均势三向（约3.68/2.98/2.54），用数据盘面+伤停增量，不追低赔。",
         "fear": "萨利巴缺席后防毛；主队转换得手。",
-        "off_field": "有",
+        "off_field": "Maradona｜Saliba(伤)、McTominay(伤)、Anguissa(伤)等7人｜客程更紧｜天气/出行暂缺｜supplier≠官宣",
         "off_field_note": "萨利巴背部、麦克托米奈心脏问题；安圭萨/邦乔诺伤缺在证据包（供应商≠官宣）。",
         "even_board": true,
         "low_odds_flag": false,
-        "fixture_id": 1635698
+        "fixture_id": 1635698,
+        "hot_fav": false
       },
       {
         "no": 4,
@@ -203,11 +163,12 @@
         "review_basis": "形 HD。M3 unclear（无首发）。M4 代理偏平仅旁证。M2 不主刀。 反低赔：HD带平≠已验证稳胆升级。",
         "view": "主场硬度凑覆盖；HD 客打穿风险仍在。盘面偏平，不是低赔热门。",
         "fear": "客胜打穿 HD。",
-        "off_field": "空包",
+        "off_field": "Estadio Jorge Luis Hirschi｜伤停通道暂无/空（不装满员）｜天气暂缺；出行暂缺｜supplier≠官宣",
         "off_field_note": "证据包伤停条目空——不写满员；客队赛程间隙更紧可写负荷，不作稳胆。",
         "even_board": true,
         "low_odds_flag": false,
-        "fixture_id": 1631506
+        "fixture_id": 1631506,
+        "hot_fav": false
       },
       {
         "no": 5,
@@ -238,7 +199,7 @@
         "review_basis": "形 HD。实验室无本场 M3。有场外增量但非纯低赔抬档。M2 不主刀。 反低赔：HD带平≠已验证稳胆升级。",
         "view": "压迫 vs 回收有剧本+伤停增量；让球-1 下不是「1.x 低赔稳胆」，仍只勉强。",
         "fear": "闷平/客打穿；把欧冠热门当低赔信仰。",
-        "off_field": "有",
+        "off_field": "Anfield｜H. Ekitike(伤)、A. Sorloth(伤)、A. Ortiz(停)等8人 · 伤6/停1/轮换1｜天气暂缺；出行…",
         "off_field_note": "利物浦 Ekitike/Chiesa/Leoni；马竞 Sorloth、Ortiz 红牌（供应商≠官宣）。",
         "even_board": false,
         "low_odds_flag": false,
@@ -247,7 +208,8 @@
           "3.98",
           "3.05",
           "2.36"
-        ]
+        ],
+        "hot_fav": false
       },
       {
         "no": 6,
@@ -278,11 +240,12 @@
         "review_basis": "形 HD。M3 unclear。M4 代理略偏主=旁证同意向，仍因开放对攻维持勉强。 反低赔：HD带平≠已验证稳胆升级。",
         "view": "开放对攻，名气不等于稳；两侧伤停线索在。",
         "fear": "迈阿密先打穿。",
-        "off_field": "有",
+        "off_field": "Soldier Field｜M. Silvetti(伤)、Micael(伤)、J. Bamba(伤)等9人 · 伤9/停0/轮换0｜天气暂缺…",
         "off_field_note": "迈阿密 Silvetti/Micael；芝加哥 Bamba/Franco 等（供应商≠官宣）。",
         "even_board": false,
         "low_odds_flag": false,
-        "fixture_id": 1490457
+        "fixture_id": 1490457,
+        "hot_fav": false
       },
       {
         "no": 7,
@@ -313,11 +276,12 @@
         "review_basis": "均势占位；无 dual/M3 覆盖；场外无。M2 不主刀。强度封顶勉强。 反低赔：HD带平≠已验证稳胆升级。",
         "view": "三向最均势之一（约2.78/3.20/3.03）；换入是为执行「优先均势」，不是因为找到稳胆。研报薄，只守不败。",
         "fear": "任意一边先打穿；信息增量不足。",
-        "off_field": "无",
+        "off_field": "场外线索空｜伤停通道未齐（不装满员）｜天气/出行暂缺｜信息薄仅均势盘",
         "off_field_note": "日更检索无可用伤停/动机增量；仅盘面均势。",
         "even_board": true,
         "low_odds_flag": false,
-        "fixture_id": 1520866
+        "fixture_id": 1520866,
+        "hot_fav": false
       }
     ]
   },
@@ -470,13 +434,5 @@
         "hot_fav": false
       }
     ]
-  },
-  "anti_lowodds": {
-    "source": "analysis/METHOD-LAB-1.4/backtest/ANTI-LOWODDS-BIAS.md",
-    "n": 1133,
-    "raw_top2_survive": "12.5%",
-    "fav_plus_draw_survive": "6.7%",
-    "rule": "勿盲目低赔+必带平；带平须机制；真SP重跑",
-    "wed013": "北单58 帕梅拉斯 M2 diverge → 不进今日7 / 勿稳胆"
   }
 }
