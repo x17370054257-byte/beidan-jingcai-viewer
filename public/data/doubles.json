@@ -1,28 +1,72 @@
 {
-  "as_of": "2026-09-10T03:34:00+08:00",
+  "as_of": "2026-09-10T03:35:42+08:00",
   "date": "2026-09-10",
   "version": "1.4",
-  "disclaimer": "研究观察 · 不出票 · 非投注建议 · 结构精选≠出票授权 · 禁止只买低赔",
+  "schema": "doubles-strength/1.4",
   "sp_policy": "live_okooo_series_latest",
+  "user_hard_rules": {
+    "no_pure_low_odds": "拒信/拒结构精选当纯低赔无机制",
+    "prefer": [
+      "even_board",
+      "mechanism",
+      "off_field_delta"
+    ],
+    "each_leg_requires": "off_field 有|无|空包"
+  },
+  "backtest_steer": {
+    "source": "analysis/METHOD-LAB-1.4/backtest/FOR-CURATED-DUAL-NUMBERS.md",
+    "amplified": "analysis/METHOD-LAB-1.4/backtest/BACKTEST-7DUAL-AMPLIFIED.md",
+    "n_tickets": 542,
+    "ticket_survive_best": "M3/M4-proxy 12.9%",
+    "m3_survive": "12.9%",
+    "m4_proxy_survive": "12.9%",
+    "m2_survive": "7.4%",
+    "leg_hit_approx": "74%",
+    "weak_modes": [
+      "HA_draw_fail"
+    ],
+    "rules": [
+      "prefer_M3",
+      "M4_proxy_secondary",
+      "ban_bare_HA",
+      "M2_not_primary",
+      "downgrade_HD_away_risk"
+    ]
+  },
+  "disclaimer": "研究观察 · 不出票 · 非投注建议 · 偏M3 · 禁裸HA · 拒纯低赔",
+  "true_curated_count": 0,
   "structure_pick_sale_ids": [
     "82"
   ],
+  "dropped_legs": [
+    {
+      "sale_id": "90",
+      "match": "布拉格斯拉维亚 vs 朗斯",
+      "reason": "HD 主向最短约2.14，偏「买热门侧凑数」；有场外但优先级让给更均势的53/68"
+    },
+    {
+      "sale_id": "96",
+      "match": "德尔瓦耶独立 vs 弗拉门戈",
+      "reason": "原不碰+伤停空包；换出"
+    }
+  ],
   "beidan7": {
-    "title": "北单7场双选（强度版·拒纯低赔）",
+    "title": "北单7场双选（强度版·偏M3）",
     "forced_selection": true,
     "ticket_gate_curated": "blocked",
     "ticket_gate_daily": "review",
-    "note": "用户硬规矩：不追纯低赔。换腿：出90/96，入53（均势+场外）、68（均势占位）。脊梁仍仅82（机制+场外，非因客短赔）。真精选0。",
+    "note": "放大样本后主刀 M3 12.9%（M2 降至 7.4% 不主刀）。55 因 M3 differ 降为勉强。脊梁仍仅 82（DA）。禁裸 HA。引用 FOR-CURATED-DUAL-NUMBERS.md。真精选0。 反低赔：勿盲「低赔必带平」（代理 Top2 12.5%>稳胆带平6.7%）。未纳入周三013/58。",
     "manager_summary": {
       "strongest": [
         "82"
       ],
       "weakest": [
+        "55",
         "68",
-        "73",
-        "71"
+        "71",
+        "73"
       ],
-      "fear_tonight": "把短赔当信仰；HD 客打穿；68 信息真空当胆。"
+      "fear_tonight": "忽略 M3 differ 仍抬 55；裸 HA；拿已降权的 M2 叙事凑胆。"
     },
     "legs": [
       {
@@ -51,15 +95,14 @@
         "structure_tier_code": "structure_pick",
         "true_curated": false,
         "why_not_true_curated": "market_baseline；paused；weight=0。",
-        "review_basis": "回测避裸HA（本形DA）。M2/M3今日未覆盖。数据+经验：控场客队客场要分。",
-        "view": "对位剧本：主队声浪逼抢 vs 罗马控场；客胜主叙事、平托底。客赔约2.00偏短，但抬档理由是机制+场外，不是「低所以稳」。",
+        "review_basis": "引用 FOR-CURATED-DUAL-NUMBERS：放大后偏 M3(12.9%)；本场实验室未跑 M3。抬信靠对位剧本+场外，非 M2。形 DA 禁裸 HA。 反低赔：DA 因对位机制，非「客短赔所以锁平稳胆」。",
+        "view": "对位剧本：主队声浪逼抢 vs 罗马控场；客胜主叙事、平托底。客短赔不是抬档理由。M2 已降权，不拿赛程密度吹本场。",
         "fear": "主队逼抢早进球；或把客短赔误当成稳胆。",
-        "off_field": "伤停 Asensio/Pellegrini/Oosterwolde；停赛 Guendouzi；计伤4…",
+        "off_field": "有",
         "off_field_note": "供应商：费内 Asensio 肌肉、Oosterwolde 跟腱；罗马 Pellegrini 大腿——两边名单都不完美（≠官宣）。",
         "even_board": false,
         "low_odds_flag": false,
-        "fixture_id": 1635659,
-        "hot_fav": true
+        "fixture_id": 1635659
       },
       {
         "no": 2,
@@ -81,21 +124,20 @@
         "disabled": "yes",
         "odds_label": "北单让球SP",
         "tip": "让胜/让平/让负 · okooo · 非500官方 · 不可当成交价",
-        "strength": "偏信",
-        "strength_code": "lean_trust",
+        "strength": "勉强",
+        "strength_code": "thin",
         "structure_tier": "日更腿",
         "structure_tier_code": "daily_leg",
         "true_curated": false,
-        "why_not_true_curated": "disabled；M3 分歧；收市场。",
-        "review_basis": "M1 agree 客；M3 differ→偏信。非纯低赔（客约2.19）。",
-        "view": "英冠肉搏+主队人员缺口叙事仍在，但 M3 对位 diverge，不当脊梁。",
-        "fear": "误当成已过 M3；主队铁桶翻盘。",
-        "off_field": "伤停 Mannion/Ramsay/Chair；停赛 McNamara；计伤12/停1/轮换0",
+        "why_not_true_curated": "M3 分歧；disabled；收市场。",
+        "review_basis": "FOR-CURATED-DUAL-NUMBERS：M3 票存活12.9%主刀；本场 M3 vs_report=differ。M2(7.4%)不主刀。形 DA 非裸 HA。",
+        "view": "英冠肉搏+主队人员缺口仍可谈客不败，但放大样本后主刀是 M3，而本场 M3 method=H 与客向 differ → 强度封顶勉强，绝不当脊梁。",
+        "fear": "按 M3 主刀被阵型控制打穿客向；或仍把旧「偏信」当胆。",
+        "off_field": "有",
         "off_field_note": "查尔顿 McNamara 红牌及一串伤缺；巡游者 I.Chair 伤缺（供应商，≠官宣）。",
         "even_board": false,
         "low_odds_flag": false,
-        "fixture_id": 1563151,
-        "hot_fav": false
+        "fixture_id": 1563151
       },
       {
         "no": 3,
@@ -123,15 +165,14 @@
         "structure_tier_code": "daily_leg",
         "true_curated": false,
         "why_not_true_curated": "disabled=yes；market_baseline；未过升权。",
-        "review_basis": "换入理由：替换原90/96低信息或偏热门凑数腿；本场更均势。研报客向+平。",
+        "review_basis": "均势盘+场外伤停；研报客向。实验室 M3 未覆盖本场 fixture。形 DA。M4 代理与 M3 同档数字但不能当真历史 SP。",
         "view": "欧对位：客队控场质量 vs 主队转换；均势三向（约3.68/2.98/2.54），用数据盘面+伤停增量，不追低赔。",
         "fear": "萨利巴缺席后防毛；主队转换得手。",
-        "off_field": "场外线索见研报",
+        "off_field": "有",
         "off_field_note": "萨利巴背部、麦克托米奈心脏问题；安圭萨/邦乔诺伤缺在证据包（供应商≠官宣）。",
         "even_board": true,
         "low_odds_flag": false,
-        "fixture_id": 1635698,
-        "hot_fav": false
+        "fixture_id": 1635698
       },
       {
         "no": 4,
@@ -159,15 +200,14 @@
         "structure_tier_code": "daily_leg",
         "true_curated": false,
         "why_not_true_curated": "HD 弱形；无 M2/M3。",
-        "review_basis": "形 HD=回测弱腿。M2/M3 unclear。",
+        "review_basis": "形 HD。M3 unclear（无首发）。M4 代理偏平仅旁证。M2 不主刀。 反低赔：HD带平≠已验证稳胆升级。",
         "view": "主场硬度凑覆盖；HD 客打穿风险仍在。盘面偏平，不是低赔热门。",
         "fear": "客胜打穿 HD。",
-        "off_field": "伤停通道空，不写满员。",
+        "off_field": "空包",
         "off_field_note": "证据包伤停条目空——不写满员；客队赛程间隙更紧可写负荷，不作稳胆。",
         "even_board": true,
         "low_odds_flag": false,
-        "fixture_id": 1631506,
-        "hot_fav": false
+        "fixture_id": 1631506
       },
       {
         "no": 5,
@@ -195,10 +235,10 @@
         "structure_tier_code": "daily_leg",
         "true_curated": false,
         "why_not_true_curated": "disabled；收市场热门侧；无 M2/M3 放行。",
-        "review_basis": "有机制叙事但 HD；实验室未覆盖同场 M2/M3。",
+        "review_basis": "形 HD。实验室无本场 M3。有场外增量但非纯低赔抬档。M2 不主刀。 反低赔：HD带平≠已验证稳胆升级。",
         "view": "压迫 vs 回收有剧本+伤停增量；让球-1 下不是「1.x 低赔稳胆」，仍只勉强。",
         "fear": "闷平/客打穿；把欧冠热门当低赔信仰。",
-        "off_field": "伤停 Ekitike/Sorloth/Chiesa；停赛 Ortiz；计伤6/停1/轮换1",
+        "off_field": "有",
         "off_field_note": "利物浦 Ekitike/Chiesa/Leoni；马竞 Sorloth、Ortiz 红牌（供应商≠官宣）。",
         "even_board": false,
         "low_odds_flag": false,
@@ -207,8 +247,7 @@
           "3.98",
           "3.05",
           "2.36"
-        ],
-        "hot_fav": false
+        ]
       },
       {
         "no": 6,
@@ -236,15 +275,14 @@
         "structure_tier_code": "daily_leg",
         "true_curated": false,
         "why_not_true_curated": "M1 unclear。",
-        "review_basis": "HD+开放；非纯低赔。",
+        "review_basis": "形 HD。M3 unclear。M4 代理略偏主=旁证同意向，仍因开放对攻维持勉强。 反低赔：HD带平≠已验证稳胆升级。",
         "view": "开放对攻，名气不等于稳；两侧伤停线索在。",
         "fear": "迈阿密先打穿。",
-        "off_field": "伤停 Silvetti/Micael/Bamba；计伤9/停0/轮换0",
+        "off_field": "有",
         "off_field_note": "迈阿密 Silvetti/Micael；芝加哥 Bamba/Franco 等（供应商≠官宣）。",
         "even_board": false,
         "low_odds_flag": false,
-        "fixture_id": 1490457,
-        "hot_fav": false
+        "fixture_id": 1490457
       },
       {
         "no": 7,
@@ -272,7 +310,7 @@
         "structure_tier_code": "daily_leg",
         "true_curated": false,
         "why_not_true_curated": "信息薄；forced 均势占位。",
-        "review_basis": "换下96：均势优先于空包不碰腿。场外无线索→强度封顶勉强。",
+        "review_basis": "均势占位；无 dual/M3 覆盖；场外无。M2 不主刀。强度封顶勉强。 反低赔：HD带平≠已验证稳胆升级。",
         "view": "三向最均势之一（约2.78/3.20/3.03）；换入是为执行「优先均势」，不是因为找到稳胆。研报薄，只守不败。",
         "fear": "任意一边先打穿；信息增量不足。",
         "off_field": "无",
@@ -305,7 +343,7 @@
           "3.60",
           "4.50"
         ],
-        "strength": "偏信",
+        "strength": "勉强",
         "layer": "结构精选",
         "odds_label_nspf": "竞彩非让",
         "odds_label_spf": "竞彩让球",
@@ -313,11 +351,11 @@
         "tip_spf": "让胜/让平/让负 · 渠道快照 · 非成交价",
         "view": "英冠偏客；主队缠斗防反会让客胜变难。",
         "fear": "主队肉搏防住转换。",
-        "strength_code": "lean_trust",
+        "strength_code": "thin",
         "structure_tier": "日更腿",
         "structure_tier_code": "daily_leg",
-        "review_basis": "对照北单55；M1 agree 但 M3 differ → 偏信。",
-        "why_not_true_curated": "回测偏 M3，移出结构精选。",
+        "review_basis": "对照北单55；M3 differ → 勉强。",
+        "why_not_true_curated": "M3 分歧。",
         "true_curated": false,
         "pick_pair": "DA",
         "off_field": "",
@@ -432,5 +470,13 @@
         "hot_fav": false
       }
     ]
+  },
+  "anti_lowodds": {
+    "source": "analysis/METHOD-LAB-1.4/backtest/ANTI-LOWODDS-BIAS.md",
+    "n": 1133,
+    "raw_top2_survive": "12.5%",
+    "fav_plus_draw_survive": "6.7%",
+    "rule": "勿盲目低赔+必带平；带平须机制；真SP重跑",
+    "wed013": "北单58 帕梅拉斯 M2 diverge → 不进今日7 / 勿稳胆"
   }
 }

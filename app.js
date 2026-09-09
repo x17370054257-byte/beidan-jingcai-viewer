@@ -349,6 +349,12 @@ function renderList() {
 
 function pickOffField(text, legHint) {
   const fromLeg = legHint && legHint.off_field ? String(legHint.off_field).trim() : '';
+  const abs = pick(text, /场外摘要[：:]\s*(.+)/);
+  if (abs) {
+    let a = abs.replace(/\s+/g, ' ').trim();
+    if (a.length > 120) a = a.slice(0, 118) + '…';
+    return a;
+  }
   if (fromLeg) return fromLeg;
   let s = pick(text, /场外消息[：:]\s*(.+)/) || pick(text, /场外[：:]\s*(.+)/);
   if (!s) return '';
