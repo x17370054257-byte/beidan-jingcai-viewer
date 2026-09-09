@@ -212,7 +212,11 @@ function renderDesk() {
     return;
   }
   const pack = deskKind === 'beidan7' ? DOUBLES.beidan7 : DOUBLES.jingcai;
-  $('desk-note').textContent = deskKind === 'beidan7' ? '' : (pack.summary || '');
+  $('desk-note').textContent = deskKind === 'beidan7'
+    ? ((DOUBLES.main_survive || DOUBLES.ticket_agree && DOUBLES.ticket_agree.ablation_survive_when_pass)
+        ? (`冠军核同意 n/3 · 整票门主数字 ${DOUBLES.main_survive || DOUBLES.ticket_agree.ablation_survive_when_pass} · 未升权`)
+        : (pack.note || ''))
+    : (pack.summary || '');
   const legs = pack.legs || [];
   const html = legs.map((leg, i) => deskKind === 'beidan7' ? deskCardBeidan(leg, i) : deskCardJingcai(leg, i)).join('');
   $('desk-list').innerHTML = html || `<div class="empty">无腿</div>`;
