@@ -39,7 +39,6 @@ body {
 .switch-row {
   display: flex; gap: 8px; padding: 10px 12px;
   background: #0f1419; border-bottom: 1px solid var(--line);
-  position: sticky; top: 0; z-index: 15;
 }
 .chip-sw {
   appearance: none; border: 1px solid var(--line); background: #1a222b;
