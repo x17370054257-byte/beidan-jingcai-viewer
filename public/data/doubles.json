@@ -2,13 +2,8 @@
   "as_of": "2026-09-10T03:30:12+08:00",
   "date": "2026-09-10",
   "version": "1.4",
-  "schema": "doubles-strength/1.4",
   "disclaimer": "研究观察 · 不出票 · 非投注建议 · 结构精选≠出票授权",
-  "true_curated_count": 0,
-  "structure_pick_sale_ids": [
-    "82",
-    "55"
-  ],
+  "sp_policy": "live_okooo_series_latest",
   "beidan7": {
     "title": "北单7场双选（强度版）",
     "forced_selection": true,
@@ -430,7 +425,5 @@
         "true_curated": false
       }
     ]
-  },
-  "sp_policy": "live_okooo_series_latest",
-  "sp_note": "公网 doubles 腿 SP 跟 crawl/sp-series 最新点；日更 md 可另存 locked 快照。71：4.85=写盘快照，4.86=中间帧，最新=4.87。"
+  }
 }
