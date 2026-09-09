@@ -7,16 +7,7 @@ let deskKind = 'beidan7'; // beidan7 | jingcai
 const $ = (id) => document.getElementById(id);
 
 async function load() {
-  // meta optional in 1.4 desk skeleton — never white-screen on missing #meta
-  const metaEl = $('meta');
-  if (metaEl) {
-    try {
-      const c = (typeof DATA !== 'undefined' && DATA && DATA.counts) ? DATA.counts : {};
-      metaEl.innerHTML = '';
-    } catch (_) {}
-  }
-
-  $('desk-list').innerHTML = `<div class="empty">加载双选短表…</div>`;
+  if ($('desk-list')) $('desk-list').innerHTML = `<div class="empty">加载双选短表…</div>`;
   $('detail').innerHTML = `<div class="empty">加载中…</div>`;
   try {
     const [dayRes, dblRes] = await Promise.all([
@@ -27,7 +18,7 @@ async function load() {
     DATA = await dayRes.json();
     DOUBLES = dblRes.ok ? await dblRes.json() : null;
   } catch (err) {
-    $('desk-list').innerHTML = `<div class="empty">加载失败：${escapeHtml(err.message)}</div>`;
+    if ($('desk-list')) $('desk-list').innerHTML = `<div class="empty">加载失败：${escapeHtml(err.message)}</div>`;
     $('detail').innerHTML = `<div class="empty">请硬刷新</div>`;
     return;
   }
@@ -37,6 +28,15 @@ async function load() {
   const n = (DATA.matches || []).length;
   const asOf = (DATA.as_of || DOUBLES?.as_of || '').replace('T', ' ').slice(0, 19);
   $('build').textContent = `版本 1.4 · 已载入 ${n} 场 · 刷新 ${asOf || '—'}`;
+  if ($('meta')) {
+    $('meta').innerHTML = [
+      chip('日期 ' + (DATA.date || '')),
+      chip('竞彩 ' + (c.jingcai ?? 0)),
+      chip('北单 ' + (c.beidan ?? 0)),
+      chip('精选 ' + (c.selected ?? 0)),
+      chip('观察 ' + (c.observe ?? 0)),
+    ].join('');
+  }
 
   document.querySelectorAll('.mode-tab').forEach(btn => {
     btn.onclick = () => setMode(btn.dataset.mode);
