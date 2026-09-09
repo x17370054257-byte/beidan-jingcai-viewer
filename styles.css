@@ -153,3 +153,39 @@ body {
 }
 
 .muted-loading { color: var(--muted); font-size: 15px; }
+
+.desk-off {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.desk-off em {
+  font-style: normal;
+  font-weight: 800;
+  color: #a8b4c4;
+  margin-right: 6px;
+}
+/* 低赔热门：视觉降权，别金闪闪 */
+.desk-card.hot-fav {
+  border-color: #2a3340;
+  background: #12171d;
+  box-shadow: none;
+  opacity: 0.92;
+}
+.desk-card.hot-fav .desk-double {
+  color: #c5ced8;
+}
+.desk-card.hot-fav .desk-double em { color: #8b98a8; }
+.desk-card.hot-fav .str.xin,
+.desk-card.hot-fav .str.pian {
+  background: rgba(139,152,168,.14);
+  color: #c5ced8;
+  border-color: rgba(139,152,168,.35);
+}
+.desk-card.hot-fav .hc {
+  background: rgba(139,152,168,.12);
+  color: #c5ced8;
+  border-color: rgba(139,152,168,.3);
+}
+.desk-card.hot-fav .odds-val { color: #a8b4c4; font-weight: 600; }

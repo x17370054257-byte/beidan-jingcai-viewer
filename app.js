@@ -128,13 +128,16 @@ function renderDesk() {
 function deskCardBeidan(leg, idx) {
   const sp = Array.isArray(leg.sp) ? leg.sp.join(' / ') : '';
   const name = leg.match_name || `${leg.home} vs ${leg.away}`;
-  return `<button type="button" class="desk-card" data-idx="${idx}">
+  const hot = leg.hot_fav ? ' hot-fav' : '';
+  const off = leg.off_field ? `<div class="desk-off"><em>场外</em>${escapeHtml(leg.off_field)}</div>` : '';
+  return `<button type="button" class="desk-card${hot}" data-idx="${idx}">
     <div class="desk-top">
       <span class="desk-no">北单 ${escapeHtml(leg.sale_id)} ${strengthBadge(leg.strength)}</span>
       <span class="hc">让 ${escapeHtml(leg.handicap)}</span>
     </div>
     <div class="desk-teams">${escapeHtml(name)}</div>
     <div class="desk-double"><em>双选</em>${escapeHtml(leg.double)}</div>
+    ${off}
     <div class="odds-row">
       <span class="odds-label">北单让球SP</span>
       ${sp ? `<span class="odds-val">${escapeHtml(sp)}</span>` : `<span class="odds-miss">无SP</span>`}
@@ -145,13 +148,16 @@ function deskCardBeidan(leg, idx) {
 function deskCardJingcai(leg, idx) {
   const name = leg.match_name || `${leg.home} vs ${leg.away}`;
   const nspf = Array.isArray(leg.nspf) ? leg.nspf.join(' / ') : '';
-  return `<button type="button" class="desk-card" data-idx="${idx}">
+  const hot = leg.hot_fav ? ' hot-fav' : '';
+  const off = leg.off_field ? `<div class="desk-off"><em>场外</em>${escapeHtml(leg.off_field)}</div>` : '';
+  return `<button type="button" class="desk-card${hot}" data-idx="${idx}">
     <div class="desk-top">
       <span class="desk-no">${escapeHtml(leg.sale_id)} ${strengthBadge(leg.strength)}</span>
       <span class="hc">让 ${escapeHtml(leg.handicap)}</span>
     </div>
     <div class="desk-teams">${escapeHtml(name)}</div>
     <div class="desk-double"><em>双选</em>${escapeHtml(leg.double)}</div>
+    ${off}
     <div class="odds-row">
       <span class="odds-label">竞彩非让</span>
       ${nspf ? `<span class="odds-val">${escapeHtml(nspf)}</span>` : `<span class="odds-miss">无SP</span>`}
@@ -193,6 +199,10 @@ function renderSkeleton(leg) {
         <h3>我怕什么</h3>
         <p class="muted-loading">加载中…</p>
       </div>
+      <div class="section" id="sec-off">
+        <h3>场外消息</h3>
+        <p>${leg.off_field ? escapeHtml(leg.off_field) : '<span class="muted-loading">加载中…</span>'}</p>
+      </div>
       <div class="section" id="sec-market">
         <h3>市场对照</h3>
         ${marketFromLeg(leg)}
@@ -222,6 +232,10 @@ async function fillDetailAsync(leg, seq) {
   }
   if (leg.fear && fearEl()) {
     fearEl().innerHTML = `<h3>我怕什么</h3><ul><li>${escapeHtml(leg.fear)}</li></ul>`;
+  }
+  const offEl = () => $('detail-body')?.querySelector('#sec-off');
+  if (leg.off_field && offEl()) {
+    offEl().innerHTML = `<h3>场外消息</h3><p>${escapeHtml(leg.off_field)}</p>`;
   }
 
   // try richer report via day.json mapping — lazy
@@ -333,6 +347,34 @@ function renderList() {
   }).join('') || `<div class="empty">无匹配</div>`;
 }
 
+function pickOffField(text, legHint) {
+  const fromLeg = legHint && legHint.off_field ? String(legHint.off_field).trim() : '';
+  if (fromLeg) return fromLeg;
+  let s = pick(text, /场外消息[：:]\s*(.+)/) || pick(text, /场外[：:]\s*(.+)/);
+  if (!s) return '';
+  s = s.replace(/\s+/g, ' ').trim();
+  s = s.replace(/^来源[^）]*）\s*[。.]?\s*/, '').replace(/^来源[^。]*。\s*/, '');
+  s = s.replace(/天气：暂缺[^。]*。/g, '').replace(/出行：暂缺[^。]*。/g, '').replace(/不以低赔收尾。?/g, '');
+  if (/伤停\/停赛[：:].*(unsupported|条目空)/.test(s)) return '伤停通道空，不写满员。';
+  const bits = [];
+  const inj = s.match(/伤停\s*(.+?)(?=；停赛|；轮换|（计数|$)/);
+  const sus = s.match(/停赛\s*(.+?)(?=；轮换|（计数|$)/);
+  const cnt = s.match(/（计数\s*([^）]+)）/);
+  const names = (chunk) => [...(chunk || '').matchAll(/([A-Za-zÀ-ÿ.]+)\s*（/g)].map(m => m[1]);
+  if (inj) {
+    const n = names(inj[1]).slice(0, 3);
+    bits.push(n.length ? ('伤停 ' + n.join('/')) : '伤停线索有');
+  }
+  if (sus) {
+    const n = names(sus[1]).slice(0, 2);
+    if (n.length) bits.push('停赛 ' + n.join('/'));
+  }
+  if (cnt) bits.push('计' + cnt[1].replace(/\s+/g, ''));
+  let out = bits.length ? bits.join('；') : s.slice(0, 52);
+  if (out.length > 52) out = out.slice(0, 50) + '…';
+  return out;
+}
+
 function plainReport(md, m, legHint) {
   let text = String(md || '');
   text = text.replace(/\n---\s*\n(?:后台|规则|验证位)[\s\S]*$/m, '');
@@ -377,6 +419,15 @@ function plainReport(md, m, legHint) {
 
   let oddsTalk = simplifyOddsTalk(pick(text, /盘口[：:]\s*(.+)/) || '');
 
+  // 三块：经验复盘 / 数据证据 / 场外
+  const exp = pick(text, /经验复盘[：:]\s*(.+)/);
+  const dataEv = pick(text, /数据\/?证据[：:]\s*(.+)/);
+  const off = pickOffField(text, legHint);
+  const tri = [];
+  if (exp) tri.push('经验复盘：' + exp);
+  if (dataEv) tri.push('数据/证据：' + dataEv);
+  const viewItems = tri.length ? tri : uniq.slice(0, 4);
+
   return `
     <div class="plain">
       <div class="verdict">
@@ -386,11 +437,15 @@ function plainReport(md, m, legHint) {
       </div>
       <div class="section">
         <h3>比赛怎么看</h3>
-        <ol>${uniq.slice(0, 4).map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ol>
+        <ol>${viewItems.map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ol>
       </div>
       <div class="section fear-box">
         <h3>我怕什么</h3>
         <ul>${fears.map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ul>
+      </div>
+      <div class="section" id="sec-off">
+        <h3>场外消息</h3>
+        <p>${off ? escapeHtml(off) : '本场暂无单独场外摘要。'}</p>
       </div>
       <div class="section">
         <h3>市场对照</h3>
