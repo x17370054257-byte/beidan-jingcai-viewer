@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-10T03:42:30+08:00",
+  "as_of": "2026-09-10T03:44:31+08:00",
   "date": "2026-09-10",
   "version": "1.4",
   "schema": "doubles-strength/1.4",
@@ -493,10 +493,21 @@
   "sale_day_main": {
     "source": "analysis/METHOD-LAB-1.4/backtest/SALE-DAY-SCORED.md",
     "curated_memo": "team/curated/MEMO-SALE-DAY-MAIN-20260910.md",
-    "n_tickets": 114,
-    "leg_hit": "80.3%",
-    "ticket_survive": "14.0%",
+    "n_tickets": 236,
+    "leg_hit": "76.0%",
+    "ticket_survive": "11.9%",
+    "beidan_pool": {
+      "n": 94,
+      "leg_hit": "78.9%",
+      "survive": "9.6%"
+    },
+    "jingcai_pool": {
+      "n": 142,
+      "leg_hit": "74.0%",
+      "survive": "13.4%",
+      "note": "略好"
+    },
     "production_weight": 0,
-    "note": "新主表；不升权；继续扩已完赛售卖日"
+    "note": "扩日主表；不升权；继续扩已完赛售卖日；旧114/14.0%为子集"
   }
 }
