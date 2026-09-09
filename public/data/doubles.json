@@ -443,5 +443,106 @@
         "hot_fav": false
       }
     ]
-  }
+  },
+  "sale_day_main": {
+    "source": "analysis/METHOD-LAB-1.4/backtest/SALE-DAY-SCORED.md",
+    "curated_memo": "team/curated/MEMO-SALE-DAY-MAIN-20260910.md",
+    "priority": "jingcai_GE7_SP_Top2",
+    "jingcai_ge7_sp": {
+      "n": 156,
+      "leg_hit": "73.8%",
+      "survive": "8.9%",
+      "survive_raw": "14/156",
+      "strategy": "SP Top2"
+    },
+    "jingcai_ge7_elo_ctrl": {
+      "n": 156,
+      "leg_hit": "73.4%",
+      "survive": "13.5%",
+      "strategy": "Elo Top2"
+    },
+    "beidan_sp_0909": {
+      "n": 37,
+      "leg_hit": "76.8%",
+      "survive": "8.1%",
+      "strategy": "SP Top2"
+    },
+    "beidan_ft_elo_ctrl": {
+      "n": 97,
+      "leg_hit": "84.4%",
+      "survive": "17.5%",
+      "strategy": "Elo Top2"
+    },
+    "n_tickets": 156,
+    "leg_hit": "73.8%",
+    "ticket_survive": "8.9%",
+    "sp_not_more_stable": true,
+    "sp_vs_elo_note": "SP Top2 8.9% < Elo Top2 13.5% → 勿把SP双选当更稳",
+    "production_weight": 0,
+    "deprecated_as_main": [
+      "114/80.3%/14.0% Elo-only",
+      "236/11.9% Elo合计"
+    ],
+    "note": "换主表完成；SP优先口径≠更稳；不升权"
+  },
+  "tier_xin_memo": {
+    "source": "analysis/METHOD-LAB-1.4/backtest/TIER-FIX-XIN.md",
+    "curated_memo": "team/curated/MEMO-TIER-XIN-20260910.md",
+    "xin_survive": "7.6%",
+    "observe_survive": "15.4%",
+    "rule": "勿迷信信徽章；继续禁裸HA；等真SP再验"
+  },
+  "backtest_steer": {
+    "source": "analysis/METHOD-LAB-1.4/backtest/FOR-CURATED-DUAL-NUMBERS.md",
+    "amplified": "analysis/METHOD-LAB-1.4/backtest/BACKTEST-7DUAL-AMPLIFIED.md",
+    "n_tickets": 542,
+    "ticket_survive_best": "M3/M4-proxy 12.9%",
+    "m3_survive": "12.9%",
+    "m4_proxy_survive": "12.9%",
+    "m2_survive": "7.4%",
+    "leg_hit_approx": "74%",
+    "weak_modes": [
+      "HA_draw_fail"
+    ],
+    "rules": [
+      "prefer_M3",
+      "M4_proxy_secondary",
+      "ban_bare_HA",
+      "M2_not_primary",
+      "downgrade_HD_away_risk"
+    ],
+    "role": "appendix_vs_sale_day_main",
+    "sale_day_main": "114 / 80.3% / 14.0%"
+  },
+  "anti_lowodds": {
+    "source": "analysis/METHOD-LAB-1.4/backtest/ANTI-LOWODDS-BIAS.md",
+    "n": 1133,
+    "raw_top2_survive": "12.5%",
+    "fav_plus_draw_survive": "6.7%",
+    "rule": "勿盲目低赔+必带平；带平须机制；真SP重跑",
+    "wed013": "北单58 帕梅拉斯 M2 diverge → 不进今日7 / 勿稳胆"
+  },
+  "schema": "doubles-strength/1.4",
+  "true_curated_count": 0,
+  "user_hard_rules": {
+    "no_pure_low_odds": "拒信/拒结构精选当纯低赔无机制",
+    "prefer": [
+      "even_board",
+      "mechanism",
+      "off_field_delta"
+    ],
+    "each_leg_requires": "off_field 有|无|空包"
+  },
+  "dropped_legs": [
+    {
+      "sale_id": "90",
+      "match": "布拉格斯拉维亚 vs 朗斯",
+      "reason": "HD 主向最短约2.14，偏「买热门侧凑数」；有场外但优先级让给更均势的53/68"
+    },
+    {
+      "sale_id": "96",
+      "match": "德尔瓦耶独立 vs 弗拉门戈",
+      "reason": "原不碰+伤停空包；换出"
+    }
+  ]
 }
