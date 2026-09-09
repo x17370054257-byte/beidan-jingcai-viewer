@@ -1,12 +1,12 @@
 {
-  "as_of": "2026-09-10T02:43:31+08:00",
+  "as_of": "2026-09-10T03:05:02+08:00",
   "date": "2026-09-10",
   "disclaimer": "研究观察 · 不出票 · 非投注建议",
   "counts": {
     "jingcai": 17,
     "beidan": 99,
     "selected": 0,
-    "observe": 10,
+    "observe": 0,
     "with_report": 17
   },
   "matches": [
@@ -31,8 +31,8 @@
       ],
       "sell_status": "ended",
       "fixture_id": 1635736,
-      "badge": "观察",
-      "rank_score": 32,
+      "badge": null,
+      "rank_score": null,
       "has_report": true,
       "report_level": "final",
       "report_file": "jc-wed006.md"
@@ -58,8 +58,8 @@
       ],
       "sell_status": "ended",
       "fixture_id": 1635698,
-      "badge": "观察",
-      "rank_score": 34,
+      "badge": null,
+      "rank_score": null,
       "has_report": true,
       "report_level": "final",
       "report_file": "jc-wed007.md"
@@ -85,8 +85,8 @@
       ],
       "sell_status": "ended",
       "fixture_id": 1635686,
-      "badge": "观察",
-      "rank_score": 29,
+      "badge": null,
+      "rank_score": null,
       "has_report": true,
       "report_level": "final",
       "report_file": "jc-wed008.md"
@@ -108,8 +108,8 @@
       ],
       "sell_status": "ended",
       "fixture_id": 1635705,
-      "badge": "观察",
-      "rank_score": 23,
+      "badge": null,
+      "rank_score": null,
       "has_report": true,
       "report_level": "final",
       "report_file": "jc-wed009.md"
@@ -162,8 +162,8 @@
       ],
       "sell_status": "ended",
       "fixture_id": 1636205,
-      "badge": "观察",
-      "rank_score": 31,
+      "badge": null,
+      "rank_score": null,
       "has_report": true,
       "report_level": "final",
       "report_file": "jc-wed011.md"
@@ -293,8 +293,8 @@
       ],
       "sell_status": "on_sale",
       "fixture_id": 1635659,
-      "badge": "观察",
-      "rank_score": 43,
+      "badge": null,
+      "rank_score": null,
       "has_report": true,
       "report_level": "final",
       "report_file": "jc-thu001.md"
@@ -320,8 +320,8 @@
       ],
       "sell_status": "on_sale",
       "fixture_id": 1635648,
-      "badge": "观察",
-      "rank_score": 34,
+      "badge": null,
+      "rank_score": null,
       "has_report": true,
       "report_level": "final",
       "report_file": "jc-thu002.md"
@@ -343,8 +343,8 @@
       ],
       "sell_status": "on_sale",
       "fixture_id": 1635632,
-      "badge": "观察",
-      "rank_score": 23,
+      "badge": null,
+      "rank_score": null,
       "has_report": true,
       "report_level": "final",
       "report_file": "jc-thu003.md"
@@ -370,8 +370,8 @@
       ],
       "sell_status": "on_sale",
       "fixture_id": 1635729,
-      "badge": "观察",
-      "rank_score": 41,
+      "badge": null,
+      "rank_score": null,
       "has_report": true,
       "report_level": "final",
       "report_file": "jc-thu004.md"
@@ -393,8 +393,8 @@
       ],
       "sell_status": "on_sale",
       "fixture_id": 1635697,
-      "badge": "观察",
-      "rank_score": 21,
+      "badge": null,
+      "rank_score": null,
       "has_report": true,
       "report_level": "final",
       "report_file": "jc-thu005.md"
