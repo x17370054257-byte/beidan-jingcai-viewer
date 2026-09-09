@@ -47,10 +47,15 @@ function resolveMatchPhase(obj) {
 
 
 function methodAgreeBadge(leg) {
-  const n = leg && (leg.method_agree_n ?? leg.vote_agree_n);
+  if (!leg) return '';
+  const n = leg.agree_n ?? leg.method_agree_n ?? leg.vote_agree_n;
   if (n === undefined || n === null || n === '') return '';
-  const conf = leg.vote_confirmed ? '' : '';
-  return `<span class="agree" title="多方法同向数 · 观察向未升权">方法同意 ${escapeHtml(String(n))}</span>`;
+  const den = leg.agree_den ?? leg.method_agree_den ?? (leg.vote_agree_n != null ? 7 : '');
+  const label = den !== '' && den != null ? `同意 ${n}/${den}` : `同意 ${n}`;
+  const tip = leg.agree_methods
+    ? `方法同意数 ${leg.agree_methods} · 观察向未升权`
+    : '方法同意数 agree_n · 观察向未升权';
+  return `<span class="agree" title="${escapeHtml(tip)}">${escapeHtml(label)}</span>`;
 }
 
 function phaseBadge(obj) {
@@ -272,7 +277,7 @@ function renderSkeleton(leg) {
       <span>${escapeHtml(String(leg.sale_id).startsWith('周') ? '竞彩' : '北单')} ${escapeHtml(leg.sale_id)}</span>
       <span>双选 ${escapeHtml(leg.double || '—')}</span>
       ${leg.strength ? `<span>强度 ${escapeHtml(leg.strength)}</span>` : ''}
-      ${(leg.method_agree_n ?? leg.vote_agree_n) != null ? `<span>方法同意 ${escapeHtml(String(leg.method_agree_n ?? leg.vote_agree_n))}</span>` : ''}
+      ${(leg.agree_n ?? leg.method_agree_n ?? leg.vote_agree_n) != null ? `<span>${escapeHtml((() => { const n=leg.agree_n ?? leg.method_agree_n ?? leg.vote_agree_n; const d=leg.agree_den ?? leg.method_agree_den; return d!=null&&d!=='' ? `同意 ${n}/${d}` : `同意 ${n}`; })())}</span>` : ''}
       ${phaseBadge(leg)}
     </div>
     <div class="plain">
