@@ -31,7 +31,9 @@ function minutesToKickoff(leg) {
 }
 
 function hasLiveXi(text) {
-  return /live\s*XI/i.test(String(text || ''));
+  const s = String(text || '');
+  // live XI / 已官宣首发 = 高亮更新
+  return /live\s*XI/i.test(s) || /已官宣首发/.test(s);
 }
 
 /** 卡片场外：未到 T-60 →「首发待临场」；live XI → 高亮 */
