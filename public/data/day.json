@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-10T07:27:58+08:00",
+  "as_of": "2026-09-10T08:16:54+08:00",
   "date": "2026-09-10",
   "schema_version": "1.4",
   "disclaimer": "研究观察 · 不出票 · 非投注建议",
@@ -2243,11 +2243,7 @@
       "match_phase": "pre",
       "handicap": "0",
       "nspf": null,
-      "spf": [
-        "2.15",
-        "4.64",
-        "3.12"
-      ],
+      "spf": null,
       "sell_status": "paused",
       "fixture_id": 1490452,
       "badge": null,
@@ -2274,11 +2270,7 @@
       "match_phase": "pre",
       "handicap": "0",
       "nspf": null,
-      "spf": [
-        "3.46",
-        "3.44",
-        "2.37"
-      ],
+      "spf": null,
       "sell_status": "paused",
       "fixture_id": 1490454,
       "badge": null,
@@ -2305,11 +2297,7 @@
       "match_phase": "pre",
       "handicap": "0",
       "nspf": null,
-      "spf": [
-        "2.87",
-        "4.19",
-        "2.41"
-      ],
+      "spf": null,
       "sell_status": "paused",
       "fixture_id": 1490456,
       "badge": null,
@@ -2336,11 +2324,7 @@
       "match_phase": "pre",
       "handicap": "0",
       "nspf": null,
-      "spf": [
-        "4.68",
-        "3.98",
-        "1.86"
-      ],
+      "spf": null,
       "sell_status": "paused",
       "fixture_id": 1490453,
       "badge": null,
@@ -2364,14 +2348,10 @@
       "kickoff_shanghai": "2026-09-10 07:30",
       "fixture_status": "NS",
       "status_short": "NS",
-      "match_phase": "pre",
+      "match_phase": "live",
       "handicap": "0",
       "nspf": null,
-      "spf": [
-        "3.55",
-        "3.43",
-        "2.33"
-      ],
+      "spf": null,
       "sell_status": "paused",
       "fixture_id": 1520860,
       "badge": null,
@@ -2395,14 +2375,10 @@
       "kickoff_shanghai": "2026-09-10 07:30",
       "fixture_status": "NS",
       "status_short": "NS",
-      "match_phase": "pre",
+      "match_phase": "live",
       "handicap": "0",
       "nspf": null,
-      "spf": [
-        "2.81",
-        "3.23",
-        "2.97"
-      ],
+      "spf": null,
       "sell_status": "paused",
       "fixture_id": 1520866,
       "badge": null,
@@ -2429,11 +2405,7 @@
       "match_phase": "pre",
       "handicap": "-1",
       "nspf": null,
-      "spf": [
-        "3.13",
-        "3.62",
-        "2.47"
-      ],
+      "spf": null,
       "sell_status": "paused",
       "fixture_id": 1490451,
       "badge": null,
